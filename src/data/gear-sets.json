@@ -1,0 +1,405 @@
+[
+  {
+    "key": "Cleftpeak",
+    "kind": "weapon",
+    "name": {
+      "en": "Cleftpeak",
+      "zh": "斷嶽"
+    },
+    "tags": [
+      "StonesplitStrength",
+      "BamboocutKite",
+      "SnowpartingBlade",
+      "PhalanxbaneBlade",
+      "HeavenwillGauntlets",
+      "SkygraspRopeDart"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {
+          "stat": {}
+        }
+      },
+      "2": {
+        "name": "2",
+        "effect": {
+          "rawStat": {
+            "minPhys": 78
+          }
+        }
+      },
+      "4": {
+        "name": "4",
+        "effect": {
+          "stat": {
+            "minPhys": 78
+          },
+          "trigger": {
+            "event": "damage",
+            "action": {
+              "type": "apply",
+              "target": "self",
+              "value": "Cleftpeak",
+              "stack": 1,
+              "reapply": true
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": "RainWhisper",
+    "kind": "weapon",
+    "name": {
+      "en": "Rain Whisper",
+      "zh": "時雨"
+    },
+    "tags": [
+      "StonesplitStrength",
+      "StonesplitMight",
+      "SilkbindDeluge",
+      "SnowpartingBlade",
+      "PhalanxbaneBlade",
+      "ThundercryBlade",
+      "StormbreakerSpear",
+      "PanaceaFan",
+      "SoulshadeUmbrella"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {
+          "stat": {}
+        }
+      },
+      "2": {
+        "name": "2",
+        "effect": {
+          "rawStat": {
+            "precision": 0.08
+          }
+        }
+      },
+      "4": {
+        "name": "4",
+        "effect": [
+          {
+            "stat": {
+              "precision": 0.08
+            }
+          },
+          {
+            "requirement": [],
+            "effect": {
+              "critDmgBonus": 0.1
+            }
+          },
+          {
+            "requirement": [
+              {
+                "target": "self",
+                "value": "Shield"
+              }
+            ],
+            "effect": {
+              "critDmgBonus": 0.15
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "key": "Ivorybloom",
+    "kind": "weapon",
+    "name": {
+      "en": "Ivorybloom",
+      "zh": "浣花"
+    },
+    "tags": [
+      "SilkbindDeluge",
+      "PanaceaFan",
+      "SoulshadeUmbrella"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {
+          "stat": {}
+        }
+      },
+      "2": {
+        "name": "2",
+        "effect": {
+          "rawStat": {
+            "crit": 0.09
+          }
+        }
+      },
+      "4": {
+        "name": "4",
+        "effect": [
+          {
+            "stat": {
+              "crit": 0.09
+            }
+          },
+          {
+            "requirement": [
+              {
+                "target": "selfHPPercentage",
+                "comparison": ">=",
+                "amount": 100
+              }
+            ],
+            "effect": {
+              "stat": {
+                "crit": 0.05
+              },
+              "critDmgBonus": 0.15,
+              "criticalHealingBonus": 0.15
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "key": "Hawkwing",
+    "kind": "weapon",
+    "name": {
+      "en": "Hawkwing",
+      "zh": null
+    },
+    "tags": [
+      "BellstrikeSplendor",
+      "BellstrikeUmbra",
+      "SilkbindDeluge",
+      "NamelessSword",
+      "NamelessSpear",
+      "StrategicSword",
+      "HeavenQuakerSpear",
+      "PanaceaFan",
+      "SoulshadeUmbrella"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {
+          "stat": {}
+        }
+      },
+      "2": {
+        "name": "2",
+        "effect": {
+          "rawStat": {
+            "affinity": 0.045
+          }
+        }
+      },
+      "4": {
+        "name": "4",
+        "effect": {
+          "stat": {
+            "affinity": 0.045
+          },
+          "trigger": {
+            "event": "damageOutcome",
+            "outcome": "affinity",
+            "action": {
+              "type": "apply",
+              "target": "self",
+              "value": "Hawkwing",
+              "stack": 1,
+              "reapply": true
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": "Etherwrath",
+    "kind": "weapon",
+    "name": {
+      "en": "Etherwrath",
+      "zh": null
+    },
+    "tags": [
+      "BamboocutKite",
+      "StonesplitStrength",
+      "SilkbindDeluge",
+      "HeavenwillGauntlets",
+      "SkygraspRopeDart",
+      "SnowpartingBlade",
+      "PhalanxbaneBlade",
+      "PanaceaFan",
+      "SoulshadeUmbrella"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {
+          "stat": {}
+        }
+      },
+      "2": {
+        "name": "2",
+        "effect": {
+          "rawStat": {
+            "minPhys": 78
+          }
+        }
+      },
+      "4": {
+        "name": "4",
+        "effect": {
+          "condition": "Etherwrath4P",
+          "stat": {
+            "minPhys": 78
+          },
+          "trigger": {
+            "event": "damage",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "DirectDamage"
+              }
+            ],
+            "action": {
+              "type": "apply",
+              "target": "self",
+              "value": "Etherwrath",
+              "stack": 1,
+              "reapply": true
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "key": "Formbend",
+    "kind": "armor",
+    "name": {
+      "en": "Formbend",
+      "zh": "易相"
+    },
+    "tags": [
+      "StonesplitStrength",
+      "StonesplitMight",
+      "SnowpartingBlade",
+      "PhalanxbaneBlade",
+      "ThundercryBlade",
+      "StormbreakerSpear"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {}
+      },
+      "2": {
+        "name": "2",
+        "effect": {}
+      },
+      "4": {
+        "name": "4",
+        "effect": {
+          "condition": "FormBend4"
+        }
+      }
+    }
+  },
+  {
+    "key": "Moonflare",
+    "kind": "armor",
+    "name": {
+      "en": "Moonflare",
+      "zh": null
+    },
+    "tags": [
+      "SilkbindDeluge",
+      "PanaceaFan",
+      "SoulshadeUmbrella"
+    ],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {}
+      },
+      "2": {
+        "name": "2",
+        "effect": {}
+      },
+      "4": {
+        "name": "4",
+        "effect": {}
+      }
+    }
+  },
+  {
+    "key": "Calmwaters",
+    "kind": "armor",
+    "name": {
+      "en": "Calmwaters",
+      "zh": "江凝"
+    },
+    "tags": [],
+    "options": {
+      "0": {
+        "name": "0",
+        "effect": {}
+      },
+      "2": {
+        "name": "2",
+        "effect": {}
+      },
+      "4": {
+        "name": "4",
+        "effect": {}
+      }
+    }
+  },
+  {
+    "key": "None",
+    "kind": "bowRing",
+    "name": {
+      "en": "None",
+      "zh": "無"
+    },
+    "tags": [],
+    "options": {}
+  },
+  {
+    "key": "Precision",
+    "kind": "bowRing",
+    "name": {
+      "en": "Precision",
+      "zh": "精準"
+    },
+    "tags": [],
+    "options": {}
+  },
+  {
+    "key": "Critical",
+    "kind": "bowRing",
+    "name": {
+      "en": "Critical",
+      "zh": null
+    },
+    "tags": [],
+    "options": {}
+  },
+  {
+    "key": "Affinity",
+    "kind": "bowRing",
+    "name": {
+      "en": "Affinity",
+      "zh": null
+    },
+    "tags": [],
+    "options": {}
+  }
+]

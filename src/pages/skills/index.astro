@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import { martialArts, skills } from '../../lib/data';
+import { displayName } from '../../lib/format';
+
+// 技能按来源文件分组：general=通用、mystic=绝学、其余为对应武学
+const SOURCE_LABELS: Record<string, string> = {
+  general: '通用',
+  mystic: '绝学',
+};
+const groups = new Map<string, typeof skills>();
+for (const skill of skills) {
+  if (!groups.has(skill.source)) groups.set(skill.source, []);
+  groups.get(skill.source)!.push(skill);
+}
+const sourceLabel = (source: string) => {
+  if (SOURCE_LABELS[source]) return SOURCE_LABELS[source];
+  const ma = martialArts[source];
+  return ma ? `${displayName(ma.name).text}（${ma.name.en}）` : source;
+};
+const fmtDuration = (v: number | Record<string, unknown> | null) => {
+  if (v === null) return '—';
+  if (typeof v === 'number') {
+    return `${v.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1')}s`;
+  }
+  return '随武器';
+};
+---
+
+<Base active="/skills">
+  <h1>技能</h1>
+  <p class="page-desc">
+    共 {skills.length} 条技能数据。来源：社区整理的技能动作数据（伤害系数、资源消耗为机器可读数据）。
+  </p>
+
+  {
+    [...groups.entries()].map(([source, items]) => (
+      <details open={items.length <= 30}>
+        <summary class="group-summary">
+          {sourceLabel(source)}（{items.length} 条）
+        </summary>
+        <table>
+          <thead>
+            <tr>
+              <th>技能</th>
+              <th>施法时间</th>
+              <th>冷却</th>
+              <th>标签</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((skill) => {
+              const name = displayName(skill.name);
+              return (
+                <tr>
+                  <td>
+                    <span class={name.zhMissing ? 'zh-missing' : ''}>
+                      {name.text}
+                    </span>
+                    {skill.shortName && skill.shortName !== skill.name.en && (
+                      <span class="muted"> · {skill.shortName}</span>
+                    )}
+                  </td>
+                  <td>{fmtDuration(skill.castTime)}</td>
+                  <td>
+                    {skill.cooldown === null ? '—' : fmtDuration(skill.cooldown)}
+                    {skill.cooldownGroup && (
+                      <span class="muted">（组：{skill.cooldownGroup}）</span>
+                    )}
+                  </td>
+                  <td>
+                    {skill.tags.slice(0, 3).map((tag) => (
+                      <span class="tag">{tag}</span>
+                    ))}
+                    {skill.tags.length > 3 && (
+                      <span class="muted"> +{skill.tags.length - 3}</span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </details>
+    ))
+  }
+</Base>
+
+<style>
+  details {
+    margin-bottom: 1.2rem;
+  }
+  details > table {
+    margin-top: 0.6rem;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-top: 1.4rem;
+  }
+</style>

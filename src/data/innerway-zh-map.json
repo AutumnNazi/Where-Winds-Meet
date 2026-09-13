@@ -1,0 +1,27 @@
+{
+  "_comment": "参考数据心法（where-builds-meet 英文）→ 灰机wiki 中文名对照。对照方法：先用流派 tag 锚定分组（裂石·威=StonesplitMight 等 10 组全部对应），再逐部语义核对。confidence：high=直译逐字吻合；medium=语义吻合但非逐字，需游戏内截图确认；null=暂无可靠对照，不得臆填。",
+  "_factionsAnchor": {
+    "StonesplitMight": "裂石·威",
+    "StonesplitStrength": "裂石·钧",
+    "BellstrikeSplendor": "鸣金·虹",
+    "BellstrikeUmbra": "鸣金·影",
+    "SilkbindDeluge": "牵丝·霖",
+    "SilkbindJade": "牵丝·玉",
+    "BamboocutWind": "破竹·风",
+    "BamboocutDust": "破竹·尘",
+    "BamboocutKite": "破竹·鸢",
+    "BamboocutDraught": "破竹·樽"
+  },
+  "art-of-resistance": { "zh": "抗造大法", "confidence": "high" },
+  "frost-clad-night": { "zh": "霜天白夜", "confidence": "high" },
+  "throat-piercing-art": { "zh": "穿喉诀", "confidence": "high" },
+  "steadfast-devotion": { "zh": "孤忠不辞", "confidence": "high" },
+  "royal-remedy": { "zh": "君臣药", "confidence": "high" },
+  "soaring-high": { "zh": "扶摇直上", "confidence": "high" },
+  "sky-gripped": { "zh": "擒天势", "confidence": "high" },
+  "seasonal-edge": { "zh": "四时无常", "confidence": "high" },
+  "battle-anthem": { "zh": "山河绝韵", "confidence": "medium" },
+  "adaptive-steel": { "zh": "磐石诀", "confidence": "medium" },
+  "envigorated-warrior": { "zh": "生龙活虎", "confidence": "medium" },
+  "empirical-edge": { "zh": "三穷致知", "confidence": "medium" }
+}

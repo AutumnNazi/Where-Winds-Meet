@@ -1,0 +1,248 @@
+/* 燕云资料站：水墨暗色主题 */
+:root {
+  --bg: #141110;
+  --panel: #1e1916;
+  --panel-2: #292119;
+  --border: #3a2f26;
+  --text: #e9e0d1;
+  --text-dim: #a2917a;
+  --text-faint: #6f6353;
+  --accent: #c9a86a;
+  --accent-dim: #93784c;
+  --danger: #c96a6a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Noto Serif SC', 'Source Han Serif SC', 'Microsoft YaHei', 'PingFang SC',
+    system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background:
+    radial-gradient(1200px 500px at 50% -100px, #241d17, transparent),
+    var(--bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- 导航 ---- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: rgba(20, 17, 16, 0.92);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.site-header .inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 3.4rem;
+}
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+.site-title span {
+  color: var(--accent);
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-nav a {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.4rem;
+}
+.site-nav a:hover,
+.site-nav a[aria-current='page'] {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ---- 页面骨架 ---- */
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+h1 {
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+  border-left: 4px solid var(--accent);
+  padding-left: 0.7rem;
+  margin: 0 0 0.4rem;
+}
+h2 {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  margin: 2.2rem 0 0.9rem;
+  color: var(--accent);
+}
+.page-desc {
+  color: var(--text-dim);
+  margin: 0 0 2rem;
+  font-size: 0.95rem;
+}
+
+/* ---- 卡片 ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+.card {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.9rem 1.1rem;
+  color: var(--text);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.card:hover {
+  border-color: var(--accent-dim);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.card .title {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.card .sub {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* ---- 标签 ---- */
+.tag {
+  display: inline-block;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 4px;
+  padding: 0.05rem 0.5rem;
+  font-size: 0.78rem;
+  margin: 0.15rem 0.25rem 0.15rem 0;
+  letter-spacing: 0.04em;
+}
+.tag.accent {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+/* ---- 表格 ---- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.92rem;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.55rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+th {
+  background: var(--panel-2);
+  color: var(--text-dim);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---- 面板 ---- */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- 英文回落（缺中文名）---- */
+.zh-missing {
+  color: var(--text-dim);
+  font-style: italic;
+}
+.zh-missing::after {
+  content: '（中文名待补）';
+  font-style: normal;
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  margin-left: 0.3rem;
+}
+
+/* ---- 效果原文折叠 ---- */
+details.raw {
+  margin-top: 0.3rem;
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+details.raw pre {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem;
+  overflow: auto;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* ---- 其他 ---- */
+.muted {
+  color: var(--text-dim);
+  font-size: 0.88rem;
+}
+.notice {
+  border: 1px dashed var(--accent-dim);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin: 1.2rem 0;
+}
+.footer {
+  border-top: 1px solid var(--border);
+  color: var(--text-faint);
+  font-size: 0.8rem;
+}
+.footer .inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+}

@@ -1,0 +1,189 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  affixValues,
+  attunements,
+  gearDefs,
+  martialArtById,
+  pathByTag,
+} from '../../lib/data';
+import { displayName, pascalToKebab } from '../../lib/format';
+
+/** tag → 中文：通用词表 / 流派 / 武学，其余显示原文 */
+const COMMON_TAGS: Record<string, string> = {
+  Weapon: '武器类',
+  Armor: '防具类',
+  Defensive: '防御类',
+};
+const tagLabel = (tag: string) => {
+  if (COMMON_TAGS[tag]) return COMMON_TAGS[tag];
+  const path = pathByTag(tag);
+  if (path) return displayName(path.name).text;
+  const ma = martialArtById(pascalToKebab(tag));
+  if (ma) return displayName(ma.name).text;
+  return tag;
+};
+
+const groupOrder = ['Weapon', 'Armor', 'Defensive'];
+const attunementGroups = new Map<string, typeof attunements>();
+for (const a of attunements) {
+  const key = a.tags[0] ?? 'Other';
+  if (!attunementGroups.has(key)) attunementGroups.set(key, []);
+  attunementGroups.get(key)!.push(a);
+}
+const orderedGroups = [
+  ...groupOrder.filter((g) => attunementGroups.has(g)).map((g) => [g, attunementGroups.get(g)!] as const),
+  ...[...attunementGroups.keys()]
+    .filter((g) => !groupOrder.includes(g))
+    .map((g) => [g, attunementGroups.get(g)!] as const),
+];
+
+const affixName = (key: string) => {
+  const a = gearDefs.affixes.find((x) => x.key === key);
+  return a ? displayName(a.name).text : key;
+};
+const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
+---
+
+<Base active="/attunements">
+  <h1>词条</h1>
+  <p class="page-desc">
+    调律词条 {attunements.length} 条、装备词条池 {gearDefs.gear.length} 件、数值上限 {levels.length} 档。
+  </p>
+
+  <h2>调律词条总表</h2>
+  {
+    orderedGroups.map(([group, items]) => (
+      <section>
+        <h3 class="group-title">{tagLabel(group)}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>词条</th>
+              <th>数值类型</th>
+              <th>适用范围</th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((a) => {
+              const name = displayName(a.name);
+              return (
+                <tr>
+                  <td>
+                    <span class={name.zhMissing ? 'zh-missing' : ''}>{name.text}</span>
+                  </td>
+                  <td>{a.percentage ? '百分比' : '固定值'}</td>
+                  <td>
+                    {a.tags.map((tag) => (
+                      <span class="tag">{tagLabel(tag)}</span>
+                    ))}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </section>
+    ))
+  }
+
+  <h2>装备词条池</h2>
+  <p class="muted">每件装备按等级解锁不同词条池；承音（Relayed）词条为 96 级附加池。</p>
+  {
+    gearDefs.gear.map((g) => {
+      const name = displayName(g.name);
+      const slotNames = g.slots
+        .map((s) => displayName(gearDefs.slots.find((x) => x.id === s)?.name ?? { en: s, zh: null }).text)
+        .join(' / ');
+      return (
+        <details>
+          <summary class="group-summary">
+            {name.text}
+            <span class="muted">
+              {' '}（{name.en} · {slotNames}）
+            </span>
+          </summary>
+          <table>
+            <thead>
+              <tr>
+                <th>等级</th>
+                <th>主词条池</th>
+                <th>副词条池</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.keys(g.baseAffixes).map((level) => (
+                <tr>
+                  <td>{level}</td>
+                  <td>
+                    {(g.baseAffixes[level] ?? []).map((k) => (
+                      <span class="tag">{affixName(k)}</span>
+                    ))}
+                  </td>
+                  <td>
+                    {(g.additionalAffixes[level] ?? []).map((k) => (
+                      <span class="tag">{affixName(k)}</span>
+                    ))}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </details>
+      );
+    })
+  }
+
+  <h2>词条数值上限（按装备等级）</h2>
+  {
+    levels.map((level) => (
+      <details open={level === levels[0]}>
+        <summary class="group-summary">{level} 级</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>副词条</th>
+              <th>上限</th>
+              <th>调律词条</th>
+              <th>上限</th>
+            </tr>
+          </thead>
+          <tbody>
+            {(() => {
+              const affixEntries = Object.entries(affixValues[level]?.affix ?? {});
+              const attunementEntries = Object.entries(affixValues[level]?.attunement ?? {});
+              const rows = Math.max(affixEntries.length, attunementEntries.length);
+              return Array.from({ length: rows }, (_, i) => (
+                <tr>
+                  <td>{affixEntries[i] ? affixName(affixEntries[i][0]) : ''}</td>
+                  <td>{affixEntries[i]?.[1] ?? ''}</td>
+                  <td>{attunementEntries[i] ? affixName(attunementEntries[i][0]) : ''}</td>
+                  <td>{attunementEntries[i]?.[1] ?? ''}</td>
+                </tr>
+              ));
+            })()}
+          </tbody>
+        </table>
+      </details>
+    ))
+  }
+</Base>
+
+<style>
+  .group-title {
+    font-size: 1.05rem;
+    color: var(--accent);
+    margin: 1.6rem 0 0.6rem;
+  }
+  details {
+    margin-bottom: 0.8rem;
+  }
+  details > table {
+    margin-top: 0.5rem;
+  }
+  summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+  }
+</style>

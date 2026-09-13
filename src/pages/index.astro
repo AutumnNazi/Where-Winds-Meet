@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import { attunements, builds, innerways, martialArts, skills } from '../lib/data';
+
+const stats = [
+  { href: '/innerways/', label: '心法', en: 'Inner Ways', count: Object.keys(innerways).length, desc: 'T0–T6 分层效果与适配流派' },
+  { href: '/martial-arts/', label: '武学', en: 'Martial Arts', count: Object.keys(martialArts).length, desc: '按武器分类的技能强化树' },
+  { href: '/skills/', label: '技能', en: 'Skills', count: skills.length, desc: '技能数值、消耗与动作数据' },
+  { href: '/attunements/', label: '词条', en: 'Attunements', count: attunements.length, desc: '调律词条、装备词条池与数值上限' },
+  { href: '/builds/', label: '配装', en: 'Builds', count: builds.length, desc: '流派配装：心法、套装与词条搭配' },
+];
+---
+
+<Base>
+  <h1>燕云资料站</h1>
+  <p class="page-desc">《燕云十六声》（Where Winds Meet）配装、心法、武学、技能与词条资料库。</p>
+
+  <div class="card-grid">
+    {
+      stats.map((s) => (
+        <a class="card" href={s.href}>
+          <div class="title">
+            {s.label} <span class="muted">{s.en}</span>
+          </div>
+          <div class="sub">{s.desc}</div>
+          <div class="count">{s.count} 条数据</div>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="notice">
+    <p>当前数据为第一版导入：结构化数值已就绪，但<strong>技能与心法的效果描述、属性中文名尚缺官方文案</strong>，页面以英文原文 + 机器转译展示，标注「中文名待补」处为后续补录重点。</p>
+    <p>数据更新方式：更新参考仓库后运行 <code>npm run import:ref</code> 重新生成 <code>src/data/</code>，再构建即可。</p>
+  </div>
+</Base>
+
+<style>
+  .count {
+    margin-top: 0.5rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+  code {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.05rem 0.35rem;
+    font-size: 0.82em;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+/** 渲染转译后的效果条目列表：可转译的显示文本，无法识别的折叠展示 JSON 原文 */
+import type { EffectRender } from '../lib/format';
+
+interface Props {
+  items: EffectRender[];
+  emptyText?: string;
+}
+const { items, emptyText = '本层无效果' } = Astro.props;
+---
+
+{
+  items.length === 0 ? (
+    <span class="muted">{emptyText}</span>
+  ) : (
+    <ul class="effect-list">
+      {items.map((item) =>
+        'text' in item ? (
+          <li>{item.text}</li>
+        ) : (
+          <li>
+            <details class="raw">
+              <summary>原始效果数据</summary>
+              <pre>{JSON.stringify(item.raw, null, 2)}</pre>
+            </details>
+          </li>
+        ),
+      )}
+    </ul>
+  )
+}
+
+<style>
+  .effect-list {
+    margin: 0.2rem 0;
+    padding-left: 1.2rem;
+  }
+  .effect-list li {
+    margin: 0.2rem 0;
+  }
+</style>

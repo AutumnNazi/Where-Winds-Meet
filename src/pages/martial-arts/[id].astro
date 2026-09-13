@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import EffectList from '../../components/EffectList.astro';
+import { martialArts, skillsBySource, weaponByKey } from '../../lib/data';
+import { displayName, renderEffectEntry } from '../../lib/format';
+
+export function getStaticPaths() {
+  return Object.values(martialArts).map((ma) => ({
+    params: { id: ma.id },
+    props: { ma },
+  }));
+}
+
+const { ma } = Astro.props;
+const name = displayName(ma.name);
+const weapon = weaponByKey(ma.weapon);
+const relatedSkills = skillsBySource(ma.id);
+const activeTalents = ma.talents.filter((t) => t.entries.length > 0);
+---
+
+<Base active="/martial-arts">
+  <p><a href="/martial-arts/">← 返回武学列表</a></p>
+  <h1 class={name.zhMissing ? 'zh-missing' : ''}>{name.text}</h1>
+  <p class="page-desc">{ma.name.en}</p>
+
+  <div>
+    武器类别：
+    <span class="tag accent">{weapon ? displayName(weapon.name).text : ma.weapon}</span>
+  </div>
+
+  <h2>强化树</h2>
+  {
+    activeTalents.length === 0 ? (
+      <p class="muted">暂无强化层数据。</p>
+    ) : (
+      <table>
+        <thead>
+          <tr>
+            <th>层级</th>
+            <th>强化效果</th>
+          </tr>
+        </thead>
+        <tbody>
+          {activeTalents.map((talent) => (
+            <tr>
+              <td class="level-cell">{talent.level}</td>
+              <td>
+                {talent.entries.map((entry) => {
+                  const entryName = entry.nameZh ?? (entry.data as { name?: string }).name;
+                  const renders = ((entry.data as { effect?: unknown[] }).effect ?? []).map(
+                    renderEffectEntry,
+                  );
+                  const isZh = Boolean(entry.nameZh);
+                  return (
+                    <div class="talent-entry">
+                      {entryName && (
+                        <div class={isZh ? 'talent-name' : 'talent-name zh-missing'}>
+                          {entryName}
+                        </div>
+                      )}
+                      <EffectList items={renders} emptyText="（无效果文本）" />
+                    </div>
+                  );
+                })}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    )
+  }
+
+  {
+    relatedSkills.length > 0 && (
+      <>
+        <h2>关联技能</h2>
+        <p class="muted">
+          本武学的技能动作数据共 {relatedSkills.length} 条（伤害系数等详见
+          <a href="/skills/">技能总表</a>）。
+        </p>
+      </>
+    )
+  }
+</Base>
+
+<style>
+  .level-cell {
+    color: var(--accent);
+    font-weight: 600;
+    width: 3.5rem;
+    text-align: center;
+  }
+  .talent-entry {
+    margin-bottom: 0.6rem;
+  }
+  .talent-entry:last-child {
+    margin-bottom: 0;
+  }
+  .talent-name {
+    color: var(--text);
+    font-weight: 600;
+  }
+</style>

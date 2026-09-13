@@ -1,0 +1,153 @@
+[
+  {
+    "key": "bellstrikeSplendor",
+    "tag": "BellstrikeSplendor",
+    "name": {
+      "en": "Splendor",
+      "zh": null
+    },
+    "status": "plannerOnly",
+    "buildGroup": "bellstrike-splendor",
+    "lockedWeapons": [
+      "namelessSword",
+      "namelessSpear"
+    ]
+  },
+  {
+    "key": "bellstrikeUmbra",
+    "tag": "BellstrikeUmbra",
+    "name": {
+      "en": "Umbra",
+      "zh": null
+    },
+    "status": "plannerOnly",
+    "buildGroup": "bellstrike-umbra",
+    "lockedWeapons": [
+      "strategicSword",
+      "heavenquakerSpear"
+    ]
+  },
+  {
+    "key": "stonesplitMight",
+    "tag": "StonesplitMight",
+    "name": {
+      "en": "Might",
+      "zh": "威"
+    },
+    "status": "available",
+    "buildGroup": "stonesplit-might",
+    "lockedWeapons": [
+      "thundercry",
+      "stormbreaker"
+    ]
+  },
+  {
+    "key": "stonesplitStrength",
+    "tag": "StonesplitStrength",
+    "name": {
+      "en": "Strength",
+      "zh": "鈞"
+    },
+    "status": "available",
+    "buildGroup": "stonesplit-strength",
+    "lockedWeapons": [
+      "snowparting",
+      "phalanxbane"
+    ]
+  },
+  {
+    "key": "silkbindJade",
+    "tag": "SilkbindJade",
+    "name": {
+      "en": "Jade",
+      "zh": null
+    },
+    "status": "plannerOnly",
+    "buildGroup": "silkbind-jade",
+    "lockedWeapons": [
+      "vernalUmbrella",
+      "inkwellFan"
+    ]
+  },
+  {
+    "key": "silkbindDeluge",
+    "tag": "SilkbindDeluge",
+    "name": {
+      "en": "Deluge",
+      "zh": null
+    },
+    "status": "available",
+    "buildGroup": "silkbind-deluge",
+    "lockedWeapons": [
+      "panaceaFan",
+      "soulshadeUmbrella"
+    ]
+  },
+  {
+    "key": "bamboocutWind",
+    "tag": "BamboocutWind",
+    "name": {
+      "en": "Wind",
+      "zh": null
+    },
+    "status": "wip",
+    "buildGroup": "bamboocut-wind",
+    "lockedWeapons": [
+      "infernalTwinblades",
+      "mortalRopeDart"
+    ]
+  },
+  {
+    "key": "bamboocutDust",
+    "tag": "BamboocutDust",
+    "name": {
+      "en": "Dust",
+      "zh": "塵"
+    },
+    "status": "plannerOnly",
+    "buildGroup": "bamboocut-dust",
+    "lockedWeapons": [
+      "everspring",
+      "unfettered"
+    ]
+  },
+  {
+    "key": "bamboocutKite",
+    "tag": "BamboocutKite",
+    "name": {
+      "en": "Kite",
+      "zh": "鳶"
+    },
+    "status": "available",
+    "buildGroup": "bamboocut-kite",
+    "lockedWeapons": [
+      "heavenwill",
+      "skygrasp"
+    ]
+  },
+  {
+    "key": "bamboocutDraught",
+    "tag": "BamboocutDraught",
+    "name": {
+      "en": "Draught",
+      "zh": null
+    },
+    "status": "plannerOnly",
+    "buildGroup": "bamboocut-draught",
+    "lockedWeapons": [
+      "skystrikeGauntlets",
+      "rivenTwinblades"
+    ]
+  },
+  {
+    "key": "mixed",
+    "tag": null,
+    "name": {
+      "en": "Mixed",
+      "zh": "混搭"
+    },
+    "status": "devOnly",
+    "buildGroup": "mixed",
+    "lockedWeapons": []
+  }
+]

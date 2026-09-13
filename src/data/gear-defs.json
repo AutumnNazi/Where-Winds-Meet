@@ -1,0 +1,1824 @@
+{
+  "slots": [
+    {
+      "id": "leftWeapon",
+      "name": {
+        "en": "Left Weapon",
+        "zh": null
+      }
+    },
+    {
+      "id": "rightWeapon",
+      "name": {
+        "en": "Right Weapon",
+        "zh": null
+      }
+    },
+    {
+      "id": "disc",
+      "name": {
+        "en": "Disc",
+        "zh": null
+      }
+    },
+    {
+      "id": "pendant",
+      "name": {
+        "en": "Pendant",
+        "zh": null
+      }
+    },
+    {
+      "id": "helmet",
+      "name": {
+        "en": "Helmet",
+        "zh": null
+      }
+    },
+    {
+      "id": "chestpiece",
+      "name": {
+        "en": "Chestpiece",
+        "zh": null
+      }
+    },
+    {
+      "id": "greaves",
+      "name": {
+        "en": "Greaves",
+        "zh": null
+      }
+    },
+    {
+      "id": "bracer",
+      "name": {
+        "en": "Bracer",
+        "zh": null
+      }
+    }
+  ],
+  "affixes": [
+    {
+      "key": "minPhys",
+      "name": {
+        "en": "Min Physical Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxPhys",
+      "name": {
+        "en": "Max Physical Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "minVoidAttack",
+      "name": {
+        "en": "Min Void Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxVoidAttack",
+      "name": {
+        "en": "Max Void Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "minBellstrike",
+      "name": {
+        "en": "Min Bellstrike Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxBellstrike",
+      "name": {
+        "en": "Max Bellstrike Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "minStonesplit",
+      "name": {
+        "en": "Min Stonesplit Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxStonesplit",
+      "name": {
+        "en": "Max Stonesplit Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "minSilkbind",
+      "name": {
+        "en": "Min Silkbind Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxSilkbind",
+      "name": {
+        "en": "Max Silkbind Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "minBamboocut",
+      "name": {
+        "en": "Min Bamboocut Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "maxBamboocut",
+      "name": {
+        "en": "Max Bamboocut Attack",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "power",
+      "name": {
+        "en": "Power",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "body",
+      "name": {
+        "en": "Body",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "agility",
+      "name": {
+        "en": "Agility",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "momentum",
+      "name": {
+        "en": "Momentum",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "defense",
+      "name": {
+        "en": "Defense",
+        "zh": null
+      },
+      "percentage": false
+    },
+    {
+      "key": "precision",
+      "name": {
+        "en": "Precision",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "crit",
+      "name": {
+        "en": "Critical",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "affinity",
+      "name": {
+        "en": "Affinity",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "allMartialArts",
+      "name": {
+        "en": "All Martial Arts",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "hengBladeDmgBoost",
+      "name": {
+        "en": "Art of Heng",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "moBladeDmgBoost",
+      "name": {
+        "en": "Art of Mo",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "umbrellaDmgBoost",
+      "name": {
+        "en": "Art of Umbrella",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "ropeDartDmgBoost",
+      "name": {
+        "en": "Art of Rope Dart",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "gauntletDmgBoost",
+      "name": {
+        "en": "Art of Gauntlet",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "spearDmgBoost",
+      "name": {
+        "en": "Art of Spear",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "swordDmgBoost",
+      "name": {
+        "en": "Art of Sword",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "fanDmgBoost",
+      "name": {
+        "en": "Art of Fan",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "dualBladesDmgBoost",
+      "name": {
+        "en": "Art of Dual Blades",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "singleTargetMysticDmgBoost",
+      "name": {
+        "en": "Single-Target Mystic Skill DMG Boost",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "areaMysticDmgBoost",
+      "name": {
+        "en": "Area Mystic Skill DMG Boost",
+        "zh": null
+      },
+      "percentage": true
+    },
+    {
+      "key": "vsBossDmg",
+      "name": {
+        "en": "vs Boss DMG",
+        "zh": null
+      },
+      "percentage": true
+    }
+  ],
+  "universalAdditionalAffixes": {
+    "91": [
+      "body",
+      "defense"
+    ],
+    "96": [
+      "body",
+      "defense"
+    ]
+  },
+  "gear": [
+    {
+      "key": "hengBlade",
+      "name": {
+        "en": "Heng Blade",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "snowparting",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "hengBladeDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "hengBladeDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "moBlade",
+      "name": {
+        "en": "Mo Blade",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "phalanxbane",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "moBladeDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "moBladeDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "umbrella",
+      "name": {
+        "en": "Umbrella",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "everspring",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "umbrellaDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "umbrellaDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "unfetteredRopeDart",
+      "name": {
+        "en": "Rope Dart",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "unfettered",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "ropeDartDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "ropeDartDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "gauntlet",
+      "name": {
+        "en": "Gauntlet",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "heavenwill",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "gauntletDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "gauntletDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "skygraspRopeDart",
+      "name": {
+        "en": "Rope Dart",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "skygrasp",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "ropeDartDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "ropeDartDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "spear",
+      "name": {
+        "en": "Spear",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "stormbreaker",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "spearDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "spearDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "sword",
+      "name": {
+        "en": "Sword",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "namelessSword",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "swordDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "swordDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "fan",
+      "name": {
+        "en": "Fan",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "inkwellFan",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "fanDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "fanDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "dualBlades",
+      "name": {
+        "en": "Dual Blades",
+        "zh": null
+      },
+      "slots": [
+        "leftWeapon",
+        "rightWeapon"
+      ],
+      "martialArt": "infernalTwinblades",
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 53,
+            "maxPhys": 124
+          },
+          "Purple": {
+            "minPhys": 48,
+            "maxPhys": 112
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 65,
+            "maxPhys": 151
+          },
+          "Purple": {
+            "minPhys": 59,
+            "maxPhys": 136
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minStonesplit",
+          "maxStonesplit"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "agility",
+          "momentum"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "agility",
+          "momentum",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "dualBladesDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minVoidAttack",
+          "maxVoidAttack",
+          "minStonesplit",
+          "maxStonesplit",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "dualBladesDmgBoost"
+        ],
+        "96Relayed": [
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut"
+        ]
+      }
+    },
+    {
+      "key": "disc",
+      "name": {
+        "en": "Disc",
+        "zh": null
+      },
+      "slots": [
+        "disc"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "minPhys": 71
+          },
+          "Purple": {
+            "minPhys": 64
+          }
+        },
+        "96": {
+          "Gold": {
+            "minPhys": 86
+          },
+          "Purple": {
+            "minPhys": 78
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "allMartialArts"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "allMartialArts"
+        ]
+      }
+    },
+    {
+      "key": "pendant",
+      "name": {
+        "en": "Pendant",
+        "zh": null
+      },
+      "slots": [
+        "pendant"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "maxPhys": 106
+          },
+          "Purple": {
+            "maxPhys": 96
+          }
+        },
+        "96": {
+          "Gold": {
+            "maxPhys": 129
+          },
+          "Purple": {
+            "maxPhys": 116
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "allMartialArts"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "allMartialArts"
+        ]
+      }
+    },
+    {
+      "key": "helmet",
+      "name": {
+        "en": "Helmet",
+        "zh": null
+      },
+      "slots": [
+        "helmet"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "maxHp": 4614,
+            "physicalDefense": 18
+          },
+          "Purple": {
+            "maxHp": 4153,
+            "physicalDefense": 16
+          }
+        },
+        "96": {
+          "Gold": {
+            "maxHp": 5774,
+            "physicalDefense": 22
+          },
+          "Purple": {
+            "maxHp": 5196,
+            "physicalDefense": 20
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "crit",
+          "precision",
+          "affinity"
+        ],
+        "96": [
+          "crit",
+          "precision",
+          "affinity"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "singleTargetMysticDmgBoost",
+          "areaMysticDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "singleTargetMysticDmgBoost",
+          "areaMysticDmgBoost"
+        ]
+      }
+    },
+    {
+      "key": "chestpiece",
+      "name": {
+        "en": "Chestpiece",
+        "zh": null
+      },
+      "slots": [
+        "chestpiece"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "maxHp": 9227,
+            "physicalDefense": 18
+          },
+          "Purple": {
+            "maxHp": 8305,
+            "physicalDefense": 16
+          }
+        },
+        "96": {
+          "Gold": {
+            "maxHp": 11547,
+            "physicalDefense": 22
+          },
+          "Purple": {
+            "maxHp": 10392,
+            "physicalDefense": 20
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "crit",
+          "precision",
+          "affinity"
+        ],
+        "96": [
+          "crit",
+          "precision",
+          "affinity"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "singleTargetMysticDmgBoost",
+          "areaMysticDmgBoost"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "singleTargetMysticDmgBoost",
+          "areaMysticDmgBoost"
+        ]
+      }
+    },
+    {
+      "key": "greaves",
+      "name": {
+        "en": "Greaves",
+        "zh": null
+      },
+      "slots": [
+        "greaves"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "maxHp": 4614,
+            "physicalDefense": 36
+          },
+          "Purple": {
+            "maxHp": 4153,
+            "physicalDefense": 32
+          }
+        },
+        "96": {
+          "Gold": {
+            "maxHp": 5774,
+            "physicalDefense": 44
+          },
+          "Purple": {
+            "maxHp": 5196,
+            "physicalDefense": 39
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "crit",
+          "precision",
+          "affinity",
+          "power"
+        ],
+        "96": [
+          "crit",
+          "precision",
+          "affinity",
+          "power"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "vsBossDmg"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "vsBossDmg"
+        ]
+      }
+    },
+    {
+      "key": "bracer",
+      "name": {
+        "en": "Bracer",
+        "zh": null
+      },
+      "slots": [
+        "bracer"
+      ],
+      "martialArt": null,
+      "baseStats": {
+        "91": {
+          "Gold": {
+            "maxHp": 4614,
+            "physicalDefense": 18
+          },
+          "Purple": {
+            "maxHp": 4153,
+            "physicalDefense": 16
+          }
+        },
+        "96": {
+          "Gold": {
+            "maxHp": 5774,
+            "physicalDefense": 22
+          },
+          "Purple": {
+            "maxHp": 5196,
+            "physicalDefense": 20
+          }
+        }
+      },
+      "baseAffixes": {
+        "91": [
+          "crit",
+          "precision",
+          "affinity",
+          "power"
+        ],
+        "96": [
+          "crit",
+          "precision",
+          "affinity",
+          "power"
+        ]
+      },
+      "additionalAffixes": {
+        "91": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "vsBossDmg"
+        ],
+        "96": [
+          "minPhys",
+          "maxPhys",
+          "minBellstrike",
+          "maxBellstrike",
+          "minStonesplit",
+          "maxStonesplit",
+          "minSilkbind",
+          "maxSilkbind",
+          "minBamboocut",
+          "maxBamboocut",
+          "agility",
+          "momentum",
+          "power",
+          "precision",
+          "crit",
+          "affinity",
+          "vsBossDmg"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,7219 @@
+[
+  {
+    "source": "general",
+    "key": "PiercingDamage",
+    "name": {
+      "en": "Piercing Damage",
+      "zh": "刺傷"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": "FivefoldBleed",
+    "tags": [
+      "Triggered",
+      "DirectDamage",
+      "PiercingDamage"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1,
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "Defense",
+    "name": {
+      "en": "Defense",
+      "zh": "防禦"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "General"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Cadence",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ExquisiteSceneryT0"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "RiposteTrigger",
+    "name": {
+      "en": "Riposte Trigger",
+      "zh": "防反觸發"
+    },
+    "shortName": null,
+    "castTime": 10,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "General",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Riposte",
+        "stack": 1,
+        "reapply": true,
+        "time": 10,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Cadence"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ExquisiteSceneryT4"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -5
+        }
+      }
+    ]
+  },
+  {
+    "source": "general",
+    "key": "AoRT4Shield",
+    "name": {
+      "en": "AoR T4 Shield",
+      "zh": "抗造4護盾"
+    },
+    "shortName": null,
+    "castTime": 3,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "General",
+      "Shield"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Shield",
+        "stack": 1,
+        "duration": 14,
+        "reapply": true,
+        "time": 0
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Shield",
+        "duration": 2,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FormBend4"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "Deflect",
+    "name": {
+      "en": "Deflect",
+      "zh": "卸勢"
+    },
+    "shortName": null,
+    "castTime": {
+      "function": "switch",
+      "param1": "currentWeapon",
+      "param2": {
+        "HengBlade": 0.338,
+        "MoBlade": 0.338,
+        "Spear": 0.338,
+        "Umbrella": 0.338,
+        "RopeDart": 0.338,
+        "Gauntlet": 0.3,
+        "Sword": 0.338,
+        "Fan": 0.338,
+        "DualBlades": 0.338
+      },
+      "fallback": 0.338
+    },
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Deflect"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "DeflectSuccessful",
+    "name": {
+      "en": "Deflect (Successful)",
+      "zh": "成功卸勢"
+    },
+    "shortName": null,
+    "castTime": {
+      "function": "switch",
+      "param1": "currentWeapon",
+      "param2": {
+        "HengBlade": 0.338,
+        "MoBlade": 0.338,
+        "Spear": 0.338,
+        "Umbrella": 0.338,
+        "RopeDart": 0.338,
+        "Gauntlet": 0.3,
+        "Sword": 0.338,
+        "Fan": 0.338,
+        "DualBlades": 0.338
+      },
+      "fallback": 0.338
+    },
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Deflect",
+      "AvoidsTakeDamage"
+    ],
+    "actions": [
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 3,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT4"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "MoraleChant",
+    "name": {
+      "en": "Morale Chant",
+      "zh": "易水歌"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": 10,
+    "cooldownGroup": null,
+    "damageGroup": "MoraleChant",
+    "tags": [
+      "DirectDamage",
+      "General",
+      "MoraleChant",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 1
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "BreakingPointT6Dodge",
+    "name": {
+      "en": "Disintegration",
+      "zh": "崩解"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": 15,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Disintegration",
+        "stack": 5,
+        "reapply": true,
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "PerfectDodgeCancel",
+    "name": {
+      "en": "Perfect Dodge [Cancel]",
+      "zh": "完美閃避(打斷)"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "General",
+      "PerfectDodge",
+      "AvoidsTakeDamage"
+    ],
+    "actions": [
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 3,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT1"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Etherwrath",
+        "stack": 5,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Etherwrath4P"
+          }
+        ]
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "BreakingPointT6Dodge",
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "BreakingPointT6"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "MysteryDMGBoost",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "operator": "or",
+            "operand": [
+              {
+                "target": "self",
+                "value": "Mystery"
+              },
+              {
+                "target": "self",
+                "value": "MysteryUmbra"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "MysteryUmbra"
+          }
+        ],
+        "value": {
+          "function": "switch",
+          "param1": "currentWeapon",
+          "param2": {
+            "HengBlade": "GhostlyStepsUmbraDodgeHengBlade",
+            "MoBlade": "GhostlyStepsUmbraDodgeMoBlade",
+            "Spear": "GhostlyStepsUmbraDodgeSpear",
+            "Umbrella": "GhostlyStepsUmbraDodgeUmbrella",
+            "RopeDart": "GhostlyStepsUmbraDodgeRopeDart",
+            "Gauntlet": "GhostlyStepsUmbraDodgeGauntlet"
+          },
+          "resolveAt": "skillStart"
+        },
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "general",
+    "key": "PerfectDodge",
+    "name": {
+      "en": "Perfect Dodge",
+      "zh": "完美閃避"
+    },
+    "shortName": null,
+    "castTime": {
+      "function": "switch",
+      "param1": "currentWeapon",
+      "param2": {
+        "HengBlade": 0.5,
+        "MoBlade": 0.5,
+        "Spear": 0.5,
+        "Umbrella": 0.5,
+        "RopeDart": 0.5,
+        "Gauntlet": 0.5,
+        "Sword": 0.5,
+        "Fan": 0.5,
+        "DualBlades": 0.5
+      },
+      "fallback": 0.5
+    },
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "General",
+      "PerfectDodge",
+      "AvoidsTakeDamage"
+    ],
+    "actions": [
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 3,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT1"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Etherwrath",
+        "stack": 5,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Etherwrath4P"
+          }
+        ]
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "BreakingPointT6Dodge",
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "BreakingPointT6"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "MysteryDMGBoost",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "operator": "or",
+            "operand": [
+              {
+                "target": "self",
+                "value": "Mystery"
+              },
+              {
+                "target": "self",
+                "value": "MysteryUmbra"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "MysteryUmbra"
+          }
+        ],
+        "value": {
+          "function": "switch",
+          "param1": "currentWeapon",
+          "param2": {
+            "HengBlade": "GhostlyStepsUmbraDodgeHengBlade",
+            "MoBlade": "GhostlyStepsUmbraDodgeMoBlade",
+            "Spear": "GhostlyStepsUmbraDodgeSpear",
+            "Umbrella": "GhostlyStepsUmbraDodgeUmbrella",
+            "RopeDart": "GhostlyStepsUmbraDodgeRopeDart",
+            "Gauntlet": "GhostlyStepsUmbraDodgeGauntlet"
+          },
+          "resolveAt": "skillStart"
+        },
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "HeavenwillDeclared",
+    "name": {
+      "en": "Heavenwill Declared",
+      "zh": null
+    },
+    "shortName": "Gauntlet Q1",
+    "castTime": 0.675,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "HeavenwillDeclared"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.2201,
+        "phyBonus": 61,
+        "attrBonus": 33,
+        "time": 0.45,
+        "attrCoef": 0.2201
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.8804,
+        "phyBonus": 244,
+        "attrBonus": 132,
+        "time": 0.5125,
+        "attrCoef": 0.8804
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "CelestialMandate",
+    "name": {
+      "en": "Celestial Mandate",
+      "zh": null
+    },
+    "shortName": "Gauntlet Q2",
+    "castTime": 1.45,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "Falcon",
+      "MartialArtEffect",
+      "CelestialMandate"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.2293,
+        "phyBonus": 63,
+        "attrBonus": 34,
+        "time": 0.525,
+        "attrCoef": 0.2293
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2293,
+        "phyBonus": 63,
+        "attrBonus": 34,
+        "time": 0.6875,
+        "attrCoef": 0.2293
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2293,
+        "phyBonus": 63,
+        "attrBonus": 34,
+        "time": 0.7625,
+        "attrCoef": 0.2293
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2293,
+        "phyBonus": 63,
+        "attrBonus": 34,
+        "time": 0.925,
+        "attrCoef": 0.2293
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.6115,
+        "phyBonus": 169,
+        "attrBonus": 92,
+        "time": 1.275,
+        "attrCoef": 0.6115
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.1,
+        "time": 1.275
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.2,
+        "time": 1.275,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "HeavensUnity"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VirtuousEnthroned1stHit",
+    "name": {
+      "en": "Virtuous Enthroned 1st Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet H1",
+    "castTime": 0.4125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VirtuousEnthroned"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4349,
+        "phyBonus": 121,
+        "attrBonus": 66,
+        "time": 0.4125,
+        "attrCoef": 0.4349
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VirtuousEnthroned2ndHit",
+    "name": {
+      "en": "Virtuous Enthroned 2nd Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet H2",
+    "castTime": 0.4375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VirtuousEnthroned"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3237,
+        "phyBonus": 91,
+        "attrBonus": 49,
+        "time": 0.4375,
+        "attrCoef": 0.3237
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VirtuousEnthroned3rdHit",
+    "name": {
+      "en": "Virtuous Enthroned 3rd Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet H3",
+    "castTime": 0.9625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VirtuousEnthroned"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.19089,
+        "phyBonus": 53.1,
+        "attrBonus": 28.8,
+        "time": 0.275,
+        "attrCoef": 0.19089
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.19089,
+        "phyBonus": 53.1,
+        "attrBonus": 28.8,
+        "time": 0.55,
+        "attrCoef": 0.19089
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.25452,
+        "phyBonus": 70.8,
+        "attrBonus": 38.4,
+        "time": 0.7375,
+        "attrCoef": 0.25452
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "WickedDefiance",
+    "name": {
+      "en": "Wicked Defiance",
+      "zh": null
+    },
+    "shortName": "Gauntlet VC",
+    "castTime": 1.375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "VariedCombo",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "WickedDefiance"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.209,
+        "phyBonus": 335,
+        "attrBonus": 183,
+        "time": 0.725,
+        "attrCoef": 1.209
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.1,
+        "time": 1.1125
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign1stHit",
+    "name": {
+      "en": "Righteous Reign 1st Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A1",
+    "castTime": 0.3375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3564,
+        "phyBonus": 100,
+        "attrBonus": 54,
+        "time": 0.3375,
+        "attrCoef": 0.3564
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign2ndHit",
+    "name": {
+      "en": "Righteous Reign 2nd Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A2",
+    "castTime": 0.6,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.15684,
+        "phyBonus": 44,
+        "attrBonus": 23.6,
+        "time": 0.4125,
+        "attrCoef": 0.15684
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.23526,
+        "phyBonus": 66,
+        "attrBonus": 35.4,
+        "time": 0.6,
+        "attrCoef": 0.23526
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign3rdHit",
+    "name": {
+      "en": "Righteous Reign 3rd Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A3",
+    "castTime": 0.425,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.2529,
+        "phyBonus": 71,
+        "attrBonus": 39,
+        "time": 0.425,
+        "attrCoef": 0.2529
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign4thHit",
+    "name": {
+      "en": "Righteous Reign 4th Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A4",
+    "castTime": 0.4625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3183,
+        "phyBonus": 89,
+        "attrBonus": 48,
+        "time": 0.325,
+        "attrCoef": 0.3183
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign5thHit",
+    "name": {
+      "en": "Righteous Reign 5th Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A5",
+    "castTime": 0.6125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.1558,
+        "phyBonus": 43.33333333,
+        "attrBonus": 23.666667,
+        "time": 0.275,
+        "attrCoef": 0.1558
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.3116,
+        "phyBonus": 86.666666667,
+        "attrBonus": 47.333333,
+        "time": 0.5,
+        "attrCoef": 0.3116
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign6thHit",
+    "name": {
+      "en": "Righteous Reign 6th Hit",
+      "zh": null
+    },
+    "shortName": "Gauntlet A6",
+    "castTime": 0.75,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.8202,
+        "phyBonus": 228,
+        "attrBonus": 124,
+        "time": 0.2875,
+        "attrCoef": 0.8202
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "LightAttackFalcon",
+        "time": 0.2875
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "RighteousReign6thHitCancel",
+    "name": {
+      "en": "Righteous Reign 6th Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "Gauntlet A6",
+    "castTime": 0.2875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "RighteousReign"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.8202,
+        "phyBonus": 228,
+        "attrBonus": 124,
+        "time": 0.2875,
+        "attrCoef": 0.8202
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "LightAttackFalcon",
+        "time": 0.2875
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "LightAttackFalcon",
+    "name": {
+      "en": "Light Attack Falcon",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "HeavenwillGauntlets",
+      "Falcon",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.3,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.45,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.5875,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.1,
+        "time": 0.5875
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.2,
+        "time": 0.5875,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "HeavensUnity"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "AllUnderJustice",
+    "name": {
+      "en": "All Under Justice",
+      "zh": null
+    },
+    "shortName": "Gauntlet Special",
+    "castTime": 1.1125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "AllUnderJustice"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4884,
+        "phyBonus": 135,
+        "attrBonus": 73,
+        "time": 0.3875,
+        "attrCoef": 0.4884
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.4884,
+        "phyBonus": 135,
+        "attrBonus": 73,
+        "time": 0.5125,
+        "attrCoef": 0.4884
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.4884,
+        "phyBonus": 135,
+        "attrBonus": 73,
+        "time": 0.675,
+        "attrCoef": 0.4884
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.9769,
+        "phyBonus": 270,
+        "attrBonus": 147,
+        "time": 0.9625,
+        "attrCoef": 0.9769
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VileCondemned",
+    "name": {
+      "en": "Vile Condemned",
+      "zh": null
+    },
+    "shortName": "Gauntlet Charged",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Charged",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VileCondemned",
+      "MartialArtEffect"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VileCondemnedCharge",
+    "name": {
+      "en": "Vile Condemned Charge",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.775,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Charged",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VileCondemned",
+      "MartialArtEffect",
+      "SubAction"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VileCondemnedHit",
+    "name": {
+      "en": "Vile Condemned Hit",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 2.8375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Charged",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VileCondemned",
+      "MartialArtEffect",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "HeavensWill",
+        "amount": 2,
+        "time": 0.375,
+        "requirement": [
+          {
+            "target": "resource",
+            "value": "HeavensWill",
+            "comparison": ">=",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 7.2178,
+        "phyBonus": 1997,
+        "attrBonus": 1088,
+        "time": 1.9,
+        "attrCoef": 7.2178
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "VileCondemnedEndHit",
+    "name": {
+      "en": "Vile Condemned End Hit",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 2.8375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Charged",
+      "Gauntlet",
+      "HeavenwillGauntlets",
+      "VileCondemned",
+      "VileCondemnedEnd",
+      "MartialArtEffect",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "HeavensWill",
+        "amount": 1,
+        "time": 0.375,
+        "requirement": {
+          "resolveAt": "skillStart",
+          "operand": [
+            {
+              "target": "self",
+              "value": "SoaringHighT6"
+            },
+            {
+              "target": "resource",
+              "value": "HeavensWill",
+              "comparison": "==",
+              "amount": 4
+            }
+          ]
+        }
+      },
+      {
+        "type": "consumeResource",
+        "value": "HeavensWill",
+        "amount": 3,
+        "time": 0.375
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "VileCondemnedEndCooldown",
+        "time": 0.7375
+      },
+      {
+        "type": "damage",
+        "phyCoef": 11.7527,
+        "phyBonus": 3250,
+        "attrBonus": 1771,
+        "time": 1.9,
+        "attrCoef": 11.7527
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SoaringHighT6"
+          },
+          {
+            "target": "resource",
+            "value": "HeavensWill",
+            "comparison": "==",
+            "amount": 4
+          }
+        ],
+        "effect": {
+          "baseDMGBonus": 0.3,
+          "critDmgBonus": 0.1
+        }
+      }
+    ]
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "SoaringHighT6Refund",
+    "name": {
+      "en": "Soaring High T6 Refund",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": 18,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Triggered",
+      "BamboocutKite"
+    ],
+    "actions": [
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 1,
+        "time": 0.001
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "heavenwill-gauntlets",
+    "key": "SkyGrippedReplay",
+    "name": {
+      "en": "Heaven's Might Damage",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Triggered",
+      "DOT",
+      "Replayed",
+      "BamboocutKite"
+    ],
+    "actions": [
+      {
+        "type": "replay",
+        "coef": 0.133333,
+        "time": 1
+      },
+      {
+        "type": "replay",
+        "coef": 0.133333,
+        "time": 2
+      },
+      {
+        "type": "replay",
+        "coef": 0.133333,
+        "time": 3
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "SoaringSpin1",
+    "name": {
+      "en": "Soaring Spin 1-Hit",
+      "zh": "騎龍回馬1下"
+    },
+    "shortName": "Soaring 1 Hit",
+    "castTime": 1.26,
+    "cooldown": 12,
+    "cooldownGroup": "SoaringSpin",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "Soaring Spin"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 15,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 4.5,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 3.1956,
+        "phyBonus": 459,
+        "attrBonus": 0,
+        "time": 1.26,
+        "attrCoef": 3.1956
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.26,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "SoaringSpin2",
+    "name": {
+      "en": "Soaring Spin",
+      "zh": "騎龍回馬"
+    },
+    "shortName": "Soaring",
+    "castTime": 2.1,
+    "cooldown": 12,
+    "cooldownGroup": "SoaringSpin",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "Soaring Spin"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 15,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 4.5,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 3.1956,
+        "phyBonus": 459,
+        "attrBonus": 0,
+        "time": 1.26,
+        "attrCoef": 3.1956
+      },
+      {
+        "type": "damage",
+        "phyCoef": 3.9058,
+        "phyBonus": 561,
+        "attrBonus": 0,
+        "time": 2.05,
+        "attrCoef": 3.9058
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 2.1,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "LeapingToad",
+    "name": {
+      "en": "Leaping Toad [Cancel]",
+      "zh": "金蟾騰躍(打斷)"
+    },
+    "shortName": "Toad",
+    "castTime": 1.25,
+    "cooldown": 8,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "AreaMystic",
+      "LeapingToad"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 25,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 7.5,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.5406,
+        "phyBonus": 77,
+        "attrBonus": 0,
+        "time": 0.5,
+        "attrCoef": 0.5406
+      },
+      {
+        "type": "damage",
+        "phyCoef": 3.2435,
+        "phyBonus": 465,
+        "attrBonus": 0,
+        "time": 1.15,
+        "attrCoef": 3.2435
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "ToadVenom",
+        "reapply": false,
+        "time": 1.15
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.25,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoetDrink",
+    "name": {
+      "en": "Drunken Poet Drink",
+      "zh": "喝酒"
+    },
+    "shortName": "Drink",
+    "castTime": 0.6875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 3,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.6875,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoetDrinkCancel",
+    "name": {
+      "en": "Drunken Poet Drink [Cancel]",
+      "zh": "喝酒"
+    },
+    "shortName": "Drink",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 3,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet1Hit",
+    "name": {
+      "en": "Drunken Poet 1 Hit",
+      "zh": null
+    },
+    "shortName": "Poet x1",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet2Hits",
+    "name": {
+      "en": "Drunken Poet 2 Hits",
+      "zh": null
+    },
+    "shortName": "Poet x2",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet3Hits",
+    "name": {
+      "en": "Drunken Poet 3 Hits",
+      "zh": null
+    },
+    "shortName": "Poet x3",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet4Hits",
+    "name": {
+      "en": "Drunken Poet 4 Hits",
+      "zh": null
+    },
+    "shortName": "Poet x4",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet5HitsCancel",
+    "name": {
+      "en": "Drunken Poet 5 Hits [Cancel]",
+      "zh": "太白醉月五下(打斷)"
+    },
+    "shortName": "Poet x5",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet1",
+    "name": {
+      "en": "Drunken Poet 1st Hit",
+      "zh": "太白醉月第一擊"
+    },
+    "shortName": "Poet",
+    "castTime": 0.6375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1.7999999999999998,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.0231,
+        "phyBonus": 146,
+        "attrBonus": 0,
+        "time": 0.425,
+        "attrCoef": 1.0231
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EnhanceDrunkenPoet",
+        "stack": 1,
+        "time": 0.425
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Combustion"
+          }
+        ],
+        "value": "CombustionExplosion",
+        "time": 0.425
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Smolder"
+          }
+        ],
+        "value": "SmolderExplosion",
+        "time": 0.425
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.6375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet2",
+    "name": {
+      "en": "Drunken Poet 2nd Hit",
+      "zh": "太白醉月第二擊"
+    },
+    "shortName": "Poet",
+    "castTime": 0.5,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1.7999999999999998,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.0231,
+        "phyBonus": 146,
+        "attrBonus": 0,
+        "time": 0.3125,
+        "attrCoef": 1.0231
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EnhanceDrunkenPoet",
+        "stack": 1,
+        "time": 0.3125
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Combustion"
+          }
+        ],
+        "value": "CombustionExplosion",
+        "time": 0.3125
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Smolder"
+          }
+        ],
+        "value": "SmolderExplosion",
+        "time": 0.3125
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.5,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet3",
+    "name": {
+      "en": "Drunken Poet 3rd Hit",
+      "zh": "太白醉月第三擊"
+    },
+    "shortName": "Poet",
+    "castTime": 0.625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1.7999999999999998,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.0231,
+        "phyBonus": 146,
+        "attrBonus": 0,
+        "time": 0.425,
+        "attrCoef": 1.0231
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EnhanceDrunkenPoet",
+        "stack": 1,
+        "time": 0.425
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Combustion"
+          }
+        ],
+        "value": "CombustionExplosion",
+        "time": 0.425
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Smolder"
+          }
+        ],
+        "value": "SmolderExplosion",
+        "time": 0.425
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.625,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet4",
+    "name": {
+      "en": "Drunken Poet 4th Hit",
+      "zh": "太白醉月第四擊"
+    },
+    "shortName": "Poet",
+    "castTime": 0.65,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1.7999999999999998,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.0231,
+        "phyBonus": 146,
+        "attrBonus": 0,
+        "time": 0.475,
+        "attrCoef": 1.0231
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EnhanceDrunkenPoet",
+        "stack": 1,
+        "time": 0.475
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Combustion"
+          }
+        ],
+        "value": "CombustionExplosion",
+        "time": 0.475
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Smolder"
+          }
+        ],
+        "value": "SmolderExplosion",
+        "time": 0.475
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.65,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DrunkenPoet5",
+    "name": {
+      "en": "Drunken Poet 5th Hit [Cancel]",
+      "zh": "太白醉月第五擊"
+    },
+    "shortName": "Poet",
+    "castTime": 0.5875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 1.7999999999999998,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "EnhanceDrunkenPoet",
+        "stack": "all",
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.7052,
+        "phyBonus": 244,
+        "attrBonus": 0,
+        "time": 0.5875,
+        "attrCoef": 1.7052
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Combustion"
+          }
+        ],
+        "value": "CombustionExplosion",
+        "time": 0.5875
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "target",
+            "value": "Smolder"
+          }
+        ],
+        "value": "SmolderExplosion",
+        "time": 0.5875
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.5875,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "EnhanceDrunkenPoet"
+          }
+        ],
+        "effect": {
+          "dmgBonus": {
+            "function": "byStack",
+            "param1": "EnhanceDrunkenPoet",
+            "param2": 0.2
+          }
+        }
+      }
+    ]
+  },
+  {
+    "source": "mystic",
+    "key": "CombustionExplosion",
+    "name": {
+      "en": "Combustion Explosion",
+      "zh": "爆燃爆炸"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.7016,
+        "phyBonus": 100,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.7016
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 1.5,
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "SmolderExplosion",
+    "name": {
+      "en": "Smolder Explosion",
+      "zh": "暗灼爆炸"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DrunkenPoet",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.6078,
+        "phyBonus": 230,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 1.6078
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DragonsBreath1",
+    "name": {
+      "en": "Dragon's Breath 1-Hit [Cancel]",
+      "zh": "神龍吐火1下(打斷)"
+    },
+    "shortName": "Breath 1 Hit",
+    "castTime": 1.3375,
+    "cooldown": 6,
+    "cooldownGroup": "DragonBreath",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DragonsBreath"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 20,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.3604,
+        "phyBonus": 195.5,
+        "attrBonus": 0,
+        "time": 1.3375,
+        "attrCoef": 1.3604
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 1.5,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 8,
+        "reapply": false,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.3375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Intoxicated"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -0.7
+        }
+      }
+    ]
+  },
+  {
+    "source": "mystic",
+    "key": "DragonsBreathSmolder1",
+    "name": {
+      "en": "Dragon's Breath - Smolder 1-Hit [Cancel]",
+      "zh": "神龍吐火・暗灼1下(打斷)"
+    },
+    "shortName": "Smolder 1 Hit",
+    "castTime": 1.3375,
+    "cooldown": 12,
+    "cooldownGroup": "DragonBreathSmolder",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DragonsBreath"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 20,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.28345,
+        "phyBonus": 186,
+        "attrBonus": 0,
+        "time": 1.3375,
+        "attrCoef": 1.28345
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Smolder",
+        "duration": 4,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Smolder",
+        "reapply": false,
+        "duration": 4,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.3375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Intoxicated"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -0.7
+        }
+      }
+    ]
+  },
+  {
+    "source": "mystic",
+    "key": "DragonsBreath2",
+    "name": {
+      "en": "Dragon's Breath 2-Hit [Cancel]",
+      "zh": "神龍吐火2下(打斷)"
+    },
+    "shortName": "Breath Full",
+    "castTime": 2.7375,
+    "cooldown": 6,
+    "cooldownGroup": "DragonBreath",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DragonsBreath"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 20,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.3604,
+        "phyBonus": 195.5,
+        "attrBonus": 0,
+        "time": 1.3375,
+        "attrCoef": 1.3604
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 1.5,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 8,
+        "reapply": false,
+        "time": 1.3375
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.3604,
+        "phyBonus": 195.5,
+        "attrBonus": 0,
+        "time": 2.7375,
+        "attrCoef": 1.3604
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4992,
+        "phyBonus": 215,
+        "attrBonus": 0,
+        "time": 2.7375,
+        "attrCoef": 1.4992
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Combustion",
+        "duration": 3,
+        "time": 2.7375
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 2.7375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Intoxicated"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": {
+            "function": "segment",
+            "param1": "actionTime",
+            "param2": [
+              1.3375
+            ],
+            "param3": [
+              -0.7,
+              -1
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "source": "mystic",
+    "key": "DragonsBreathSmolder2",
+    "name": {
+      "en": "Dragon's Breath - Smolder 2-Hit [Cancel]",
+      "zh": "神龍吐火・暗灼2下(打斷)"
+    },
+    "shortName": "Smolder Full",
+    "castTime": 2.7375,
+    "cooldown": 12,
+    "cooldownGroup": "DragonBreathSmolder",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "DragonsBreath"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 20,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Intoxicated",
+        "reapply": false,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.28345,
+        "phyBonus": 186,
+        "attrBonus": 0,
+        "time": 1.3375,
+        "attrCoef": 1.28345
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Smolder",
+        "duration": 4,
+        "time": 1.3375
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Smolder",
+        "duration": 4,
+        "reapply": false,
+        "time": 1.3375
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.28345,
+        "phyBonus": 186,
+        "attrBonus": 0,
+        "time": 2.7375,
+        "attrCoef": 1.28345
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4144,
+        "phyBonus": 205,
+        "attrBonus": 0,
+        "time": 2.7375,
+        "attrCoef": 1.4144
+      },
+      {
+        "type": "extend",
+        "target": "target",
+        "value": "Smolder",
+        "duration": 7.5,
+        "time": 2.7375
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 2.7375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Intoxicated"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": {
+            "function": "segment",
+            "param1": "actionTime",
+            "param2": [
+              1.3375
+            ],
+            "param3": [
+              -0.7,
+              -1
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "source": "mystic",
+    "key": "FluteOfTheTidesCancel",
+    "name": {
+      "en": "Flute of the Tides [Cancel]",
+      "zh": "簫吟千浪(打斷)"
+    },
+    "shortName": "Flute Cancel",
+    "castTime": 0.8,
+    "cooldown": 25,
+    "cooldownGroup": "FluteOfTheTides",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "AreaMystic",
+      "Distance",
+      "FluteOfTheTides"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 50,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Flute",
+        "reapply": true,
+        "time": 3.275
+      },
+      {
+        "type": "trigger",
+        "value": "FluteRipple",
+        "time": 3.275
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.8,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "FluteOfTheTides",
+    "name": {
+      "en": "Flute of the Tides Full",
+      "zh": "簫吟千浪(完整)"
+    },
+    "shortName": "Flute Full",
+    "castTime": 3.275,
+    "cooldown": 25,
+    "cooldownGroup": "FluteOfTheTides",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "AreaMystic",
+      "Distance",
+      "FluteOfTheTides"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 50,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 1.35,
+        "attrCoef": 1.4696
+      },
+      {
+        "type": "damage",
+        "phyCoef": 3.919,
+        "phyBonus": 830,
+        "attrBonus": 0,
+        "time": 3.275,
+        "attrCoef": 3.919
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Flute",
+        "reapply": true,
+        "time": 3.275
+      },
+      {
+        "type": "trigger",
+        "value": "FluteRipple",
+        "time": 3.275
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 3.275,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "FluteRipple",
+    "name": {
+      "en": "Flute Chanting a thousand Waves",
+      "zh": "簫吟千浪"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "AreaMystic",
+      "FluteOfTheTides",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 0.55,
+        "attrCoef": 1.4696
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 3.025,
+        "attrCoef": 1.4696
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 5.525,
+        "attrCoef": 1.4696
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 8.0625,
+        "attrCoef": 1.4696
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.4696,
+        "phyBonus": 310,
+        "attrBonus": 0,
+        "time": 10.55,
+        "attrCoef": 1.4696
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlySteps",
+    "name": {
+      "en": "Ghostly Step",
+      "zh": "陰陽迷蹤步"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": 60,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Mystic",
+      "GhostlySteps"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 35,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Mystery",
+        "reapply": true,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbra",
+    "name": {
+      "en": "Ghostly Step - Umbra",
+      "zh": "陰陽迷蹤步・影"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": 60,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Mystic",
+      "GhostlySteps"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 40,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "MysteryUmbra",
+        "reapply": true,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "DragonHeadTide",
+    "name": {
+      "en": "Dragon Head - Tide",
+      "zh": "葉龍驤首・疊浪"
+    },
+    "shortName": null,
+    "castTime": 5.85,
+    "cooldown": 120,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "HP",
+      "DragonHead",
+      "DragonHeadTide"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 80,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.05
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.3
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.6
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.9
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.2
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.5
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.8
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "SurgingWaves",
+        "stack": 1,
+        "reapply": true,
+        "time": 2.1
+      },
+      {
+        "type": "damage",
+        "phyCoef": 12.595814,
+        "phyBonus": 1259.5814,
+        "attrBonus": 0,
+        "time": 4.7375,
+        "attrCoef": 12.595814
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 5.85,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "SereneBreeze",
+    "name": {
+      "en": "Serene Breeze",
+      "zh": "清風霽月"
+    },
+    "shortName": null,
+    "castTime": 0.4375,
+    "cooldown": 30,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SereneBreeze"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.9539,
+        "phyBonus": 467,
+        "attrBonus": 0,
+        "time": 0.4375,
+        "attrCoef": 0.9539
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.4375,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "BurstingNine",
+    "name": {
+      "en": "Bursting Nine",
+      "zh": "衍九矢"
+    },
+    "shortName": null,
+    "castTime": 1.45,
+    "cooldown": 30,
+    "cooldownGroup": "BurstingNine",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "BurstingNine"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 20,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 6,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.546,
+        "phyBonus": 365,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 2.546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.7638,
+        "phyBonus": 109.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.7638
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.45,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "BurstingNine2Shots",
+    "name": {
+      "en": "Bursting Nine 2 Shots",
+      "zh": "衍九矢二連"
+    },
+    "shortName": null,
+    "castTime": 1.925,
+    "cooldown": 30,
+    "cooldownGroup": "BurstingNine",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "BurstingNine"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 30,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 9,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.546,
+        "phyBonus": 365,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 2.546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.7638,
+        "phyBonus": 109.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.7638
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.2546,
+        "phyBonus": 36.5,
+        "attrBonus": 0,
+        "time": 1.1625,
+        "attrCoef": 0.2546
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.273,
+        "phyBonus": 182.5,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 1.273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.3819,
+        "phyBonus": 54.75,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.3819
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.1273,
+        "phyBonus": 18.25,
+        "attrBonus": 0,
+        "time": 1.6125,
+        "attrCoef": 0.1273
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 1.925,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeHengBlade",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Heng Blade)",
+      "zh": "陰陽迷蹤步・影閃避（橫刀）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "HengBlade"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeMoBlade",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Mo Blade)",
+      "zh": "陰陽迷蹤步・影閃避（陌刀）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "MoBlade"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeSpear",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Spear)",
+      "zh": "陰陽迷蹤步・影閃避（槍）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "Spear"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeUmbrella",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Umbrella)",
+      "zh": "陰陽迷蹤步・影閃避（傘）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "Umbrella"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeRopeDart",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Rope Dart)",
+      "zh": "陰陽迷蹤步・影閃避（繩鏢）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "RopeDart"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "GhostlyStepsUmbraDodgeGauntlet",
+    "name": {
+      "en": "Ghostly Step - Umbra Dodge (Gauntlet)",
+      "zh": "陰陽迷蹤步・影閃避（手甲）"
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "GhostlySteps",
+      "Triggered",
+      "Gauntlet"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.0416,
+        "phyBonus": 312,
+        "attrBonus": 0,
+        "time": 0.8,
+        "attrCoef": 2.0416
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "WorldToSword",
+    "name": {
+      "en": "World to Sword",
+      "zh": "萬物為鋒"
+    },
+    "shortName": "WTS",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Mystic",
+      "SingleTargetMystic",
+      "WorldToSword"
+    ],
+    "actions": [
+      {
+        "type": "consumeResource",
+        "value": "Vitality",
+        "amount": 40,
+        "time": 0
+      },
+      {
+        "type": "addResource",
+        "value": "Vitality",
+        "amount": 10,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Turnaround"
+          }
+        ]
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "WorldToSword",
+        "stack": 1,
+        "reapply": true,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Turnaround",
+        "stack": 1,
+        "reapply": true,
+        "time": 0,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FuryHarvestT6"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "mystic",
+    "key": "QiBlade",
+    "name": {
+      "en": "Qi Blade",
+      "zh": "氣刃"
+    },
+    "shortName": "Qi Blade",
+    "castTime": 0,
+    "cooldown": 0.3,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Mystic",
+      "SingleTargetMystic",
+      "WorldToSword",
+      "QiBlade",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "emitEvent",
+        "value": "QiBladeCheck",
+        "time": 0.3
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.0368,
+        "phyBonus": 292,
+        "attrBonus": 0,
+        "time": 0.5,
+        "attrCoef": 2.0368
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "MorningDrizzle",
+    "name": {
+      "en": "Morning Drizzle",
+      "zh": null
+    },
+    "shortName": "Fan Special",
+    "castTime": 0.7625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "Special",
+      "Fan",
+      "PanaceaFan",
+      "MorningDrizzle"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "player",
+        "value": "MorningDrizzle",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.55
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "CloudburstHealing",
+    "name": {
+      "en": "Cloudburst Healing",
+      "zh": null
+    },
+    "shortName": "Fan Q",
+    "castTime": 0.9125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "HOT",
+      "MartialArts",
+      "MartialArt",
+      "Fan",
+      "PanaceaFan",
+      "CloudburstHealing"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 0.125,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 1.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 2.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 3.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 4.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 5.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 6.9,
+        "silkbindCoef": 2.1705
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "CloudburstHealingCancel",
+    "name": {
+      "en": "Cloudburst Healing [Cancel]",
+      "zh": null
+    },
+    "shortName": "Fan Q [Cancel]",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "HOT",
+      "MartialArts",
+      "MartialArt",
+      "Fan",
+      "PanaceaFan",
+      "CloudburstHealing"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 0.125,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 1.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 2.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 3.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 4.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 5.9,
+        "silkbindCoef": 2.1705
+      },
+      {
+        "type": "heal",
+        "phyCoef": 2.1705,
+        "phyBonus": 600,
+        "attrBonus": 327,
+        "time": 6.9,
+        "silkbindCoef": 2.1705
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EndlessCloud",
+    "name": {
+      "en": "Endless Cloud",
+      "zh": null
+    },
+    "shortName": "Fan QQ",
+    "castTime": 0.9375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "MartialArt",
+      "Fan",
+      "PanaceaFan",
+      "EndlessCloud"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 11.7766,
+        "phyBonus": 3259,
+        "attrBonus": 1776,
+        "time": 0.3125,
+        "silkbindCoef": 11.7766
+      },
+      {
+        "type": "apply",
+        "target": "player",
+        "value": "MorningDrizzle",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.3125
+      },
+      {
+        "type": "apply",
+        "target": "player",
+        "value": "MorningDrizzle",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.3125
+      },
+      {
+        "type": "trigger",
+        "value": "EchoesOfAThousandPlantsFanQQ",
+        "time": 0.9375,
+        "requirement": [
+          {
+            "target": "equippedMartialArt",
+            "value": "soulshadeUmbrella"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EndlessCloudCancel",
+    "name": {
+      "en": "Endless Cloud [Cancel]",
+      "zh": null
+    },
+    "shortName": "Fan QQ [Cancel]",
+    "castTime": 0.3125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "MartialArt",
+      "Fan",
+      "PanaceaFan",
+      "EndlessCloud"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 11.7766,
+        "phyBonus": 3259,
+        "attrBonus": 1776,
+        "time": 0.3125,
+        "silkbindCoef": 11.7766
+      },
+      {
+        "type": "apply",
+        "target": "player",
+        "value": "MorningDrizzle",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.3125
+      },
+      {
+        "type": "apply",
+        "target": "player",
+        "value": "MorningDrizzle",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.3125
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "FourfoldInquiry1",
+    "name": {
+      "en": "Fourfold Inquiry 1st Hit",
+      "zh": null
+    },
+    "shortName": "Fan A1",
+    "castTime": 0.5625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Fan",
+      "PanaceaFan",
+      "FourfoldInquiry"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3955,
+        "phyBonus": 109,
+        "attrBonus": 59,
+        "time": 0.5625,
+        "attrCoef": 0.3955
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "FourfoldInquiry2",
+    "name": {
+      "en": "Fourfold Inquiry 2nd Hit",
+      "zh": null
+    },
+    "shortName": "Fan A2",
+    "castTime": 0.45,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Fan",
+      "PanaceaFan",
+      "FourfoldInquiry"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.2967,
+        "phyBonus": 82,
+        "attrBonus": 44,
+        "time": 0.45,
+        "attrCoef": 0.2967
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "FourfoldInquiry3",
+    "name": {
+      "en": "Fourfold Inquiry 3rd Hit",
+      "zh": null
+    },
+    "shortName": "Fan A3",
+    "castTime": 0.4875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Fan",
+      "PanaceaFan",
+      "FourfoldInquiry"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3955,
+        "phyBonus": 109,
+        "attrBonus": 59,
+        "time": 0.4875,
+        "attrCoef": 0.3955
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "FourfoldInquiry4",
+    "name": {
+      "en": "Fourfold Inquiry 4th Hit",
+      "zh": null
+    },
+    "shortName": "Fan A4",
+    "castTime": 0.4625,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "Fan",
+      "PanaceaFan",
+      "FourfoldInquiry"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.89,
+        "phyBonus": 246,
+        "attrBonus": 134,
+        "time": 0.4625,
+        "attrCoef": 0.89
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EmeraldDewtouch1",
+    "name": {
+      "en": "Emerald Dewtouch 1st Hit",
+      "zh": null
+    },
+    "shortName": "Fan H1",
+    "castTime": 0.4,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "Heavy",
+      "Fan",
+      "PanaceaFan",
+      "EmeraldDewtouch"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 1.8767,
+        "phyBonus": 519,
+        "attrBonus": 283,
+        "time": 0.325,
+        "silkbindCoef": 1.8767
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EmeraldDewtouch2",
+    "name": {
+      "en": "Emerald Dewtouch 2nd Hit",
+      "zh": null
+    },
+    "shortName": "Fan H2",
+    "castTime": 0.8,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "Heavy",
+      "Fan",
+      "PanaceaFan",
+      "EmeraldDewtouch"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 2.4129,
+        "phyBonus": 668,
+        "attrBonus": 364,
+        "time": 0.25,
+        "silkbindCoef": 2.4129
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EmeraldDewtouch2Cancel",
+    "name": {
+      "en": "Emerald Dewtouch 2nd Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "Fan H2 [Cancel]",
+    "castTime": 0.25,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "Heavy",
+      "Fan",
+      "PanaceaFan",
+      "EmeraldDewtouch"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 2.4129,
+        "phyBonus": 668,
+        "attrBonus": 364,
+        "time": 0.25,
+        "silkbindCoef": 2.4129
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "EmeraldDewtouch3Cancel",
+    "name": {
+      "en": "Emerald Dewtouch 3rd Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "Fan H3 [Cancel]",
+    "castTime": 0.3375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "Heavy",
+      "Fan",
+      "PanaceaFan",
+      "EmeraldDewtouch"
+    ],
+    "actions": [
+      {
+        "type": "heal",
+        "phyCoef": 3.3512,
+        "phyBonus": 928,
+        "attrBonus": 506,
+        "time": 0.3375,
+        "silkbindCoef": 3.3512
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "panacea-fan",
+    "key": "JumpHeavy",
+    "name": {
+      "en": "Jump Heavy",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.3125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Fan",
+      "PanaceaFan",
+      "JumpHeavy"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.8408,
+        "phyBonus": 510,
+        "attrBonus": 278,
+        "time": 1.025,
+        "attrCoef": 1.841
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyPreCharge",
+    "name": {
+      "en": "Burning Heart Pre Charge",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.4,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "SubAction"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavySlam1",
+    "name": {
+      "en": "Burning Heart Slam 1",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.0375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ]
+        },
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ]
+        },
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.3875
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.3972,
+        "phyBonus": 110,
+        "attrBonus": 60,
+        "time": 0.3875,
+        "attrCoef": 0.3972
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.4875
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.9269,
+        "phyBonus": 256,
+        "attrBonus": 140,
+        "time": 0.4875,
+        "attrCoef": 0.9269
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyFastSlam1",
+    "name": {
+      "en": "Burning Heart Fast Slam 1",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.0375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ]
+        },
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ]
+        },
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.3875
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.3972,
+        "phyBonus": 110,
+        "attrBonus": 60,
+        "time": 0.3875,
+        "attrCoef": 0.3972
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.4875
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.9269,
+        "phyBonus": 256,
+        "attrBonus": 140,
+        "time": 0.4875,
+        "attrCoef": 0.9269
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT4"
+          }
+        ],
+        "effect": {
+          "baseDMGBonus": 0.32
+        }
+      }
+    ]
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyCharge2",
+    "name": {
+      "en": "Burning Heart Charge 2",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.95,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart2",
+        "time": 0.95
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ],
+          "resolveAt": "skillStart"
+        },
+        "stack": 1,
+        "time": 0.96
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyFastCharge2",
+    "name": {
+      "en": "Burning Heart Fast Charge 2",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.6333333333333333,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart2",
+        "time": 0.6333333333333333
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ],
+          "resolveAt": "skillStart"
+        },
+        "stack": 1,
+        "time": 0.64
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavySlam2",
+    "name": {
+      "en": "Burning Heart Slam 2",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.05,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.7
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.8827,
+        "phyBonus": 244,
+        "attrBonus": 133,
+        "time": 0.7,
+        "attrCoef": 0.8827
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.85
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.0597,
+        "phyBonus": 569,
+        "attrBonus": 310,
+        "time": 0.85,
+        "attrCoef": 2.0597
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyFastSlam2",
+    "name": {
+      "en": "Burning Heart Fast Slam 2",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.05,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.7
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.8827,
+        "phyBonus": 244,
+        "attrBonus": 133,
+        "time": 0.7,
+        "attrCoef": 0.8827
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.85
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.0597,
+        "phyBonus": 569,
+        "attrBonus": 310,
+        "time": 0.85,
+        "attrCoef": 2.0597
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT4"
+          }
+        ],
+        "effect": {
+          "baseDMGBonus": 0.32
+        }
+      }
+    ]
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyCharge3",
+    "name": {
+      "en": "Burning Heart Charge 3",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.6,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart2",
+        "time": 0.95
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart3",
+        "time": 1.6
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ],
+          "resolveAt": "skillStart"
+        },
+        "stack": 1,
+        "time": 1.61
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyFastCharge3",
+    "name": {
+      "en": "Burning Heart Fast Charge 3",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 1.0666666666666667,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart2",
+        "time": 0.6333333333333333
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierBurningHeart3",
+        "time": 1.0666666666666667
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": {
+          "operator": "first",
+          "operand": [
+            "InnerPassion",
+            "ChargeEnhancement"
+          ],
+          "resolveAt": "skillStart"
+        },
+        "stack": 1,
+        "time": 1.0733333333333333
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavySlam3",
+    "name": {
+      "en": "Burning Heart Slam 3",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.9875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.7
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.7199,
+        "phyBonus": 475,
+        "attrBonus": 259,
+        "time": 0.7,
+        "attrCoef": 1.7199
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.775
+      },
+      {
+        "type": "damage",
+        "phyCoef": 4.0131,
+        "phyBonus": 1110,
+        "attrBonus": 604,
+        "time": 0.775,
+        "attrCoef": 4.0131
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyFastSlam3",
+    "name": {
+      "en": "Burning Heart Fast Slam 3",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0.9875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder",
+      "SubAction"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.7
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.7199,
+        "phyBonus": 475,
+        "attrBonus": 259,
+        "time": 0.7,
+        "attrCoef": 1.7199
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "ChargeEnhancement",
+        "stack": 3,
+        "time": 0.775
+      },
+      {
+        "type": "damage",
+        "phyCoef": 4.0131,
+        "phyBonus": 1110,
+        "attrBonus": 604,
+        "time": 0.775,
+        "attrCoef": 4.0131
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT4"
+          }
+        ],
+        "effect": {
+          "baseDMGBonus": 0.32
+        }
+      }
+    ]
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyCharged1",
+    "name": {
+      "en": "Burning Heart 1st Stage",
+      "zh": null
+    },
+    "shortName": "Mo Charged",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyCharged2",
+    "name": {
+      "en": "Burning Heart 2nd Stage",
+      "zh": null
+    },
+    "shortName": "Mo Charged",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneHeavyCharged3",
+    "name": {
+      "en": "Burning Heart 3rd Stage",
+      "zh": null
+    },
+    "shortName": "Mo Charged",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "BurningHeart",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneSpecial",
+    "name": {
+      "en": "Legion Summon",
+      "zh": null
+    },
+    "shortName": "Mo Special",
+    "castTime": 1.3,
+    "cooldown": 20,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "LegionSummon"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "requirement": [],
+        "target": "self",
+        "value": "IronGuard",
+        "stack": 1,
+        "time": 1.125
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SteadfastDevotionT1"
+          }
+        ],
+        "effect": {
+          "cooldown": 1,
+          "duration": 40
+        }
+      }
+    ]
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "PhalanxbaneQ",
+    "name": {
+      "en": "Total Annihilation",
+      "zh": null
+    },
+    "shortName": "Mo QQ",
+    "castTime": 0.8,
+    "cooldown": 15,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "TotalAnnihilation",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.8943,
+        "phyBonus": 438,
+        "attrBonus": 245,
+        "time": 0.475,
+        "attrCoef": 1.8943
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierTotalAnnihilation",
+        "time": 0.913
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "AnxiSoldierBurningHeart2",
+    "name": {
+      "en": "Anxi Soldier Burning Heart 2nd Stage",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Charged",
+      "MartialArts",
+      "MartialArtTrigger",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "AnxiSoldier",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.5,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.45,
+        "attrCoef": 0.5
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "InnerPassion"
+          }
+        ],
+        "target": "self",
+        "value": "MountainSplitter",
+        "time": 0.45
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "AnxiSoldierBurningHeart3",
+    "name": {
+      "en": "Anxi Soldier Burning Heart 3rd Stage",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "Charged",
+      "MartialArts",
+      "MartialArtTrigger",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "AnxiSoldier",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.9,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.45,
+        "attrCoef": 0.9
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "InnerPassion"
+          }
+        ],
+        "target": "self",
+        "value": "MountainSplitter",
+        "time": 0.45
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "phalanxbane-blade",
+    "key": "AnxiSoldierTotalAnnihilation",
+    "name": {
+      "en": "Anxi Soldier Total Annihilation",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArtTrigger",
+      "MoBlade",
+      "PhalanxbaneBlade",
+      "AnxiSoldier",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.5,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.5
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.5,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.5
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "InnerPassion"
+          }
+        ],
+        "target": "self",
+        "value": "MountainSplitter",
+        "time": 0
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "skygrasp-rope-dart",
+    "key": "SkyGrasped",
+    "name": {
+      "en": "Sky Grasped",
+      "zh": null
+    },
+    "shortName": "RD Special",
+    "castTime": 0.975,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "RopeDart",
+      "SkygraspRopeDart",
+      "SkyGrasped"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.2503,
+        "phyBonus": 347,
+        "attrBonus": 189,
+        "time": 0.7125,
+        "attrCoef": 1.2503
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "HeavensUnity",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.7125
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.87,
+        "time": 1.1,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SkyGrippedT3"
+          },
+          {
+            "target": "equippedMartialArt",
+            "value": "heavenwill"
+          }
+        ],
+        "attrCoef": 1.87
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.25,
+        "time": 1.1,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SkyGrippedT3"
+          },
+          {
+            "target": "equippedMartialArt",
+            "value": "heavenwill"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "skygrasp-rope-dart",
+    "key": "SnaringLashCancel",
+    "name": {
+      "en": "Snaring Lash [Cancel]",
+      "zh": null
+    },
+    "shortName": "RD Q [Cancel]",
+    "castTime": 0.425,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "RopeDart",
+      "SkygraspRopeDart",
+      "SnaringLash"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4975,
+        "phyBonus": 137,
+        "attrBonus": 75,
+        "time": 0.425,
+        "attrCoef": 0.4975
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "SnaringLashFalcon",
+        "time": 0.425
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "HeavensMight",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.425,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SkyGrippedT0"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "skygrasp-rope-dart",
+    "key": "SnaringLash",
+    "name": {
+      "en": "Snaring Lash",
+      "zh": null
+    },
+    "shortName": "RD Q",
+    "castTime": 1.4125,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "RopeDart",
+      "SkygraspRopeDart",
+      "SnaringLash"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4975,
+        "phyBonus": 137,
+        "attrBonus": 75,
+        "time": 0.425,
+        "attrCoef": 0.4975
+      },
+      {
+        "type": "trigger",
+        "target": "self",
+        "value": "SnaringLashFalcon",
+        "time": 0.425
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "HeavensMight",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.425,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "SkyGrippedT0"
+          }
+        ]
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.58045,
+        "phyBonus": 160.5,
+        "attrBonus": 87.5,
+        "time": 1.3125,
+        "attrCoef": 0.58045
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.58045,
+        "phyBonus": 160.5,
+        "attrBonus": 87.5,
+        "time": 1.375,
+        "attrCoef": 0.58045
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "skygrasp-rope-dart",
+    "key": "SnaringLashFalcon",
+    "name": {
+      "en": "Snaring Lash Falcon",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "SkygraspRopeDart",
+      "Falcon",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.2875,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.4125,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.748,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0.55,
+        "attrCoef": 0.748
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.1,
+        "time": 0.55
+      },
+      {
+        "type": "addResource",
+        "value": "HeavensWill",
+        "amount": 0.2,
+        "time": 0.55,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "HeavensUnity"
+          }
+        ]
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingLightCharged",
+    "name": {
+      "en": "Grave Frost",
+      "zh": null
+    },
+    "shortName": "Heng LC",
+    "castTime": 1.617,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Light",
+      "VariedCombo",
+      "Charged",
+      "HengBlade",
+      "SnowpartingBlade",
+      "GraveFrost"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "Forgetfulness",
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.4899,
+        "phyBonus": 135.333,
+        "attrBonus": 73.667,
+        "time": 0.667,
+        "attrCoef": 0.4899
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.4899,
+        "phyBonus": 135.333,
+        "attrBonus": 73.667,
+        "time": 0.667,
+        "attrCoef": 0.4899
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.4899,
+        "phyBonus": 135.333,
+        "attrBonus": 73.667,
+        "time": 0.667,
+        "attrCoef": 0.4899
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.9798,
+        "phyBonus": 271,
+        "attrBonus": 147,
+        "time": 1.617,
+        "attrCoef": 0.9798
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Forgetfulness"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -0.619
+        }
+      }
+    ]
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingHeavyVC",
+    "name": {
+      "en": "Snowbreak Spring",
+      "zh": null
+    },
+    "shortName": "Heng VC",
+    "castTime": 0.85,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "VariedCombo",
+      "HengBlade",
+      "SnowpartingBlade",
+      "SnowbreakSpring",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 2.8245,
+        "phyBonus": 782,
+        "attrBonus": 425,
+        "time": 0.588,
+        "attrCoef": 2.8245
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "InnerPassion",
+        "stack": 1,
+        "time": 0.588
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT1"
+          },
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierSnowbreakSpring",
+        "time": 0.588
+      },
+      {
+        "type": "extend",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "target",
+        "value": "Dread",
+        "duration": 2,
+        "time": 0.588
+      },
+      {
+        "type": "clearCD",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT6"
+          },
+          {
+            "target": "target",
+            "value": "Exhausted"
+          }
+        ],
+        "target": "self",
+        "value": "Forgetfulness",
+        "time": 0.588
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT6"
+          }
+        ],
+        "target": "self",
+        "value": "Forgetfulness",
+        "stack": 1,
+        "time": 0.588
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingSpecial",
+    "name": {
+      "en": "Fleeting Trace",
+      "zh": null
+    },
+    "shortName": "Heng Special",
+    "castTime": 2.177,
+    "cooldown": 20,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "HengBlade",
+      "SnowpartingBlade",
+      "FleetingTrace"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.378,
+        "phyBonus": 104,
+        "attrBonus": 57,
+        "time": 0.5,
+        "attrCoef": 0.378
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.377975,
+        "phyBonus": 104.5,
+        "attrBonus": 57,
+        "time": 0.878,
+        "attrCoef": 0.377975
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.377975,
+        "phyBonus": 104.5,
+        "attrBonus": 57,
+        "time": 0.878,
+        "attrCoef": 0.377975
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.377975,
+        "phyBonus": 104.5,
+        "attrBonus": 57,
+        "time": 0.878,
+        "attrCoef": 0.377975
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.377975,
+        "phyBonus": 104.5,
+        "attrBonus": 57,
+        "time": 0.878,
+        "attrCoef": 0.377975
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.47245,
+        "phyBonus": 130.75,
+        "attrBonus": 130.75,
+        "time": 1.843,
+        "attrCoef": 0.47245
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.47245,
+        "phyBonus": 130.75,
+        "attrBonus": 130.75,
+        "time": 1.843,
+        "attrCoef": 0.47245
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.47245,
+        "phyBonus": 130.75,
+        "attrBonus": 130.75,
+        "time": 1.843,
+        "attrCoef": 0.47245
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.47245,
+        "phyBonus": 130.75,
+        "attrBonus": 130.75,
+        "time": 1.843,
+        "attrCoef": 0.47245
+      },
+      {
+        "type": "apply",
+        "requirement": [],
+        "target": "self",
+        "value": "InnerPassion",
+        "stack": 3,
+        "time": 2.177
+      },
+      {
+        "type": "apply",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT4"
+          }
+        ],
+        "target": "self",
+        "value": "InnerPassion",
+        "stack": 1,
+        "time": 2.177
+      },
+      {
+        "type": "apply",
+        "requirement": [],
+        "target": "target",
+        "value": "Dread",
+        "stack": 1,
+        "time": 2.177
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingQSlide",
+    "name": {
+      "en": "General's Bane - Slide",
+      "zh": null
+    },
+    "shortName": "Heng Q",
+    "castTime": 0.711,
+    "cooldown": 12,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "HengBlade",
+      "SnowpartingBlade",
+      "General's Bane"
+    ],
+    "actions": [],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingQ",
+    "name": {
+      "en": "General's Bane",
+      "zh": null
+    },
+    "shortName": "Heng Q",
+    "castTime": 0.711,
+    "cooldown": 12,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "HengBlade",
+      "SnowpartingBlade",
+      "General's Bane"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.2338,
+        "phyBonus": 342,
+        "attrBonus": 186,
+        "time": 0.549,
+        "attrCoef": 1.2338
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingQSlash",
+    "name": {
+      "en": "General's Bane: Slash",
+      "zh": null
+    },
+    "shortName": "Heng Q",
+    "castTime": 1.383,
+    "cooldown": 12,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "HengBlade",
+      "SnowpartingBlade",
+      "General's Bane",
+      "General's Bane: Slash"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.74545,
+        "phyBonus": 206.5,
+        "attrBonus": 112.5,
+        "time": 1.383,
+        "attrCoef": 0.74545
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.74545,
+        "phyBonus": 206.5,
+        "attrBonus": 112.5,
+        "time": 1.383,
+        "attrCoef": 0.74545
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingQStab",
+    "name": {
+      "en": "General's Bane: Stab",
+      "zh": null
+    },
+    "shortName": "Heng Q Stab",
+    "castTime": 1.166,
+    "cooldown": 12,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "HengBlade",
+      "SnowpartingBlade",
+      "General's Bane",
+      "General's Bane: Stab",
+      "TriggerAnxiSolder"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.0662,
+        "phyBonus": 295,
+        "attrBonus": 161,
+        "time": 0.263,
+        "attrCoef": 1.0662
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.0662,
+        "phyBonus": 295,
+        "attrBonus": 161,
+        "time": 0.821,
+        "attrCoef": 1.0662
+      },
+      {
+        "type": "apply",
+        "requirement": [],
+        "target": "target",
+        "value": "FearfulBlade",
+        "stack": 1,
+        "time": 0.821
+      },
+      {
+        "type": "extend",
+        "requirement": [],
+        "target": "target",
+        "value": "Dread",
+        "duration": 6,
+        "time": 0.821
+      },
+      {
+        "type": "trigger",
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FrostCladNightT1"
+          },
+          {
+            "target": "self",
+            "value": "IronGuard"
+          }
+        ],
+        "value": "AnxiSoldierGeneralsBaneStab",
+        "time": 1.166
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "SnowpartingConversion",
+    "name": {
+      "en": "Snowparting Conversion",
+      "zh": null
+    },
+    "shortName": "Heng Tab",
+    "castTime": 0.575,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Conversion",
+      "HengBlade",
+      "SnowpartingBlade",
+      "General's Bane"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.6486,
+        "phyBonus": 180,
+        "attrBonus": 98,
+        "time": 0.5,
+        "attrCoef": 0.6486
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "AnxiSoldierSnowbreakSpring",
+    "name": {
+      "en": "Anxi Soldier Snowbreak Spring",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArtTrigger",
+      "Heavy",
+      "VariedCombo",
+      "HengBlade",
+      "SnowpartingBlade",
+      "AnxiSoldier",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "snowparting-blade",
+    "key": "AnxiSoldierGeneralsBaneStab",
+    "name": {
+      "en": "Anxi Soldier General's Bane: Stab",
+      "zh": null
+    },
+    "shortName": null,
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArtTrigger",
+      "MartialArt",
+      "HengBlade",
+      "SnowpartingBlade",
+      "AnxiSoldier",
+      "MartialArtEffect",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      },
+      {
+        "type": "damage",
+        "phyCoef": 0.35,
+        "phyBonus": 0,
+        "attrBonus": 0,
+        "time": 0,
+        "attrCoef": 0.35
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "soulshade-umbrella",
+    "key": "EchoesOfAThousandPlants",
+    "name": {
+      "en": "Echoes of a Thousand Plants",
+      "zh": null
+    },
+    "shortName": "Umbrella Special",
+    "castTime": 1.2,
+    "cooldown": 30,
+    "cooldownGroup": "EchoesOfAThousandPlants",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "Umbrella",
+      "SoulshadeUmbrella",
+      "EchoesOfAThousandPlants"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.54,
+        "phyBonus": 149,
+        "attrBonus": 82,
+        "time": 0.625,
+        "attrCoef": 0.54
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EchoesOfAThousandPlants",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.625
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "soulshade-umbrella",
+    "key": "EchoesOfAThousandPlantsCancel",
+    "name": {
+      "en": "Echoes of a Thousand Plants [Cancel]",
+      "zh": null
+    },
+    "shortName": "Umbrella Special [Cancel]",
+    "castTime": 0.625,
+    "cooldown": 30,
+    "cooldownGroup": "EchoesOfAThousandPlants",
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "Umbrella",
+      "SoulshadeUmbrella",
+      "EchoesOfAThousandPlants"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.54,
+        "phyBonus": 149,
+        "attrBonus": 82,
+        "time": 0.625,
+        "attrCoef": 0.54
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EchoesOfAThousandPlants",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.625
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "soulshade-umbrella",
+    "key": "EchoesOfAThousandPlantsFanQQ",
+    "name": {
+      "en": "Echoes of a Thousand Plants",
+      "zh": null
+    },
+    "shortName": "Umbrella Special [Cancel]",
+    "castTime": 0.625,
+    "cooldown": 30,
+    "cooldownGroup": "EchoesOfAThousandPlants",
+    "damageGroup": null,
+    "tags": [
+      "Triggered",
+      "EchoesOfAThousandPlants"
+    ],
+    "actions": [
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "EchoesOfAThousandPlants",
+        "stack": 1,
+        "reapply": true,
+        "time": 0.625
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "soulshade-umbrella",
+    "key": "FloatingGrace",
+    "name": {
+      "en": "Floating Grace",
+      "zh": null
+    },
+    "shortName": "Umbrella Q",
+    "castTime": 1.15,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "Heal",
+      "MartialArts",
+      "MartialArt",
+      "Umbrella",
+      "SoulshadeUmbrella",
+      "FloatingGrace"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "EchoesOfAThousandPlants",
+        "stack": "all",
+        "time": 0
+      },
+      {
+        "type": "heal",
+        "phyCoef": 4.912,
+        "phyBonus": 1363,
+        "attrBonus": 743,
+        "time": 0.975,
+        "silkbindCoef": 4.912
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "FloatingGraceDeluge",
+        "duration": 12,
+        "stack": 1,
+        "reapply": true,
+        "requirement": [
+          {
+            "target": "equippedMartialArt",
+            "value": "panaceaFan"
+          }
+        ],
+        "time": 0.975
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "FloatingGrace",
+        "duration": 12,
+        "stack": 1,
+        "reapply": true,
+        "requirement": [
+          {
+            "operator": "not",
+            "operand": [
+              {
+                "target": "equippedMartialArt",
+                "value": "panaceaFan"
+              }
+            ]
+          }
+        ],
+        "time": 0.975
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "stormbreaker-spear",
+    "key": "ThunderShock",
+    "name": {
+      "en": "Thunder Shock",
+      "zh": null
+    },
+    "shortName": "Spear Special",
+    "castTime": 1.6,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "Spear",
+      "StormbreakerSpear",
+      "ThunderShock"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4843,
+        "phyBonus": 134,
+        "attrBonus": 73,
+        "time": 0.4,
+        "attrCoef": 0.4843
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Vulnerable",
+        "time": 0.4
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.13,
+        "phyBonus": 313,
+        "attrBonus": 171,
+        "time": 1.2,
+        "attrCoef": 1.13
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Vulnerable",
+        "time": 1.2
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "stormbreaker-spear",
+    "key": "ThunderShock1",
+    "name": {
+      "en": "Thunder Shock 1-Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "Spear Special 1-Hit",
+    "castTime": 0.4,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Special",
+      "Spear",
+      "StormbreakerSpear",
+      "ThunderShock"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.4843,
+        "phyBonus": 134,
+        "attrBonus": 73,
+        "time": 0.4,
+        "attrCoef": 0.4843
+      },
+      {
+        "type": "apply",
+        "target": "target",
+        "value": "Vulnerable",
+        "time": 0.4
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "stormbreaker-spear",
+    "key": "StormRoar",
+    "name": {
+      "en": "Storm Roar",
+      "zh": null
+    },
+    "shortName": "Spear Q",
+    "castTime": 1,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "MartialArt",
+      "Spear",
+      "StormbreakerSpear",
+      "StormRoar"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 0.3151,
+        "phyBonus": 88,
+        "attrBonus": 48,
+        "time": 1,
+        "attrCoef": 0.3151
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Drumbeat",
+        "time": 1
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "Avalanche",
+    "name": {
+      "en": "Avalanche",
+      "zh": null
+    },
+    "shortName": "Charged",
+    "castTime": 3.766,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "ThundercryBlade",
+      "Avalanche"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "Riposte",
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.9298,
+        "phyBonus": 534,
+        "attrBonus": 290.8,
+        "time": 2.93,
+        "attrCoef": 1.9298
+      },
+      {
+        "type": "damage",
+        "phyCoef": 2.8947,
+        "phyBonus": 801,
+        "attrBonus": 436.2,
+        "time": 3.766,
+        "attrCoef": 2.8947
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Riposte"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -2
+        }
+      }
+    ]
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "Avalanche1",
+    "name": {
+      "en": "Avalanche 1-Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "Charged 1-Hit",
+    "castTime": 2.93,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "MoBlade",
+      "ThundercryBlade",
+      "Avalanche"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "Riposte",
+        "stack": 1,
+        "time": 0
+      },
+      {
+        "type": "damage",
+        "phyCoef": 1.9298,
+        "phyBonus": 534,
+        "attrBonus": 290.8,
+        "time": 2.93,
+        "attrCoef": 1.9298
+      }
+    ],
+    "modifiers": [
+      {
+        "requirement": [
+          {
+            "target": "self",
+            "value": "Riposte"
+          }
+        ],
+        "effect": {
+          "castTimeModifier": -2
+        }
+      }
+    ]
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "StonebreakerCleave1",
+    "name": {
+      "en": "Stonebreaker Cleave 1-Hit [Cancel]",
+      "zh": null
+    },
+    "shortName": "VC",
+    "castTime": 0.6875,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "VariedCombo",
+      "MoBlade",
+      "ThundercryBlade",
+      "StonebreakerCleave"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.7562,
+        "phyBonus": 485,
+        "attrBonus": 265,
+        "time": 0.6875,
+        "attrCoef": 1.7562
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "StonebreakerCleave",
+    "name": {
+      "en": "Stonebreaker Cleave [Cancel]",
+      "zh": null
+    },
+    "shortName": "VC",
+    "castTime": 0.9375,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "VariedCombo",
+      "MoBlade",
+      "ThundercryBlade",
+      "StonebreakerCleave"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.7562,
+        "phyBonus": 485,
+        "attrBonus": 265,
+        "time": 0.6875,
+        "attrCoef": 1.7562
+      },
+      {
+        "type": "trigger",
+        "requirement": [],
+        "value": "StonebreakerQuake",
+        "time": 0.9375
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "StonebreakerQuake",
+    "name": {
+      "en": "Stonebreaker Quake",
+      "zh": null
+    },
+    "shortName": "",
+    "castTime": 0,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "DirectDamage",
+      "MartialArts",
+      "Heavy",
+      "Charged",
+      "VariedCombo",
+      "MoBlade",
+      "ThundercryBlade",
+      "StonebreakerCleave",
+      "StonebreakerQuake",
+      "Triggered"
+    ],
+    "actions": [
+      {
+        "type": "damage",
+        "phyCoef": 1.0976,
+        "phyBonus": 303,
+        "attrBonus": 165,
+        "time": 0,
+        "attrCoef": 1.0976
+      }
+    ],
+    "modifiers": []
+  },
+  {
+    "source": "thundercry-blade",
+    "key": "PredatorsShield",
+    "name": {
+      "en": "Predator's Shield",
+      "zh": null
+    },
+    "shortName": "Shield",
+    "castTime": 1,
+    "cooldown": null,
+    "cooldownGroup": null,
+    "damageGroup": null,
+    "tags": [
+      "MartialArts",
+      "MartialArt",
+      "MoBlade",
+      "ThundercryBlade",
+      "Shield"
+    ],
+    "actions": [
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "HardenedFoe",
+        "time": 1
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Shield",
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Shield",
+        "duration": 4,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ArtOfResistanceT0"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Shield",
+        "duration": 2,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ArtOfResistanceT4"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Shield",
+        "duration": 2,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FormBend4"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "apply",
+        "target": "self",
+        "value": "Breakthrough",
+        "requirement": [
+          {
+            "operator": "or",
+            "operand": [
+              {
+                "target": "self",
+                "value": "Drumbeat"
+              },
+              {
+                "target": "self",
+                "value": "Breakthrough"
+              }
+            ]
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Breakthrough",
+        "duration": 4,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ArtOfResistanceT0"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Breakthrough",
+        "duration": 2,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "ArtOfResistanceT4"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "extend",
+        "target": "self",
+        "value": "Breakthrough",
+        "duration": 2,
+        "requirement": [
+          {
+            "target": "self",
+            "value": "FormBend4"
+          }
+        ],
+        "time": 1
+      },
+      {
+        "type": "consume",
+        "target": "self",
+        "value": "Drumbeat",
+        "time": 1
+      }
+    ],
+    "modifiers": []
+  }
+]

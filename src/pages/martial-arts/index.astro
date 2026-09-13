@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import { martialArts, weapons } from '../../lib/data';
+import { displayName } from '../../lib/format';
+---
+
+<Base active="/martial-arts">
+  <h1>武学</h1>
+  <p class="page-desc">
+    共 {Object.keys(martialArts).length} 套武学，按武器分类。每套武学的强化树详见详情页。
+  </p>
+
+  {
+    weapons.map((weapon) => {
+      const wName = displayName(weapon.name);
+      return (
+        <section>
+          <h2>
+            {wName.text}
+            <span class={wName.zhMissing ? 'muted' : 'muted en-name'}>
+              {weapon.name.en}
+            </span>
+          </h2>
+          <div class="card-grid">
+            {weapon.martialArts.map((id) => {
+              const ma = martialArts[id];
+              const name = displayName(ma.name);
+              return (
+                <a class="card" href={`/martial-arts/${ma.id}/`}>
+                  <div class={name.zhMissing ? 'title zh-missing' : 'title'}>
+                    {name.text}
+                  </div>
+                  <div class="sub">{ma.name.en}</div>
+                  <div class="sub">
+                    {ma.talents.filter((t) => t.entries.length > 0).length} 层强化
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </section>
+      );
+    })
+  }
+</Base>
+
+<style>
+  .en-name {
+    font-weight: 400;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+  }
+</style>

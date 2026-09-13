@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { builds } from '../../lib/data';
+import { displayName } from '../../lib/format';
+
+// 按流派组（buildGroup）分组
+const groups = new Map<string, typeof builds>();
+for (const b of builds) {
+  if (!groups.has(b.group)) groups.set(b.group, []);
+  groups.get(b.group)!.push(b);
+}
+---
+
+<Base active="/builds">
+  <h1>配装</h1>
+  <p class="page-desc">
+    共 {builds.length} 套社区整理配装。包含武学、心法层级与套装搭配；装备词条明细待后续版本补充。
+  </p>
+
+  {
+    [...groups.entries()].map(([group, items]) => (
+      <section>
+        <h2>{group}</h2>
+        <div class="card-grid">
+          {items.map((b) => {
+            const name = displayName(b.name);
+            return (
+              <a class="card" href={`/builds/${b.id}/`}>
+                <div class={name.zhMissing ? 'title zh-missing' : 'title'}>
+                  {name.text}
+                </div>
+                <div class="sub">{b.name.en}</div>
+                <div class="sub">
+                  {b.martialArts.length} 武学 · {b.setup.innerWays.length} 心法
+                </div>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    ))
+  }
+</Base>

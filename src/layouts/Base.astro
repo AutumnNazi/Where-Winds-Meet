@@ -1,0 +1,55 @@
+---
+import { SITE } from '../lib/data';
+import '../styles/global.css';
+
+interface Props {
+  /** 当前导航高亮项的路径前缀，如 /innerways */
+  active?: string;
+}
+const { active } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE.title} · {SITE.subtitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="inner">
+        <a class="site-title" href="/">燕云<span>资料站</span></a>
+        <nav class="site-nav">
+          {
+            SITE.nav.map((item) => (
+              <a
+                href={item.href}
+                aria-current={active && item.href.startsWith(active) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="inner">
+        <p>
+          数据基于社区整理（
+          <a href="https://github.com/greydust/where-builds-meet" target="_blank" rel="noopener"
+            >where-builds-meet</a
+          >，GPL-3.0），游戏内容版权归《燕云十六声》官方所有；本站为非商业资料站。
+        </p>
+        <p>
+          词条中文名与效果描述尚缺官方文案，英文处标注「中文名待补」；效果为机器转译，请以游戏内实际为准。
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

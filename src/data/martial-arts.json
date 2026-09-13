@@ -1,0 +1,3713 @@
+{
+  "everspring-umbrella": {
+    "id": "everspring-umbrella",
+    "name": {
+      "en": "Everspring Umbrella",
+      "zh": null
+    },
+    "weapon": "Umbrella",
+    "tag": "EverspringUmbrella",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Perfect Catch Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Returning Umbrella DMG Up",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "EverspringUmbrella"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "ReturningUmbrella"
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "physDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00016,
+                          "max": 0.12
+                        }
+                      },
+                      "bamboocutDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00016,
+                          "max": 0.12
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutPenetration": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "heavenquaker-spear": {
+    "id": "heavenquaker-spear",
+    "name": {
+      "en": "HeavenQuaker Spear",
+      "zh": null
+    },
+    "weapon": "Spear",
+    "tag": "HeavenQuakerSpear",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Damage Over Time Enhancement",
+              "effect": [
+                {
+                  "trigger": {
+                    "event": "damage",
+                    "requirement": [
+                      {
+                        "target": "skillTag",
+                        "value": "HeavenQuakerSpear"
+                      },
+                      {
+                        "target": "skillTag",
+                        "value": "Charged"
+                      }
+                    ],
+                    "action": {
+                      "type": "apply",
+                      "target": "target",
+                      "value": "SoulShaken",
+                      "stack": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "maxPhys": {
+                      "formula": {
+                        "source": "power",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Damage Over Time Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "DOT"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "HighBleed"
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "affinityDmgBonus": {
+                      "formula": {
+                        "source": "maxPhys",
+                        "multiplier": 0.00012,
+                        "max": 0.18
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bellstrike Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBellstrike": 196,
+                    "minBellstrike": 98
+                  },
+                  "stat": {
+                    "bellstrikeDmgBonus": {
+                      "formula": {
+                        "source": "maxBellstrike",
+                        "multiplier": 0.000168,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "heavenwill-gauntlets": {
+    "id": "heavenwill-gauntlets",
+    "name": {
+      "en": "Heavenwill Gauntlets",
+      "zh": null
+    },
+    "weapon": "Gauntlet",
+    "tag": "HeavenwillGauntlets",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Perfect Dodge Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "VileCondemned"
+                    }
+                  ],
+                  "effect": {
+                    "convert": {
+                      "from": "abrasionRate",
+                      "to": "normalRate",
+                      "ratio": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Raptor's Instinct Crit Boost",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "Falcon"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "VileCondemned"
+                        }
+                      ]
+                    }
+                  ],
+                  "effectiveStat": {
+                    "critDmgBonus": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.0004,
+                        "max": 0.3
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutDmgBonus": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "infernal-twinblades": {
+    "id": "infernal-twinblades",
+    "name": {
+      "en": "Infernal Twinblades",
+      "zh": null
+    },
+    "weapon": "DualBlades",
+    "tag": "InfernalTwinblades",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Perfect Dodge Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "PerfectDodge"
+                    }
+                  ],
+                  "buffDurationBonus": 0.4
+                },
+                {
+                  "trigger": {
+                    "event": "skillStart",
+                    "requirement": [
+                      {
+                        "target": "skillTag",
+                        "value": "PerfectDodge"
+                      }
+                    ],
+                    "cooldown": 30,
+                    "action": {
+                      "type": "clearCD",
+                      "value": "AddledMind",
+                      "charges": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Flamelash Damage Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "self",
+                      "value": "Flamelash"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": 0.05
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "self",
+                      "value": "Flamelash"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.0003333333333333333,
+                        "max": 0.25
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutPenetration": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "inkwell-fan": {
+    "id": "inkwell-fan",
+    "name": {
+      "en": "Inkwell Fan",
+      "zh": null
+    },
+    "weapon": "Fan",
+    "tag": "InkwellFan",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Low Qi Follow-up Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "MoonShatterSpring"
+                    },
+                    {
+                      "target": "targetQiPercentage",
+                      "comparison": "<",
+                      "amount": 30
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "crit": 0.3
+                    },
+                    "hpDMGBonus": 0.08
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Heavy Attack Pursuit Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "MoonShatterSpring"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": {
+                      "function": "segment",
+                      "param1": "minPhys",
+                      "param2": [
+                        49.999999999,
+                        99.999999999,
+                        149.999999999,
+                        199.999999999,
+                        249.999999999,
+                        299.999999999,
+                        349.999999999,
+                        399.999999999,
+                        449.999999999,
+                        499.999999999,
+                        549.999999999,
+                        599.999999999,
+                        649.999999999,
+                        699.999999999,
+                        749.999999999
+                      ],
+                      "param3": [
+                        0,
+                        0.024,
+                        0.048,
+                        0.072,
+                        0.096,
+                        0.12,
+                        0.144,
+                        0.168,
+                        0.192,
+                        0.216,
+                        0.24,
+                        0.264,
+                        0.288,
+                        0.312,
+                        0.336,
+                        0.36
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Silkbind Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxSilkbind": 196,
+                    "minSilkbind": 98
+                  },
+                  "stat": {
+                    "silkbindDmgBonus": {
+                      "formula": {
+                        "source": "minSilkbind",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "mortal-rope-dart": {
+    "id": "mortal-rope-dart",
+    "name": {
+      "en": "Mortal Rope Dart",
+      "zh": null
+    },
+    "weapon": "RopeDart",
+    "tag": "MortalRopeDart",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bone Corrosion Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Rodent Damage Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Rodent"
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "physDmgBonus": 0.09,
+                      "bamboocutDmgBonus": 0.09
+                    }
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Rodent"
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "physDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00016,
+                          "max": 0.12
+                        }
+                      },
+                      "bamboocutDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00016,
+                          "max": 0.12
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutDmgBonus": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "nameless-spear": {
+    "id": "nameless-spear",
+    "name": {
+      "en": "Nameless Spear",
+      "zh": null
+    },
+    "weapon": "Spear",
+    "tag": "NamelessSpear",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Max Endurance Up",
+              "effect": [
+                {
+                  "stat": {
+                    "maxEndurance": 10
+                  }
+                },
+                {
+                  "stat": {
+                    "maxEndurance": {
+                      "function": "segment",
+                      "param1": "affinity",
+                      "param2": [
+                        0.119999999,
+                        0.139999999,
+                        0.159999999,
+                        0.179999999,
+                        0.199999999,
+                        0.219999999,
+                        0.239999999,
+                        0.259999999,
+                        0.279999999,
+                        0.299999999
+                      ],
+                      "param3": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Affinity Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "affinity": {
+                      "formula": {
+                        "source": "momentum",
+                        "multiplier": 0.000152,
+                        "max": 0.04256
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Affinity DMG Up",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "self",
+                          "value": "EndlessGale"
+                        },
+                        {
+                          "target": "endurancePercentage",
+                          "comparison": "<",
+                          "amount": 60
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "affinityDmgBonus": {
+                      "formula": {
+                        "source": "affinity",
+                        "multiplier": 0.6,
+                        "max": 0.18
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bellstrike Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBellstrike": 196,
+                    "minBellstrike": 98
+                  },
+                  "stat": {
+                    "bellstrikeDmgBonus": {
+                      "formula": {
+                        "source": "maxBellstrike",
+                        "multiplier": 0.000168,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "nameless-sword": {
+    "id": "nameless-sword",
+    "name": {
+      "en": "Nameless Sword",
+      "zh": null
+    },
+    "weapon": "Sword",
+    "tag": "NamelessSword",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Qi Struggle Enhancement",
+              "effect": [
+                {
+                  "effect": {
+                    "qiDMGBonus": 0.1
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "SwordEnergy"
+                    }
+                  ],
+                  "effect": {
+                    "hpDMGBonus": {
+                      "function": "segment",
+                      "param1": "maxPhys",
+                      "param2": [
+                        99.999999999,
+                        199.999999999,
+                        299.999999999,
+                        399.999999999,
+                        499.999999999,
+                        599.999999999,
+                        699.999999999,
+                        799.999999999,
+                        899.999999999,
+                        999.999999999
+                      ],
+                      "param3": [
+                        0,
+                        0.02,
+                        0.04,
+                        0.06,
+                        0.08,
+                        0.1,
+                        0.12,
+                        0.14,
+                        0.16,
+                        0.18,
+                        0.2
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "maxPhys": {
+                      "formula": {
+                        "source": "momentum",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Sword Qi Affinity Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "SwordEnergy"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "targetQiPercentage",
+                          "comparison": "<",
+                          "amount": 40
+                        },
+                        {
+                          "target": "target",
+                          "value": "QiImbalance"
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "affinityDmgBonus": {
+                      "formula": {
+                        "source": "maxPhys",
+                        "multiplier": 0.00012,
+                        "max": 0.18
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bellstrike Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBellstrike": 196,
+                    "minBellstrike": 98
+                  },
+                  "stat": {
+                    "bellstrikePenetration": {
+                      "formula": {
+                        "source": "maxBellstrike",
+                        "multiplier": 0.0336,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "panacea-fan": {
+    "id": "panacea-fan",
+    "name": {
+      "en": "Panacea Fan",
+      "zh": null
+    },
+    "weapon": "Fan",
+    "tag": "PanaceaFan",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Water Clone Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Heavy Attack Healing Boost",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Heavy"
+                    }
+                  ],
+                  "effect": {
+                    "healingBonus": 0.05
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Heavy"
+                    }
+                  ],
+                  "effect": {
+                    "healingBonus": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.0003333333333333333,
+                        "max": 0.25
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Silkbind Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxSilkbind": 196,
+                    "minSilkbind": 98
+                  },
+                  "stat": {
+                    "silkbindDmgBonus": {
+                      "formula": {
+                        "source": "minSilkbind",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    },
+                    "silkbindHealingBonus": {
+                      "formula": {
+                        "source": "minSilkbind",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attribute Attack Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Mystic Precision Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "equippedMartialArt",
+                      "value": "soulshadeUmbrella"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Mystic"
+                    }
+                  ],
+                  "effect": {
+                    "convert": {
+                      "from": "abrasionRate",
+                      "to": "normalRate",
+                      "ratio": 1
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "phalanxbane-blade": {
+    "id": "phalanxbane-blade",
+    "name": {
+      "en": "Phalanxbane Blade",
+      "zh": null
+    },
+    "weapon": "MoBlade",
+    "tag": "PhalanxbaneBlade",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Max Blade Momentum Up",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "鐵衛穿透提升",
+            "data": {
+              "name": "Iron Guards Penetration Up",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "self",
+                      "value": "IronGuard"
+                    }
+                  ],
+                  "effect": {
+                    "physicalPenetration": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.016,
+                        "max": 12
+                      }
+                    },
+                    "stonesplitPenetration": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.016,
+                        "max": 12
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "裂石屬性提升",
+            "data": {
+              "name": "Stonesplit Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxStonesplit": 196,
+                    "minStonesplit": 98
+                  },
+                  "stat": {
+                    "stonesplitPenetration": {
+                      "formula": {
+                        "source": "minStonesplit",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "riven-twinblades": {
+    "id": "riven-twinblades",
+    "name": {
+      "en": "Riven Twinblades",
+      "zh": null
+    },
+    "weapon": "DualBlades",
+    "tag": "RivenTwinblades",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Increased Binge Point Gain",
+              "effect": [
+                {
+                  "trigger": {
+                    "event": "skillStart",
+                    "requirement": [
+                      {
+                        "target": "skillTag",
+                        "value": "HeroesBlood"
+                      }
+                    ],
+                    "action": {
+                      "type": "apply",
+                      "target": "self",
+                      "value": "Carouse",
+                      "stack": 1
+                    }
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "self",
+                      "value": "InebriateDeepdaze"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "DragonquenchInebriate"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "HeroesBloodInebriate"
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "convert": {
+                      "from": "abrasionRate",
+                      "to": "normalRate",
+                      "ratio": 1
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Inebriate DMG Boost Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "self",
+                      "value": "Inebriate"
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "physDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00012,
+                          "max": 0.09
+                        }
+                      },
+                      "bamboocutDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00012,
+                          "max": 0.09
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutPenetration": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "skygrasp-rope-dart": {
+    "id": "skygrasp-rope-dart",
+    "name": {
+      "en": "Skygrasp Rope Dart",
+      "zh": null
+    },
+    "weapon": "RopeDart",
+    "tag": "SkygraspRopeDart",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Increased Heaven's Will Gain",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Heaven's Will DMG Boost",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "resource",
+                      "value": "HeavensWill",
+                      "comparison": ">",
+                      "amount": 1
+                    }
+                  ],
+                  "effect": {
+                    "stat": {
+                      "physDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00012,
+                          "max": 0.09
+                        }
+                      },
+                      "bamboocutDmgBonus": {
+                        "formula": {
+                          "source": "minPhys",
+                          "multiplier": 0.00012,
+                          "max": 0.09
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutPenetration": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "skystrike-gauntlets": {
+    "id": "skystrike-gauntlets",
+    "name": {
+      "en": "Skystrike Gauntlets",
+      "zh": null
+    },
+    "weapon": "Gauntlet",
+    "tag": "SkystrikeGauntlets",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Inebriate Dodge Enhancement",
+              "effect": [
+                {
+                  "trigger": {
+                    "event": "skillStart",
+                    "requirement": [
+                      {
+                        "target": "self",
+                        "value": "Carouse"
+                      },
+                      {
+                        "target": "skillTag",
+                        "value": "PerfectDodge"
+                      }
+                    ],
+                    "cooldown": 1,
+                    "action": {
+                      "type": "addResource",
+                      "value": "Binge",
+                      "amount": 5
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Inebriate Critical Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "InebriateEnhanced"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.0004,
+                        "max": 0.3
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutDmgBonus": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "snowparting-blade": {
+    "id": "snowparting-blade",
+    "name": {
+      "en": "Snowparting Blade",
+      "zh": null
+    },
+    "weapon": "HengBlade",
+    "tag": "SnowpartingBlade",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Special Skill Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "會心傷害提升",
+            "data": {
+              "name": "Critical DMG Up",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "resource",
+                      "value": "BladeMomentum",
+                      "comparison": ">",
+                      "amount": 1
+                    }
+                  ],
+                  "effectiveStat": {
+                    "critDmgBonus": {
+                      "formula": {
+                        "source": "crit",
+                        "multiplier": 0.35,
+                        "max": 0.21
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "裂石屬性提升",
+            "data": {
+              "name": "Stonesplit Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxStonesplit": 196,
+                    "minStonesplit": 98
+                  },
+                  "stat": {
+                    "stonesplitDmgBonus": {
+                      "formula": {
+                        "source": "minStonesplit",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "soulshade-umbrella": {
+    "id": "soulshade-umbrella",
+    "name": {
+      "en": "Soulshade Umbrella",
+      "zh": null
+    },
+    "weapon": "Umbrella",
+    "tag": "SoulshadeUmbrella",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Buff Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "equippedMartialArt",
+                      "value": "panaceaFan"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Mystic"
+                    }
+                  ],
+                  "effect": {
+                    "dmgBonus": 0.2
+                  }
+                },
+                {
+                  "target": "FloatingGrace",
+                  "modify": {
+                    "effect": [
+                      {
+                        "requirement": [
+                          {
+                            "target": "target",
+                            "value": "Exhausted"
+                          }
+                        ],
+                        "effect": {
+                          "dmgBonus": 0.05
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "target": "FloatingGraceDeluge",
+                  "modify": {
+                    "effect": [
+                      {
+                        "requirement": [
+                          {
+                            "target": "target",
+                            "value": "Exhausted"
+                          }
+                        ],
+                        "effect": {
+                          "dmgBonus": 0.05
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": [
+                {
+                  "stat": {
+                    "minPhys": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.264,
+                        "max": 73.92
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Critical Heal Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Special"
+                    }
+                  ],
+                  "effect": {
+                    "criticalHealingBonus": 0.05
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Special"
+                    }
+                  ],
+                  "effect": {
+                    "criticalHealingBonus": {
+                      "formula": {
+                        "source": "minPhys",
+                        "multiplier": 0.0003333333333333333,
+                        "max": 0.25
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Silkbind Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxSilkbind": 196,
+                    "minSilkbind": 98
+                  },
+                  "stat": {
+                    "silkbindPenetration": {
+                      "formula": {
+                        "source": "minSilkbind",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attribute Attack Enhancement",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "stormbreaker-spear": {
+    "id": "stormbreaker-spear",
+    "name": {
+      "en": "Stormbreaker Spear",
+      "zh": null
+    },
+    "weapon": "Spear",
+    "tag": "StormbreakerSpear",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Max Battle Will Increase",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Max HP Up",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "DMG Reduction Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "裂石屬性提升",
+            "data": {
+              "name": "Stonesplit Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxStonesplit": 196,
+                    "minStonesplit": 98
+                  },
+                  "stat": {
+                    "stonesplitDmgBonus": {
+                      "formula": {
+                        "source": "minStonesplit",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "strategic-sword": {
+    "id": "strategic-sword",
+    "name": {
+      "en": "Strategic Sword",
+      "zh": null
+    },
+    "weapon": "Sword",
+    "tag": "StrategicSword",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bleed Mechanism Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Affinity Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "affinity": {
+                      "formula": {
+                        "source": "power",
+                        "multiplier": 0.000152,
+                        "max": 0.04256
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bleed Penetration Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "Bleed"
+                    }
+                  ],
+                  "effect": {
+                    "physicalPenetration": {
+                      "formula": {
+                        "source": "maxPhys",
+                        "multiplier": 0.01,
+                        "max": 15
+                      }
+                    },
+                    "bellstrikePenetration": {
+                      "formula": {
+                        "source": "maxPhys",
+                        "multiplier": 0.01,
+                        "max": 15
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bellstrike Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBellstrike": 196,
+                    "minBellstrike": 98
+                  },
+                  "stat": {
+                    "bellstrikePenetration": {
+                      "formula": {
+                        "source": "maxBellstrike",
+                        "multiplier": 0.0336,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "thundercry-blade": {
+    "id": "thundercry-blade",
+    "name": {
+      "en": "Thundercry Blade",
+      "zh": null
+    },
+    "weapon": "MoBlade",
+    "tag": "ThundercryBlade",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": "蓄力及派生技強化",
+            "data": {
+              "name": "Charge Calculation Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "ThundercryBlade"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "Charged"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "VariedCombo"
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "convert": {
+                      "from": "abrasionRate",
+                      "to": "normalRate",
+                      "ratio": 1
+                    }
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "ThundercryBlade"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "Charged"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "VariedCombo"
+                        }
+                      ]
+                    }
+                  ],
+                  "effectiveStat": {
+                    "critDmgBonus": 0.1,
+                    "maxPhys": {
+                      "function": "segment",
+                      "param1": "maxHp",
+                      "param2": [
+                        4999.999999999,
+                        9999.999999999,
+                        14999.999999999,
+                        19999.999999999,
+                        24999.999999999,
+                        29999.999999999,
+                        34999.999999999,
+                        39999.999999999,
+                        44999.999999999,
+                        49999.999999999,
+                        54999.999999999,
+                        59999.999999999,
+                        64999.999999999,
+                        69999.999999999,
+                        74999.999999999,
+                        79999.999999999,
+                        84999.999999999,
+                        89999.999999999,
+                        94999.999999999,
+                        99999.999999999,
+                        104999.999999999,
+                        109999.999999999,
+                        114999.999999999,
+                        119999.999999999,
+                        124999.999999999,
+                        129999.999999999,
+                        134999.999999999,
+                        139999.999999999,
+                        144999.999999999,
+                        149999.999999999
+                      ],
+                      "param3": [
+                        0,
+                        4,
+                        8,
+                        12,
+                        16,
+                        20,
+                        24,
+                        28,
+                        32,
+                        36,
+                        40,
+                        44,
+                        48,
+                        52,
+                        56,
+                        60,
+                        64,
+                        68,
+                        72,
+                        76,
+                        80,
+                        84,
+                        88,
+                        92,
+                        96,
+                        100,
+                        104,
+                        108,
+                        112,
+                        116,
+                        120
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "外功攻擊提升",
+            "data": {
+              "name": "Physical Attack Up",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "蓄力及派生技會心率提升",
+            "data": {
+              "name": "Charge Critical Hit Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "ThundercryBlade"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "Charged"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "VariedCombo"
+                        }
+                      ]
+                    }
+                  ],
+                  "effectiveStat": {
+                    "effectiveCritBonus": 0.09
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "ThundercryBlade"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "skillTag",
+                          "value": "Charged"
+                        },
+                        {
+                          "target": "skillTag",
+                          "value": "VariedCombo"
+                        }
+                      ]
+                    }
+                  ],
+                  "effectiveStat": {
+                    "effectiveCritBonus": {
+                      "function": "segment",
+                      "param1": "maxHp",
+                      "param2": [
+                        5999.999999999,
+                        11999.999999999,
+                        17999.999999999,
+                        23999.999999999,
+                        29999.999999999,
+                        35999.999999999,
+                        41999.999999999,
+                        47999.999999999,
+                        53999.999999999,
+                        59999.999999999,
+                        65999.999999999,
+                        71999.999999999,
+                        77999.999999999,
+                        83999.999999999,
+                        89999.999999999
+                      ],
+                      "param3": [
+                        0,
+                        0.01,
+                        0.02,
+                        0.03,
+                        0.04,
+                        0.05,
+                        0.06,
+                        0.07,
+                        0.08,
+                        0.09,
+                        0.1,
+                        0.11,
+                        0.12,
+                        0.13,
+                        0.14,
+                        0.15
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "裂石屬性提升",
+            "data": {
+              "name": "Stonesplit Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxStonesplit": 196,
+                    "minStonesplit": 98
+                  },
+                  "stat": {
+                    "stonesplitPenetration": {
+                      "formula": {
+                        "source": "minStonesplit",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "unfettered-rope-dart": {
+    "id": "unfettered-rope-dart",
+    "name": {
+      "en": "Unfettered Rope Dart",
+      "zh": null
+    },
+    "weapon": "RopeDart",
+    "tag": "UnfetteredRopeDart",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Charged Combo Enhancement",
+              "effect": []
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Soulbreak Critical Boost",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "target",
+                      "value": "Soulbreak"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": {
+                      "formula": {
+                        "source": "crit",
+                        "multiplier": 0.45,
+                        "max": 0.27
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Bamboocut Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxBamboocut": 196,
+                    "minBamboocut": 98
+                  },
+                  "stat": {
+                    "bamboocutDmgBonus": {
+                      "formula": {
+                        "source": "minBamboocut",
+                        "multiplier": 0.000336,
+                        "max": 0.11
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "vernal-umbrella": {
+    "id": "vernal-umbrella",
+    "name": {
+      "en": "Vernal Umbrella",
+      "zh": null
+    },
+    "weapon": "Umbrella",
+    "tag": "VernalUmbrella",
+    "talents": [
+      {
+        "level": 0,
+        "entries": []
+      },
+      {
+        "level": 1,
+        "entries": []
+      },
+      {
+        "level": 2,
+        "entries": []
+      },
+      {
+        "level": 3,
+        "entries": []
+      },
+      {
+        "level": 4,
+        "entries": []
+      },
+      {
+        "level": 5,
+        "entries": []
+      },
+      {
+        "level": 6,
+        "entries": []
+      },
+      {
+        "level": 7,
+        "entries": []
+      },
+      {
+        "level": 8,
+        "entries": []
+      },
+      {
+        "level": 9,
+        "entries": []
+      },
+      {
+        "level": 10,
+        "entries": []
+      },
+      {
+        "level": 11,
+        "entries": []
+      },
+      {
+        "level": 12,
+        "entries": []
+      },
+      {
+        "level": 13,
+        "entries": [
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Trajectory Skill Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "VernalUmbrella"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Ballistic"
+                    }
+                  ],
+                  "effect": {
+                    "physicalResistance": -5
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "VernalUmbrella"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Ballistic"
+                    },
+                    {
+                      "operator": "or",
+                      "operand": [
+                        {
+                          "target": "target",
+                          "value": "Immobilized"
+                        },
+                        {
+                          "target": "target",
+                          "value": "Airborne"
+                        }
+                      ]
+                    }
+                  ],
+                  "effect": {
+                    "physicalResistance": -10
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": "會心率提升",
+            "data": {
+              "name": "Critical Rate Up",
+              "effect": [
+                {
+                  "stat": {
+                    "crit": {
+                      "formula": {
+                        "source": "agility",
+                        "multiplier": 0.000304,
+                        "max": 0.08512
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Trajectory Calculation Enhancement",
+              "effect": [
+                {
+                  "requirement": [
+                    {
+                      "target": "skillTag",
+                      "value": "VernalUmbrella"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Ballistic"
+                    }
+                  ],
+                  "effect": {
+                    "critDmgBonus": {
+                      "function": "segment",
+                      "param1": "minPhys",
+                      "param2": [
+                        49.999999999,
+                        99.999999999,
+                        149.999999999,
+                        199.999999999,
+                        249.999999999,
+                        299.999999999,
+                        349.999999999,
+                        399.999999999,
+                        449.999999999,
+                        499.999999999,
+                        549.999999999,
+                        599.999999999,
+                        649.999999999,
+                        699.999999999,
+                        749.999999999
+                      ],
+                      "param3": [
+                        0,
+                        0.024,
+                        0.048,
+                        0.072,
+                        0.096,
+                        0.12,
+                        0.144,
+                        0.168,
+                        0.192,
+                        0.216,
+                        0.24,
+                        0.264,
+                        0.288,
+                        0.312,
+                        0.336,
+                        0.36
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Silkbind Attribute Up",
+              "effect": [
+                {
+                  "rawStat": {
+                    "maxSilkbind": 196,
+                    "minSilkbind": 98
+                  },
+                  "stat": {
+                    "silkbindPenetration": {
+                      "formula": {
+                        "source": "minSilkbind",
+                        "multiplier": 0.0672,
+                        "max": 22
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "nameZh": null,
+            "data": {
+              "name": "Attr. Attack DMG Up",
+              "effect": []
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

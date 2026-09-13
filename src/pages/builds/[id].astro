@@ -1,0 +1,130 @@
+---
+import Base from '../../layouts/Base.astro';
+import {
+  builds,
+  gearSetByKey,
+  innerWayByKey,
+  martialArtById,
+  weaponByKey,
+} from '../../lib/data';
+import { displayName } from '../../lib/format';
+
+export function getStaticPaths() {
+  // 配装 id 在组内唯一（参考数据保证），直接以 id 作路由参数
+  return builds.map((b) => ({ params: { id: b.id }, props: { b } }));
+}
+
+const { b } = Astro.props;
+const name = displayName(b.name);
+
+const setLine = (sets: Record<string, number>) =>
+  Object.entries(sets)
+    .filter(([, count]) => count > 0)
+    .map(([key, count]) => {
+      const set = gearSetByKey(key);
+      const label = set ? displayName(set.name).text : key;
+      return `${label} ×${count}`;
+    });
+---
+
+<Base active="/builds">
+  <p><a href="/builds/">← 返回配装列表</a></p>
+  <h1 class={name.zhMissing ? 'zh-missing' : ''}>{name.text}</h1>
+  <p class="page-desc">{b.name.en} · 流派分组：{b.group}</p>
+
+  <h2>武学</h2>
+  <div>
+    {
+      b.martialArts.map((id) => {
+        const ma = martialArtById(id);
+        if (!ma) return <span class="tag">{id}</span>;
+        const weapon = weaponByKey(ma.weapon);
+        return (
+          <a class="tag accent" href={`/martial-arts/${ma.id}/`}>
+            {displayName(ma.name).text}
+            {weapon ? `（${displayName(weapon.name).text}）` : ''}
+          </a>
+        );
+      })
+    }
+  </div>
+
+  <h2>心法</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>心法</th>
+        <th>层级</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        b.setup.innerWays.map(({ innerWay, tier }) => {
+          const iw = innerWayByKey(innerWay);
+          return (
+            <tr>
+              <td>
+                {iw ? (
+                  <a href={`/innerways/${iw.id}/`}>{displayName(iw.name).text}</a>
+                ) : (
+                  <span class="zh-missing">{innerWay}</span>
+                )}
+              </td>
+              <td class="tier-cell">{tier}</td>
+            </tr>
+          );
+        })
+      }
+    </tbody>
+  </table>
+
+  <h2>套装搭配</h2>
+  <div class="panel">
+    <div class="set-row">
+      <strong>武器套装：</strong>
+      {setLine(b.setup.weaponSets).length ? (
+        setLine(b.setup.weaponSets).join('，')
+      ) : (
+        <span class="muted">无</span>
+      )}
+    </div>
+    <div class="set-row">
+      <strong>防具套装：</strong>
+      {setLine(b.setup.armorSets).length ? (
+        setLine(b.setup.armorSets).join('，')
+      ) : (
+        <span class="muted">无</span>
+      )}
+    </div>
+    {
+      b.setup.bowRingSet && (
+        <div class="set-row">
+          <strong>弓环：</strong>
+          {(() => {
+            const set = gearSetByKey(b.setup.bowRingSet);
+            return set ? displayName(set.name).text : b.setup.bowRingSet;
+          })()}
+        </div>
+      )
+    }
+    {
+      b.setup.arsenal && (
+        <div class="set-row">
+          <strong>军备：</strong>
+          {b.setup.arsenal}
+        </div>
+      )
+    }
+  </div>
+</Base>
+
+<style>
+  .tier-cell {
+    color: var(--accent);
+    font-weight: 600;
+    width: 5rem;
+  }
+  .set-row {
+    padding: 0.25rem 0;
+  }
+</style>

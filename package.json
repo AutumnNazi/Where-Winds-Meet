@@ -1,0 +1,17 @@
+{
+  "name": "wwm-wiki",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "description": "燕云十六声（Where Winds Meet）游戏资料站：配装、心法、武学、词条",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "import:ref": "node scripts/import-ref-data.mjs",
+    "import:huiji": "node scripts/fetch-huiji-catalog.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.18.2"
+  }
+}

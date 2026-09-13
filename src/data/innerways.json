@@ -1,0 +1,1663 @@
+{
+  "adaptive-steel": {
+    "id": "adaptive-steel",
+    "name": {
+      "en": "Adaptive Steel",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitMight"
+    ],
+    "tiers": [
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Charged"
+              }
+            ],
+            "effect": {
+              "critDmgBonus": 0.2
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "maxBellstrike": 39.8
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "bellstrikeDmgBonus": 0.03
+            }
+          }
+        ]
+      },
+      null,
+      null
+    ],
+    "extras": {}
+  },
+  "art-of-resistance": {
+    "id": "art-of-resistance",
+    "name": {
+      "en": "Art of Resistance",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitMight"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minStonesplit": 13.3,
+              "maxStonesplit": 26.5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "self",
+                "value": "Shield"
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.05
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "stonesplitPenetration": 6
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "self",
+                "value": "Shield"
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.05
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "battle-anthem": {
+    "id": "battle-anthem",
+    "name": {
+      "en": "Battle Anthem",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitMight"
+    ],
+    "tiers": [
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Charged"
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.1
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "affinity": 0.041
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Charged"
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.05
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "affinityDmgBonus": 0.052
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "effect": {
+              "dmgBonus": {
+                "function": "segment",
+                "param1": "enduranceLost",
+                "param2": [
+                  9,
+                  19,
+                  29,
+                  39,
+                  49
+                ],
+                "param3": [
+                  0,
+                  0.02,
+                  0.04,
+                  0.06,
+                  0.08,
+                  0.1
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "breaking-point": {
+    "id": "breaking-point",
+    "name": {
+      "en": "Breaking Point",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength",
+      "StonesplitMight",
+      "BamboocutKite"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "target",
+                "value": "Exhausted"
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "Disintegration",
+                "stack": 1,
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Disintegration",
+            "modify": {
+              "duration": 5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "precision": 0.072
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "target": "Disintegration",
+            "modify": {
+              "maxStack": 5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "directCrit": 0.041
+            }
+          }
+        ]
+      },
+      null
+    ],
+    "extras": {}
+  },
+  "empirical-edge": {
+    "id": "empirical-edge",
+    "name": {
+      "en": "Empirical Edge",
+      "zh": null
+    },
+    "tags": [
+      "BamboocutKite"
+    ],
+    "tiers": [
+      {
+        "effect": [
+          {
+            "target": "Cognition",
+            "modify": {
+              "maxStack": 3
+            }
+          }
+        ],
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "MartialArtEffect"
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "Cognition",
+                "stack": 1,
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Cognition",
+            "modify": {
+              "duration": 8
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 23.3,
+              "maxPhys": 46.7
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Cognition",
+            "modify": {
+              "maxStack": 5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Cognition",
+            "modify": {
+              "cooldown": 0
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physDmgBonus": 0.025
+            }
+          }
+        ]
+      },
+      null
+    ],
+    "extras": {}
+  },
+  "envigorated-warrior": {
+    "id": "envigorated-warrior",
+    "name": {
+      "en": "Envigorated Warrior",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength",
+      "BamboocutKite",
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 70.1
+            }
+          }
+        ]
+      },
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physicalPenetration": 5.1
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "effect": {
+              "dmgBonus": 0.08,
+              "healingBonus": 0.08
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "exquisite-scenery": {
+    "id": "exquisite-scenery",
+    "name": {
+      "en": "Exquisite Scenery",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitMight"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "crit": 0.09
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "target": "Riposte",
+            "modify": {
+              "cooldown": 5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "critDmgBonus": 0.044
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Light"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Charged"
+                    }
+                  ],
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Heavy"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "Charged"
+                    }
+                  ],
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Light"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "VariedCombo"
+                    }
+                  ],
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Heavy"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "VariedCombo"
+                    }
+                  ]
+                ]
+              }
+            ],
+            "effect": {
+              "baseDMGBonus": 0.5
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "fivefold-bleed": {
+    "id": "fivefold-bleed",
+    "name": {
+      "en": "Fivefold Bleed",
+      "zh": null
+    },
+    "tags": [
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "event": "damage",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "DirectDamage"
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "target",
+                "value": "WeepingBlood",
+                "chance": {
+                  "function": "switch",
+                  "param1": "FivefoldBleedT4",
+                  "param2": {
+                    "true": 0.15
+                  },
+                  "fallback": 0.1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "PiercingDamage"
+              }
+            ],
+            "effect": {
+              "baseDMGBonus": 1
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "maxPhys": 62.3
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "WeepingBlood",
+            "modify": {
+              "action": [
+                {
+                  "type": "trigger",
+                  "value": "PiercingDamage",
+                  "chance": 0.2,
+                  "time": "expire"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "critDmgBonus": 0.035
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "event": "damage",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "WeepingBloodMaxStack"
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "target",
+                "value": "WeepingBlood",
+                "stack": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "frost-clad-night": {
+    "id": "frost-clad-night",
+    "name": {
+      "en": "Frost-Clad Night",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 77.9
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "SnowbreakSpring"
+              },
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "self",
+                    "value": "InnerPassion"
+                  },
+                  [
+                    {
+                      "target": "self",
+                      "value": "FrostCladNightT6"
+                    },
+                    {
+                      "target": "target",
+                      "value": "Exhausted"
+                    }
+                  ]
+                ]
+              }
+            ],
+            "effect": {
+              "hpDMGBonus": 0.4
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "directCrit": 0.046
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "SnowbreakSpring"
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.1
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "fury-harvest": {
+    "id": "fury-harvest",
+    "name": {
+      "en": "Fury Harvest",
+      "zh": null
+    },
+    "tags": [
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physicalDefense": 35
+            }
+          }
+        ]
+      },
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physicalResistance": 5.1
+            }
+          }
+        ]
+      },
+      null
+    ],
+    "extras": {}
+  },
+  "insightful-strike": {
+    "id": "insightful-strike",
+    "name": {
+      "en": "Insightful Strike",
+      "zh": null
+    },
+    "tags": [
+      "BellstrikeSplendor",
+      "BellstrikeUmbra",
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "event": "damageOutcome",
+            "outcome": "affinity",
+            "target": "self",
+            "resource": {
+              "name": "Focus",
+              "gain": 1,
+              "decayRate": -0.25,
+              "threshold": 4,
+              "resetTo": 0
+            },
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "Concentration",
+                "stack": 1,
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "selfHPPercentage",
+                "comparison": ">",
+                "amount": 75
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.015
+            }
+          },
+          {
+            "requirement": [
+              {
+                "target": "selfHPPercentage",
+                "comparison": "<=",
+                "amount": 75
+              }
+            ],
+            "effect": {
+              "leech": 0.015
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 23.3,
+              "maxPhys": 46.7
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Concentration",
+            "modify": {
+              "effect": [
+                {
+                  "stat": {
+                    "directAffinity": 0.015
+                  }
+                },
+                {
+                  "requirement": [
+                    {
+                      "target": "selfHPPercentage",
+                      "comparison": ">",
+                      "compareTo": "targetHPPercentage"
+                    }
+                  ],
+                  "stat": {
+                    "directAffinity": 0.015
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "Focus",
+            "modify": {
+              "gain": 1.5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physicalPenetration": 5.1
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "skillTag",
+                    "value": "DOT"
+                  },
+                  {
+                    "target": "skillTag",
+                    "value": "DOTEmpowered"
+                  }
+                ]
+              }
+            ],
+            "effect": {
+              "dmgBonus": 0.1
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "morale-chant": {
+    "id": "morale-chant",
+    "name": {
+      "en": "Morale Chant",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength",
+      "StonesplitMight",
+      "BamboocutKite",
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "DirectDamage"
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "YiRiver",
+                "stack": 1,
+                "additionalStack": {
+                  "requirement": [
+                    {
+                      "target": "target",
+                      "value": "Controlled"
+                    },
+                    {
+                      "target": "self",
+                      "value": "MoraleChantT3"
+                    }
+                  ],
+                  "stack": 1
+                },
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 25.9,
+              "maxPhys": 51.9
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "target": "YiRiver",
+            "modify": {
+              "duration": 12
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "directCrit": 0.046
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "DirectDamage"
+              },
+              {
+                "target": "self",
+                "value": "YiRiver",
+                "stack": 5
+              }
+            ],
+            "action": [
+              {
+                "type": "trigger",
+                "value": "MoraleChant"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "royal-remedy": {
+    "id": "royal-remedy",
+    "name": {
+      "en": "Royal Remedy",
+      "zh": null
+    },
+    "tags": [
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "CloudburstHealing"
+              }
+            ],
+            "effect": {
+              "healingBonus": 0.1
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "event": "heal",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "CloudburstHealing"
+              }
+            ],
+            "action": [
+              {
+                "type": "addResource",
+                "value": "Vitality",
+                "amount": 2
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "crit": 0.09
+            }
+          }
+        ]
+      },
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "directCrit": 0.046
+            }
+          }
+        ]
+      },
+      null
+    ],
+    "extras": {}
+  },
+  "seasonal-edge": {
+    "id": "seasonal-edge",
+    "name": {
+      "en": "Seasonal Edge",
+      "zh": null
+    },
+    "tags": [
+      "BamboocutKite",
+      "SilkbindDeluge"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "event": "skillEndRandomBuff",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Conversion"
+              }
+            ],
+            "duration": 8,
+            "cooldown": 30,
+            "outcome": [
+              {
+                "value": "Bloom",
+                "weight": 0.25
+              },
+              {
+                "value": "Flare",
+                "weight": 0.25
+              },
+              {
+                "value": "Yield",
+                "weight": 0.25
+              },
+              {
+                "value": "Frost",
+                "weight": 0.25
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "SeasonalEdgeRandomBuff",
+            "modify": {
+              "duration": 12
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 25.9,
+              "maxPhys": 51.9
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "SeasonalEdgeRandomBuff",
+            "modify": {
+              "count": [
+                {
+                  "value": 1,
+                  "weight": 0.7
+                },
+                {
+                  "value": 2,
+                  "weight": 0.3
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "SeasonalEdgeRandomBuff",
+            "modify": {
+              "outcome": [
+                {
+                  "value": "Bloom",
+                  "weight": 0.1
+                },
+                {
+                  "value": "Flare",
+                  "weight": 0.4
+                },
+                {
+                  "value": "Yield",
+                  "weight": 0.4
+                },
+                {
+                  "value": "Frost",
+                  "weight": 0.1
+                }
+              ],
+              "additionalSkills": [
+                "SereneBreeze"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "physDmgBonus": 0.028
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "SeasonalEdgeRandomBuff",
+            "modify": {
+              "count": [
+                {
+                  "value": 1,
+                  "weight": 0.5
+                },
+                {
+                  "value": 2,
+                  "weight": 0.3
+                },
+                {
+                  "value": 3,
+                  "weight": 0.2
+                }
+              ],
+              "outcome": [
+                {
+                  "value": "Bloom",
+                  "weight": 0.1
+                },
+                {
+                  "value": "Flare",
+                  "weight": 0.4
+                },
+                {
+                  "value": "Yield",
+                  "weight": 0.4
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "sky-gripped": {
+    "id": "sky-gripped",
+    "name": {
+      "en": "Sky Gripped",
+      "zh": null
+    },
+    "tags": [
+      "BamboocutKite"
+    ],
+    "tiers": [
+      null,
+      {
+        "effect": [
+          {
+            "target": "HeavensMight",
+            "modify": {
+              "duration": 24
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "crit": 0.081
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "skillTag",
+                    "value": "Falcon"
+                  },
+                  {
+                    "target": "skillTag",
+                    "value": "VileCondemned"
+                  }
+                ]
+              }
+            ],
+            "effect": {
+              "qiDMGBonus": 0.3
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "critDmgBonus": 0.04
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Charged"
+              },
+              {
+                "target": "target",
+                "value": "HeavensMight"
+              }
+            ],
+            "effect": {
+              "critDmgBonus": 0.1
+            }
+          }
+        ],
+        "listen": [
+          {
+            "event": "damage",
+            "cooldown": 18,
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Charged"
+              },
+              {
+                "target": "target",
+                "value": "HeavensMight"
+              }
+            ],
+            "action": {
+              "type": "trigger",
+              "value": "SkyGrippedReplay",
+              "parameter": {
+                "damage": "event.damage"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "soaring-high": {
+    "id": "soaring-high",
+    "name": {
+      "en": "Soaring High",
+      "zh": null
+    },
+    "tags": [
+      "BamboocutKite"
+    ],
+    "tiers": [
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "skillTag",
+                    "value": "Falcon"
+                  },
+                  {
+                    "target": "skillTag",
+                    "value": "VileCondemned"
+                  }
+                ]
+              }
+            ],
+            "effect": {
+              "hpDMGBonus": 0.2
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minPhys": 77.9
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "Falcon"
+              },
+              {
+                "target": "target",
+                "value": "Exhausted"
+              }
+            ],
+            "action": [
+              {
+                "type": "consume",
+                "target": "self",
+                "value": "VileCondemnedEndCooldown",
+                "stack": "all"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "VileCondemned"
+              }
+            ],
+            "effect": {
+              "convert": {
+                "from": "finalAffinity",
+                "to": "directCrit",
+                "ratio": 1,
+                "max": 0.12
+              }
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "directCrit": 0.046
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "target": "skillTag",
+                "value": "VileCondemnedEnd"
+              }
+            ],
+            "action": [
+              {
+                "type": "trigger",
+                "value": "SoaringHighT6Refund"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "steadfast-devotion": {
+    "id": "steadfast-devotion",
+    "name": {
+      "en": "Steadfast Devotion",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength"
+    ],
+    "tiers": [
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "crit": 0.081
+            }
+          }
+        ]
+      },
+      null,
+      null,
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "critDmgBonus": 0.04
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "requirement": [
+              {
+                "target": "target",
+                "value": "Exhausted"
+              },
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "skillTag",
+                    "value": "BurningHeart"
+                  },
+                  {
+                    "target": "skillTag",
+                    "value": "AnxiSoldier"
+                  }
+                ]
+              }
+            ],
+            "effect": {
+              "SteadfastGuaranteedCrit": true,
+              "critDmgBonus": 0.1
+            }
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  },
+  "throat-piercing-art": {
+    "id": "throat-piercing-art",
+    "name": {
+      "en": "Throat-Piercing Art",
+      "zh": null
+    },
+    "tags": [
+      "StonesplitStrength",
+      "StonesplitMight"
+    ],
+    "tiers": [
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Light"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "VariedCombo"
+                    }
+                  ],
+                  [
+                    {
+                      "target": "skillTag",
+                      "value": "Heavy"
+                    },
+                    {
+                      "target": "skillTag",
+                      "value": "VariedCombo"
+                    }
+                  ]
+                ]
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "ThroatPierced",
+                "stack": 1,
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "target": "ThroatPierced",
+            "modify": {
+              "duration": 15
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "minStonesplit": 13.3,
+              "maxStonesplit": 26.5
+            }
+          }
+        ]
+      },
+      null,
+      {
+        "effect": [
+          {
+            "target": "ThroatPierced",
+            "modify": {
+              "maxStack": 5
+            }
+          }
+        ]
+      },
+      {
+        "effect": [
+          {
+            "rawStat": {
+              "stonesplitPenetration": 6
+            }
+          }
+        ]
+      },
+      {
+        "trigger": [
+          {
+            "target": "self",
+            "requirement": [
+              {
+                "operator": "or",
+                "operand": [
+                  {
+                    "target": "skillTag",
+                    "value": "AnxiSoldier"
+                  },
+                  {
+                    "target": "skillTag",
+                    "value": "TriggerAnxiSolder"
+                  }
+                ]
+              }
+            ],
+            "action": [
+              {
+                "type": "apply",
+                "target": "self",
+                "value": "ThroatPierced",
+                "stack": 1,
+                "reapply": true
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": {}
+  }
+}

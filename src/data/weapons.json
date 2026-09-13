@@ -1,0 +1,112 @@
+[
+  {
+    "key": "DualBlades",
+    "name": {
+      "en": "DualBlades",
+      "zh": "双刀"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "infernal-twinblades",
+      "riven-twinblades"
+    ]
+  },
+  {
+    "key": "Fan",
+    "name": {
+      "en": "Fan",
+      "zh": "扇"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "inkwell-fan",
+      "panacea-fan"
+    ]
+  },
+  {
+    "key": "Gauntlet",
+    "name": {
+      "en": "Gauntlet",
+      "zh": "拳套"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "heavenwill-gauntlets",
+      "skystrike-gauntlets"
+    ]
+  },
+  {
+    "key": "HengBlade",
+    "name": {
+      "en": "HengBlade",
+      "zh": "横刀"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "snowparting-blade"
+    ]
+  },
+  {
+    "key": "MoBlade",
+    "name": {
+      "en": "MoBlade",
+      "zh": "陌刀"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "phalanxbane-blade",
+      "thundercry-blade"
+    ]
+  },
+  {
+    "key": "RopeDart",
+    "name": {
+      "en": "RopeDart",
+      "zh": "绳镖"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "mortal-rope-dart",
+      "skygrasp-rope-dart",
+      "unfettered-rope-dart"
+    ]
+  },
+  {
+    "key": "Spear",
+    "name": {
+      "en": "Spear",
+      "zh": "枪"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "heavenquaker-spear",
+      "nameless-spear",
+      "stormbreaker-spear"
+    ]
+  },
+  {
+    "key": "Sword",
+    "name": {
+      "en": "Sword",
+      "zh": "剑"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "nameless-sword",
+      "strategic-sword"
+    ]
+  },
+  {
+    "key": "Umbrella",
+    "name": {
+      "en": "Umbrella",
+      "zh": "伞"
+    },
+    "nameSource": "manual",
+    "martialArts": [
+      "everspring-umbrella",
+      "soulshade-umbrella",
+      "vernal-umbrella"
+    ]
+  }
+]
