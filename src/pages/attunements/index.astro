@@ -5,6 +5,7 @@ import {
   attunements,
   gearDefs,
   martialArtById,
+  martialArtZhInfo,
   pathByTag,
   statDisplayName,
 } from '../../lib/data';
@@ -21,8 +22,16 @@ const tagLabel = (tag: string) => {
   const path = pathByTag(tag);
   if (path) return displayName(path.name).text;
   const ma = martialArtById(pascalToKebab(tag));
-  if (ma) return displayName(ma.name).text;
+  if (ma) return martialArtZhInfo(ma.id)?.zh ?? displayName(ma.name).text;
   return tag;
+};
+
+/** 词条名：官方术语表（statDisplayName）优先，回落词条定义英文 */
+const affixName = (key: string) => {
+  const labeled = statDisplayName(key);
+  if (labeled !== key) return labeled;
+  const a = gearDefs.affixes.find((x) => x.key === key);
+  return a ? displayName(a.name).text : key;
 };
 
 const groupOrder = ['Weapon', 'Armor', 'Defensive'];
@@ -39,11 +48,6 @@ const orderedGroups = [
     .map((g) => [g, attunementGroups.get(g)!] as const),
 ];
 
-const affixName = (key: string) => {
-  const a = gearDefs.affixes.find((x) => x.key === key);
-  return a ? displayName(a.name).text : key;
-};
-/** 调律词条效果：{ stat: { key: value } } → 「属性 +值/级」列表 */
 const attunementEffectText = (a: (typeof attunements)[number]): string | null => {
   const stat = (a.effect as { stat?: Record<string, number> } | null)?.stat;
   if (!stat) return null;

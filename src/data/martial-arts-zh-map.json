@@ -1,5 +1,5 @@
 {
-  "_comment": "参考数据武学（where-builds-meet 英文）→ 17173 攻略中文名对照。依据：专属心法关系（如「磐石诀=八方风雷枪专属」）+ 流派归属 + 武器类型三重交叉验证。high=文章直给或专属关系链完整；medium=流派+武器排除法推断；缺失的不臆填。",
+  "_comment": "参考数据武学（where-builds-meet 英文）→ 攻略中文名对照。依据：专属心法关系（如「磐石诀=八方风雷枪专属」）+ 流派归属 + 武器类型三重交叉验证（流派武器组合来源：HongKongCard 攻略——鸣金虹=剑+枪、鸣金影=剑+枪、裂石威=陌刀+枪、牵丝玉=扇+伞、破竹风=双刀+绳镖、牵丝霖=扇+伞）。high=文章直给或专属关系链完整；medium=流派+武器排除法推断；缺失的不臆填。注意：栗子遊塵为破竹·风绳镖（非双刀），对应 mortal/skygrasp/unfettered-rope-dart 之一但无定证，故三绳镖均暂空。",
   "nameless-sword": { "zh": "无名剑法", "confidence": "high" },
   "nameless-spear": { "zh": "无名枪法", "confidence": "high" },
   "panacea-fan": { "zh": "明川药典", "confidence": "high" },
@@ -7,9 +7,9 @@
   "thundercry-blade": { "zh": "嗟夫刀法", "confidence": "high" },
   "stormbreaker-spear": { "zh": "八方风雷枪", "confidence": "high" },
   "infernal-twinblades": { "zh": "泥犁三垢", "confidence": "high" },
-  "riven-twinblades": { "zh": "栗子游尘", "confidence": "medium" },
   "inkwell-fan": { "zh": "青山执笔", "confidence": "high" },
   "vernal-umbrella": { "zh": "九重春色", "confidence": "high" },
   "strategic-sword": { "zh": "积矩九剑", "confidence": "medium" },
   "heavenquaker-spear": { "zh": "九曲惊神枪", "confidence": "medium" }
 }
+

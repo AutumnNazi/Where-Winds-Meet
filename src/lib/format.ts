@@ -35,15 +35,50 @@ export function pascalToKebab(tag: string): string {
   return tag.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 }
 
-/** 词条/属性 key 的中文名（仅收录高置信度通用词，其余显示英文原文，待官方文案校对） */
+/**
+ * 词条/属性 key 的中文名（来源：17173 全武器攻略的效果描述原文、九游五维属性说明，
+ * 均为游戏内官方用语的玩家转述）：
+ * - 五维：劲/体/敏/势/御（power/body/agility/momentum/defense）
+ * - 暴击两系：会心（crit）与 会意（affinity，鸣金流派专用）
+ * - 五系属性攻击：外功/鸣金/裂石/牵丝/破竹
+ */
 const STAT_LABELS: Record<string, string> = {
   dmgBonus: '伤害加成',
   dmgBoost: '伤害提升',
   vsBossDmg: '对首领伤害',
-  crit: '暴击',
-  critDmgBonus: '暴击伤害',
-  maxHp: '生命上限',
-  defense: '防御',
+  crit: '会心',
+  critRate: '会心率',
+  critDmgBonus: '会心伤害',
+  affinity: '会意',
+  affinityRate: '会意率',
+  affinityDmgBonus: '会意伤害',
+  precision: '精准',
+  maxHp: '气血上限',
+  defense: '御',
+  power: '劲',
+  body: '体',
+  agility: '敏',
+  momentum: '势',
+  minPhys: '最小外功攻击',
+  maxPhys: '最大外功攻击',
+  minBellstrike: '最小鸣金攻击',
+  maxBellstrike: '最大鸣金攻击',
+  minStonesplit: '最小裂石攻击',
+  maxStonesplit: '最大裂石攻击',
+  minSilkbind: '最小牵丝攻击',
+  maxSilkbind: '最大牵丝攻击',
+  minBamboocut: '最小破竹攻击',
+  maxBamboocut: '最大破竹攻击',
+  allMartialArts: '全武学伤害加成',
+  moBladeDmgBoost: '陌刀伤害提升',
+  hengBladeDmgBoost: '横刀伤害提升',
+  umbrellaDmgBoost: '伞伤害提升',
+  ropeDartDmgBoost: '绳镖伤害提升',
+  gauntletDmgBoost: '拳套伤害提升',
+  spearDmgBoost: '枪伤害提升',
+  swordDmgBoost: '剑伤害提升',
+  fanDmgBoost: '扇伤害提升',
+  dualBladesDmgBoost: '双刀伤害提升',
 };
 
 export type AffixDef = { key: string; name: { en: string; zh: string | null }; percentage: boolean };
