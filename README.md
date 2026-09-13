@@ -33,7 +33,13 @@ npm run import:ref
 npm run import:huiji   # 生成 src/data/innerway-zh-catalog.json
 ```
 
-中英对照表 `src/data/innerway-zh-map.json` 为人工核对结果：先用流派锚定（10 个流派 tag 与灰机分组一一对应），再语义核对；`confidence: high` 为逐字吻合，`medium` 待游戏内确认，缺失的不得臆填。
+**3. 中文效果描述（玩家整理文案）**：[17173 全武器攻略](http://news.17173.com/content/01142025/015407897.shtml) 含 24 部心法的分类/基础增益/获取途径、12 套武学的效果描述（游戏内文案的玩家转述）。原文存档于 `docs/source-17173-wuxue.html`。
+
+```bash
+npm run parse:17173    # 生成 innerway-zh-desc.json 与 martial-arts-zh-desc.json
+```
+
+中英对照表（`innerway-zh-map.json`、`martial-arts-zh-map.json`）为人工核对结果：先用流派锚定（10 个流派 tag 与灰机分组一一对应），再以专属心法关系 + 武器类型交叉验证；`confidence: high` 为直译/关系链完整，`medium` 待游戏内确认，缺失的不得臆填。
 
 ## 目录结构
 

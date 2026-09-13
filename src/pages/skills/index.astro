@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { martialArts, skills } from '../../lib/data';
-import { displayName } from '../../lib/format';
+import { displayName, skillDamageSummary } from '../../lib/format';
 
 // 技能按来源文件分组：general=通用、mystic=绝学、其余为对应武学
 const SOURCE_LABELS: Record<string, string> = {
@@ -18,11 +18,11 @@ const sourceLabel = (source: string) => {
   const ma = martialArts[source];
   return ma ? `${displayName(ma.name).text}（${ma.name.en}）` : source;
 };
+const fmtSeconds = (v: number | null) =>
+  v === null ? '—' : `${v.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1')}s`;
 const fmtDuration = (v: number | Record<string, unknown> | null) => {
   if (v === null) return '—';
-  if (typeof v === 'number') {
-    return `${v.toFixed(2).replace(/\.00$/, '').replace(/(\.\d)0$/, '$1')}s`;
-  }
+  if (typeof v === 'number') return fmtSeconds(v);
   return '随武器';
 };
 ---
@@ -43,6 +43,7 @@ const fmtDuration = (v: number | Record<string, unknown> | null) => {
           <thead>
             <tr>
               <th>技能</th>
+              <th>伤害系数</th>
               <th>施法时间</th>
               <th>冷却</th>
               <th>标签</th>
@@ -51,6 +52,7 @@ const fmtDuration = (v: number | Record<string, unknown> | null) => {
           <tbody>
             {items.map((skill) => {
               const name = displayName(skill.name);
+              const dmg = skillDamageSummary(skill.actions);
               return (
                 <tr>
                   <td>
@@ -61,6 +63,7 @@ const fmtDuration = (v: number | Record<string, unknown> | null) => {
                       <span class="muted"> · {skill.shortName}</span>
                     )}
                   </td>
+                  <td>{dmg ? dmg.value : '—'}</td>
                   <td>{fmtDuration(skill.castTime)}</td>
                   <td>
                     {skill.cooldown === null ? '—' : fmtDuration(skill.cooldown)}

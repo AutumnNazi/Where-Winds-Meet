@@ -1,71 +1,89 @@
 ---
 import Base from '../../layouts/Base.astro';
 import EffectList from '../../components/EffectList.astro';
-import { innerwayZhInfo, innerways, pathByTag } from '../../lib/data';
-import { displayName, displayNameVerified, renderEffectList } from '../../lib/format';
+import {
+  affixLookup,
+  innerwayCatalogEntryBySlug,
+  innerwayCatalogList,
+} from '../../lib/data';
 
 export function getStaticPaths() {
-  return Object.values(innerways).map((iw) => ({
-    params: { id: iw.id },
-    props: { iw },
+  return innerwayCatalogList.map((entry) => ({
+    params: { id: entry.slug },
+    props: { entry },
   }));
 }
 
-const { iw } = Astro.props;
-const name = displayNameVerified(iw.name, innerwayZhInfo(iw.id));
+const { entry } = Astro.props;
 const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
 ---
 
 <Base active="/innerways">
   <p><a href="/innerways/">← 返回心法列表</a></p>
-  <h1 class={name.zhMissing ? 'zh-missing' : ''}>{name.text}</h1>
+  <h1>{entry.zhName}</h1>
   <p class="page-desc">
-    {iw.name.en}
-    {name.zhPending && ' · 中文名为社区对照结果，待游戏内确认'}
+    {entry.enName ?? ''}
+    {entry.faction ? ` · ${entry.faction}` : ''}{entry.quality ? ` · ${entry.quality}` : ''}
+    {entry.confidence === 'medium' && ' · 中文名为社区对照结果，待游戏内确认'}
   </p>
 
-  <div>
-    适配流派：
-    {
-      iw.tags.length ? (
-        iw.tags.map((tag) => {
-          const path = pathByTag(tag);
-          return (
-            <span class="tag accent">
-              {path ? displayName(path.name).text : tag}
-            </span>
-          );
-        })
-      ) : (
-        <span class="muted">未标注</span>
-      )
-    }
-  </div>
+  {
+    entry.desc && (
+      <div class="panel">
+        {entry.desc.category && (
+          <div class="desc-row">
+            <strong>分类：</strong>
+            {entry.desc.category}
+          </div>
+        )}
+        {entry.desc.effect && (
+          <div class="desc-row">
+            <strong>效果：</strong>
+            {entry.desc.effect}
+          </div>
+        )}
+        {entry.desc.obtain && (
+          <div class="desc-row">
+            <strong>获取：</strong>
+            {entry.desc.obtain}
+          </div>
+        )}
+      </div>
+    )
+  }
 
-  <h2>分层效果</h2>
-  <div class="notice">
-    效果文本由机器数据转译，未识别结构以原文展示；正式描述以游戏内为准。
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>层级</th>
-        <th>效果</th>
-      </tr>
-    </thead>
-    <tbody>
-      {
-        iw.tiers.map((tier, i) => (
-          <tr>
-            <td class="tier-cell">{tierLabels[i]}</td>
-            <td>
-              <EffectList items={renderEffectList(tier)} />
-            </td>
-          </tr>
-        ))
-      }
-    </tbody>
-  </table>
+  {
+    entry.tiers ? (
+      <>
+        <h2>分层效果（T0–T6）</h2>
+        <div class="notice">
+          效果文本由机器数据转译，未识别结构以原文展示；正式描述以游戏内为准。
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>层级</th>
+              <th>效果</th>
+            </tr>
+          </thead>
+          <tbody>
+            {entry.tiers.map((tier, i) => (
+              <tr>
+                <td class="tier-cell">{tierLabels[i]}</td>
+                <td>
+                  <EffectList tier={tier} affixLookup={affixLookup} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </>
+    ) : (
+      !entry.desc && (
+        <div class="notice">该心法的描述与数值待补充，欢迎对照游戏内文案录入。</div>
+      )
+    )
+  }
 </Base>
 
 <style>
@@ -74,5 +92,8 @@ const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
     color: var(--accent);
     white-space: nowrap;
     width: 4rem;
+  }
+  .desc-row {
+    padding: 0.25rem 0;
   }
 </style>

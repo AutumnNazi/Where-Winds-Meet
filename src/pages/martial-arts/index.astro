@@ -1,6 +1,11 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { martialArts, weapons } from '../../lib/data';
+import {
+  martialArts,
+  martialArtZhDesc,
+  martialArtZhInfo,
+  weapons,
+} from '../../lib/data';
 import { displayName } from '../../lib/format';
 ---
 
@@ -24,16 +29,24 @@ import { displayName } from '../../lib/format';
           <div class="card-grid">
             {weapon.martialArts.map((id) => {
               const ma = martialArts[id];
-              const name = displayName(ma.name);
+              const zh = martialArtZhInfo(id);
+              const zhDesc = zh ? martialArtZhDesc(zh.zh) : null;
               return (
                 <a class="card" href={`/martial-arts/${ma.id}/`}>
-                  <div class={name.zhMissing ? 'title zh-missing' : 'title'}>
-                    {name.text}
+                  <div class="title">
+                    {zh ? zh.zh : <span class="zh-missing">{ma.name.en}</span>}
+                    {zh?.confidence === 'medium' && (
+                      <span class="pending-tag">（待确认）</span>
+                    )}
                   </div>
                   <div class="sub">{ma.name.en}</div>
-                  <div class="sub">
-                    {ma.talents.filter((t) => t.entries.length > 0).length} 层强化
-                  </div>
+                  {zhDesc?.effects?.length ? (
+                    <div class="sub desc-preview">{zhDesc.effects[0].slice(0, 40)}…</div>
+                  ) : (
+                    <div class="sub">
+                      {ma.talents.filter((t) => t.entries.length > 0).length} 层强化
+                    </div>
+                  )}
                 </a>
               );
             })}
@@ -49,5 +62,13 @@ import { displayName } from '../../lib/format';
     font-weight: 400;
     font-size: 0.85rem;
     margin-left: 0.5rem;
+  }
+  .pending-tag {
+    color: var(--text-faint);
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+  .desc-preview {
+    max-width: 100%;
   }
 </style>

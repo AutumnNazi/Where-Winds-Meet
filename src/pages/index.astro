@@ -30,8 +30,15 @@ const stats = [
   </div>
 
   <div class="notice">
-    <p>当前数据为第一版导入：结构化数值已就绪，但<strong>技能与心法的效果描述、属性中文名尚缺官方文案</strong>，页面以英文原文 + 机器转译展示，标注「中文名待补」处为后续补录重点。</p>
-    <p>数据更新方式：更新参考仓库后运行 <code>npm run import:ref</code> 重新生成 <code>src/data/</code>，再构建即可。</p>
+    <p><strong>数据覆盖现状</strong>（诚实标注，帮助判断哪些内容可信）：</p>
+    <ul class="coverage">
+      <li>心法：全 60 部名录（11 流派 + 通用三档），24 部有中文效果与获取途径，18 部有 T0–T6 结构化数值</li>
+      <li>武学：20 套强化树完整，12 套有中文名与效果描述，8 套中文名待补</li>
+      <li>技能：129 条带伤害系数/冷却（168 条中文名）；效果描述文本缺失</li>
+      <li>词条：54 条调律词条 + 装备词条池 + 数值上限（名字暂为英文，无中文来源）</li>
+      <li>中文描述来自玩家整理的游戏文案（17173/灰机 wiki），以游戏内实际为准</li>
+    </ul>
+    <p>数据更新：结构化数值 <code>npm run import:ref</code>、心法名录 <code>npm run import:huiji</code>、中文描述 <code>npm run parse:17173</code>。</p>
   </div>
 </Base>
 

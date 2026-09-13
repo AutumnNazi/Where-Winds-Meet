@@ -46,8 +46,13 @@ const STAT_LABELS: Record<string, string> = {
   defense: '防御',
 };
 
-export function statLabel(key: string): string {
+export type AffixDef = { key: string; name: { en: string; zh: string | null }; percentage: boolean };
+export type AffixLookup = (key: string) => AffixDef | undefined;
+
+export function statLabel(key: string, affixLookup?: AffixLookup): string {
   if (STAT_LABELS[key]) return STAT_LABELS[key];
+  const def = affixLookup?.(key);
+  if (def) return def.zh ?? def.en;
   // 驼峰转空格，如 moBladeDmgBoost → mo Blade Dmg Boost（无可靠译名，保留可读英文）
   return key.replace(/([a-z0-9])([A-Z])/g, '$1 $2');
 }
@@ -77,7 +82,7 @@ type DslEntry = {
 };
 
 /** 转译单个效果条目；无法识别的结构返回原文 */
-export function renderEffectEntry(entry: unknown): EffectRender {
+export function renderEffectEntry(entry: unknown, affixLookup?: AffixLookup): EffectRender {
   if (!entry || typeof entry !== 'object') return { raw: entry };
   const e = entry as DslEntry;
   const parts: string[] = [];
@@ -93,7 +98,7 @@ export function renderEffectEntry(entry: unknown): EffectRender {
   if (e.rawStat) {
     for (const [key, val] of Object.entries(e.rawStat)) {
       if (typeof val === 'number') {
-        parts.push(`${statLabel(key)} +${fmtStatValue(key, val)}`);
+        parts.push(`${statLabel(key, affixLookup)} +${fmtStatValue(key, val)}`);
       }
     }
   }
@@ -101,7 +106,7 @@ export function renderEffectEntry(entry: unknown): EffectRender {
   if (e.effect) {
     for (const [key, val] of Object.entries(e.effect)) {
       if (typeof val === 'number') {
-        parts.push(`${statLabel(key)} +${fmtStatValue(key, val)}`);
+        parts.push(`${statLabel(key, affixLookup)} +${fmtStatValue(key, val)}`);
       } else if (val && typeof val === 'object' && 'function' in (val as object)) {
         return { raw: entry };
       }
@@ -110,7 +115,7 @@ export function renderEffectEntry(entry: unknown): EffectRender {
 
   if (e.convert) {
     parts.push(
-      `${statLabel(e.convert.from ?? '?')} 按 ${(e.convert.ratio ?? 1) * 100}% 转化为 ${statLabel(e.convert.to ?? '?')}`,
+      `${statLabel(e.convert.from ?? '?', affixLookup)} 按 ${(e.convert.ratio ?? 1) * 100}% 转化为 ${statLabel(e.convert.to ?? '?', affixLookup)}`,
     );
   }
 
@@ -118,9 +123,26 @@ export function renderEffectEntry(entry: unknown): EffectRender {
   return { text: parts.join('，') };
 }
 
-export function renderEffectList(tier: unknown): EffectRender[] {
+export function renderEffectList(tier: unknown, affixLookup?: AffixLookup): EffectRender[] {
   if (!tier || typeof tier !== 'object') return [];
   const effect = (tier as { effect?: unknown }).effect;
   if (!Array.isArray(effect)) return [];
-  return effect.map(renderEffectEntry);
+  return effect.map((e) => renderEffectEntry(e, affixLookup));
+}
+
+/** 技能伤害系数摘要：物理/丝缚系数合计与段数，无伤害动作返回 null */
+export function skillDamageSummary(
+  actions: Array<Record<string, unknown>>,
+): { label: string; value: string } | null {
+  const dmgs = actions.filter((a) => a?.type === 'damage');
+  if (!dmgs.length) return null;
+  const sum = (pick: (a: Record<string, unknown>) => unknown) =>
+    dmgs.map(pick).reduce((s: number, v) => (typeof v === 'number' ? s + v : s), 0);
+  const parts: string[] = [];
+  const phy = sum((a) => a.phyCoef);
+  if (phy > 0) parts.push(`物理系数 ${dmgs.length > 1 ? `${dmgs.length} 段合计 ` : ''}${phy.toFixed(2)}`);
+  const silk = sum((a) => a.silkbindCoef);
+  if (silk > 0) parts.push(`丝缚系数 ${silk.toFixed(2)}`);
+  if (!parts.length) return null;
+  return { label: '伤害', value: parts.join('，') };
 }

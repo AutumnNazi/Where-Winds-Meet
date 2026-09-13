@@ -1,12 +1,15 @@
 ---
 /** 渲染转译后的效果条目列表：可转译的显示文本，无法识别的折叠展示 JSON 原文 */
-import type { EffectRender } from '../lib/format';
+import type { AffixLookup, EffectRender } from '../lib/format';
+import { renderEffectList } from '../lib/format';
 
 interface Props {
-  items: EffectRender[];
+  tier: unknown;
+  affixLookup?: AffixLookup;
   emptyText?: string;
 }
-const { items, emptyText = '本层无效果' } = Astro.props;
+const { tier, affixLookup, emptyText = '本层无效果' } = Astro.props;
+const items: EffectRender[] = renderEffectList(tier, affixLookup);
 ---
 
 {

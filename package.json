@@ -9,7 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "import:ref": "node scripts/import-ref-data.mjs",
-    "import:huiji": "node scripts/fetch-huiji-catalog.mjs"
+    "import:huiji": "node scripts/fetch-huiji-catalog.mjs",
+    "parse:17173": "node scripts/parse-17173.mjs"
   },
   "dependencies": {
     "astro": "^5.18.2"

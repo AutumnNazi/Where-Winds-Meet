@@ -1,4 +1,5 @@
 import { z } from 'astro:content';
+import { statLabel } from './format';
 import attunementsRaw from '../data/attunements.json';
 import buildsRaw from '../data/builds.json';
 import gearDefsRaw from '../data/gear-defs.json';
@@ -9,7 +10,10 @@ import pathsRaw from '../data/paths.json';
 import skillsRaw from '../data/skills.json';
 import weaponsRaw from '../data/weapons.json';
 import affixValuesRaw from '../data/affix-values.json';
-import zhCatalogRaw from '../data/innerway-zh-catalog.json';
+import innerwayZhCatalogRaw from '../data/innerway-zh-catalog.json';
+import innerwayZhDescRaw from '../data/innerway-zh-desc.json';
+import martialArtsZhDescRaw from '../data/martial-arts-zh-desc.json';
+import martialArtsZhMapRaw from '../data/martial-arts-zh-map.json';
 import zhMapRaw from '../data/innerway-zh-map.json';
 import {
   affixValuesSchema,
@@ -36,10 +40,20 @@ export const skills = skillsSchema.parse(skillsRaw);
 export const weapons = weaponsSchema.parse(weaponsRaw);
 export const affixValues = affixValuesSchema.parse(affixValuesRaw);
 
-// 灰机 wiki 心法中文名录与人工核对的中英对照（策划数据，结构自控，宽松校验）
+// 灰机 wiki 心法中文名录 + 17173 中文描述 + 人工中英对照（策划数据，宽松校验）
 const zhMapEntrySchema = z.object({
   zh: z.string(),
   confidence: z.enum(['high', 'medium']),
+});
+const zhDescEntrySchema = z.object({
+  faction: z.string(),
+  category: z.string().nullable(),
+  effect: z.string().nullable(),
+  obtain: z.string().nullable(),
+});
+const maZhDescEntrySchema = z.object({
+  faction: z.string(),
+  effects: z.array(z.string()),
 });
 export const innerwayZhCatalog = z
   .object({
@@ -50,7 +64,7 @@ export const innerwayZhCatalog = z
     ),
     common: z.record(z.string(), z.array(z.string())),
   })
-  .parse(zhCatalogRaw);
+  .parse(innerwayZhCatalogRaw);
 const zhMap = z
   .record(z.string(), zhMapEntrySchema)
   .parse(
@@ -58,11 +72,83 @@ const zhMap = z
       Object.entries(zhMapRaw).filter(([key]) => !key.startsWith('_')),
     ),
   );
+const zhAnchor = z
+  .record(z.string(), z.string())
+  .parse((zhMapRaw as Record<string, unknown>)._factionsAnchor ?? {});
+const innerwayZhDesc = z
+  .object({ innerways: z.record(z.string(), zhDescEntrySchema) })
+  .parse(innerwayZhDescRaw).innerways;
+const martialArtsZhDesc = z
+  .object({ martialArts: z.record(z.string(), maZhDescEntrySchema) })
+  .parse(martialArtsZhDescRaw).martialArts;
+const martialArtsZhMap = z
+  .record(z.string(), zhMapEntrySchema)
+  .parse(
+    Object.fromEntries(
+      Object.entries(martialArtsZhMapRaw).filter(([key]) => !key.startsWith('_')),
+    ),
+  );
 
-/** 心法中文名：zh-map（人工对照）优先，medium 置信标注待确认 */
-export function innerwayZhInfo(id: string) {
-  return zhMap[id] ?? null;
-}
+export const innerwayZhInfo = (id: string) => zhMap[id] ?? null;
+export const martialArtZhInfo = (id: string) => martialArtsZhMap[id] ?? null;
+export const martialArtZhDesc = (zhName: string) =>
+  martialArtsZhDesc[zhName] ?? null;
+
+/** 心法流派 tag → 中文流派名（StonesplitMight → 裂石·威） */
+export const factionZhByTag = (tag: string) => zhAnchor[tag] ?? null;
+
+export type InnerwayCatalogEntry = {
+  slug: string;
+  zhName: string;
+  enName: string | null;
+  faction: string;
+  quality: string | null;
+  refId: string | null;
+  confidence: 'high' | 'medium' | null;
+  desc: { category: string | null; effect: string | null; obtain: string | null } | null;
+  tiers: Array<Record<string, unknown> | null> | null;
+};
+
+/**
+ * 心法全目录（60 部）：灰机名录 + 17173 描述 + 参考数据三源合并。
+ * 参考数据 18 部带英文 slug 与 T0–T6 效果；其余以中文名为 slug。
+ */
+export const innerwayCatalogList: InnerwayCatalogEntry[] = (() => {
+  const zhToId = new Map(
+    [...Object.entries(zhMap)].map(([id, v]) => [v.zh, id]),
+  );
+  const entries: InnerwayCatalogEntry[] = [];
+  const push = (
+    zhName: string,
+    faction: string,
+    quality: string | null,
+  ) => {
+    const refId = zhToId.get(zhName) ?? null;
+    const ref = refId ? innerways[refId] : null;
+    entries.push({
+      slug: refId ?? zhName,
+      zhName,
+      enName: ref?.name.en ?? null,
+      faction,
+      quality,
+      refId,
+      confidence: refId ? zhMap[refId].confidence : null,
+      desc: innerwayZhDesc[zhName] ?? null,
+      tiers: ref?.tiers ?? null,
+    });
+  };
+  for (const f of innerwayZhCatalog.factions) {
+    for (const zhName of f.innerways) push(zhName, f.key, null);
+  }
+  for (const [quality, names] of Object.entries(innerwayZhCatalog.common)) {
+    for (const zhName of names) push(zhName, '通用', quality);
+  }
+  return entries;
+})();
+
+export const innerwayCatalogEntryBySlug = (slug: string) =>
+  innerwayCatalogList.find((e) => e.slug === decodeURIComponent(slug));
+
 export const innerwayCatalogTotal = {
   factions: innerwayZhCatalog.factions.length,
   factionInnerways: innerwayZhCatalog.factions.reduce(
@@ -99,6 +185,11 @@ export const skillsBySource = (source: string) =>
   skills.filter((s) => s.source === source);
 
 export const affixByKey = new Map(gearDefs.affixes.map((a) => [a.key, a]));
+export const affixLookup = (key: string) => affixByKey.get(key);
+/** 属性显示名：中文表 → 词条定义（zh 优先回落英文）→ 英文驼峰展开 */
+export function statDisplayName(key: string): string {
+  return statLabel(key, affixLookup);
+}
 
 export const SITE = {
   title: '燕云资料站',
