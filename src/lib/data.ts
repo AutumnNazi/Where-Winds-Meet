@@ -123,6 +123,25 @@ export const tiaolvKnowledge = z
       order: z.array(z.string()),
       notes: z.array(z.string()),
     }),
+    factionPriority: z.object({
+      title: z.string(),
+      _source: z.string(),
+      factions: z.array(
+        z.object({
+          name: z.string(),
+          priority: z.string(),
+          note: z.string().optional(),
+        }),
+      ),
+      note: z.string(),
+    }),
+    gradPanels: z.object({
+      title: z.string(),
+      _source: z.string(),
+      grad: z.array(z.object({ stat: z.string(), value: z.string() })),
+      advanced: z.array(z.object({ stat: z.string(), value: z.string() })),
+      notes: z.array(z.string()),
+    }),
   })
   .parse(tiaolvKnowledgeRaw);
 

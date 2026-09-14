@@ -128,8 +128,52 @@ const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
         </ul>
       </div>
     </div>
+    <div class="knowledge-grid">
+      <div class="panel">
+        <h3>{tiaolvKnowledge.factionPriority.title}</h3>
+        <table>
+          <thead>
+            <tr><th>流派</th><th>词条优先级</th><th>备注</th></tr>
+          </thead>
+          <tbody>
+            {tiaolvKnowledge.factionPriority.factions.map((f) => (
+              <tr>
+                <td class="k-stat">{f.name}</td>
+                <td>{f.priority}</td>
+                <td class="muted small">{f.note ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="muted small">{tiaolvKnowledge.factionPriority.note}</p>
+        <p class="muted small">来源：{tiaolvKnowledge.factionPriority._source}</p>
+      </div>
+      <div class="panel">
+        <h3>{tiaolvKnowledge.gradPanels.title}</h3>
+        <table>
+          <thead>
+            <tr><th>属性</th><th>毕业</th><th>进阶</th></tr>
+          </thead>
+          <tbody>
+            {tiaolvKnowledge.gradPanels.grad.map((g, i) => (
+              <tr>
+                <td class="k-stat">{g.stat}</td>
+                <td>{g.value}</td>
+                <td>{tiaolvKnowledge.gradPanels.advanced[i]?.value ?? '—'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <ul class="flow-list">
+          {tiaolvKnowledge.gradPanels.notes.map((s) => (
+            <li>{s}</li>
+          ))}
+        </ul>
+        <p class="muted small">来源：{tiaolvKnowledge.gradPanels._source}</p>
+      </div>
+    </div>
     <p class="muted">
-      整理自社区攻略（游民星空《基础属性讲解》《调律与转律入门指南》、17173《装备词条四攻选择》），数值为 96 版本玩家实测，以游戏内实际为准。
+      整理自社区攻略（游民星空《基础属性讲解》《调律与转律入门指南》、17173《装备词条四攻选择》、切游网《各流派调律词条解析》），数值为 91-96 版本玩家实测，以游戏内实际为准。
     </p>
   </details>
 
@@ -303,5 +347,11 @@ const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
     color: var(--text);
     font-weight: 600;
     margin: 0 0 0.5rem;
+  }
+  .small {
+    font-size: 0.82rem;
+  }
+  .knowledge-grid table {
+    font-size: 0.86rem;
   }
 </style>
