@@ -1,6 +1,8 @@
 /* 燕云资料站：水墨主题（暗色默认，亮色可切换） */
 :root {
   --bg: #141110;
+  --bg-glow: #241d17;
+  --header-bg: rgba(20, 17, 16, 0.92);
   --panel: #1e1916;
   --panel-2: #292119;
   --border: #3a2f26;
@@ -16,6 +18,8 @@
 /* 亮色：宣纸水墨 */
 :root[data-theme='light'] {
   --bg: #f5efe3;
+  --bg-glow: #efe6d2;
+  --header-bg: rgba(253, 249, 240, 0.92);
   --panel: #fdf9f0;
   --panel-2: #f0e7d6;
   --border: #d8ccba;
@@ -45,7 +49,7 @@ body {
   color: var(--text);
   line-height: 1.7;
   background:
-    radial-gradient(1200px 500px at 50% -100px, #241d17, transparent),
+    radial-gradient(1200px 500px at 50% -100px, var(--bg-glow), transparent),
     var(--bg);
   min-height: 100vh;
 }
@@ -61,7 +65,7 @@ a:hover {
 /* ---- 导航 ---- */
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: rgba(20, 17, 16, 0.92);
+  background: var(--header-bg);
   position: sticky;
   top: 0;
   z-index: 10;

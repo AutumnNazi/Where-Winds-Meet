@@ -1,5 +1,5 @@
 {
-  "_comment": "参考数据武学（where-builds-meet 英文）→ 攻略中文名对照。依据：专属心法关系（如「磐石诀=八方风雷枪专属」）+ 流派归属 + 武器类型三重交叉验证（流派武器组合来源：HongKongCard 攻略——鸣金虹=剑+枪、鸣金影=剑+枪、裂石威=陌刀+枪、牵丝玉=扇+伞、破竹风=双刀+绳镖、牵丝霖=扇+伞）。high=文章直给或专属关系链完整；medium=流派+武器排除法推断；缺失的不臆填。注意：栗子遊塵为破竹·风绳镖（非双刀），对应 mortal/skygrasp/unfettered-rope-dart 之一但无定证，故三绳镖均暂空。",
+  "_comment": "参考数据武学（where-builds-meet 英文）→ 攻略中文名对照。依据：专属心法关系 + 流派归属 + 武器类型 + 强化条目语义交叉验证（流派武器组合来源：HongKongCard 攻略）。high=官方/攻略直给或关系链完整；medium=语义强吻合待游戏内确认；缺失的不臆填。skystrike=醉拳由官网公告（「新武学醉拳登场」）+ 强化名 Inebriate Dodge（醉酒闪避）双重确认。",
   "nameless-sword": { "zh": "无名剑法", "confidence": "high" },
   "nameless-spear": { "zh": "无名枪法", "confidence": "high" },
   "panacea-fan": { "zh": "明川药典", "confidence": "high" },
@@ -9,6 +9,7 @@
   "infernal-twinblades": { "zh": "泥犁三垢", "confidence": "high" },
   "inkwell-fan": { "zh": "青山执笔", "confidence": "high" },
   "vernal-umbrella": { "zh": "九重春色", "confidence": "high" },
+  "skystrike-gauntlets": { "zh": "醉拳", "confidence": "high" },
   "strategic-sword": { "zh": "积矩九剑", "confidence": "medium" },
   "heavenquaker-spear": { "zh": "九曲惊神枪", "confidence": "medium" }
 }

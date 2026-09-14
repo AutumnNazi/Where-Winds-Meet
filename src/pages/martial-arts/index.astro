@@ -50,12 +50,12 @@ const weaponOptions = ['全部', ...weapons.map((w) => displayName(w.name).text)
                       <span class="pending-tag">（待确认）</span>
                     )}
                   </div>
-                  <div class="sub">{ma.name.en}</div>
                   {zhDesc?.effects?.length ? (
                     <div class="sub desc-preview">{zhDesc.effects[0].slice(0, 40)}…</div>
                   ) : (
                     <div class="sub">
                       {ma.talents.filter((t) => t.entries.length > 0).length} 层强化
+                      {zh && <span class="sub-en"> · {ma.name.en}</span>}
                     </div>
                   )}
                 </a>
@@ -81,6 +81,10 @@ const weaponOptions = ['全部', ...weapons.map((w) => displayName(w.name).text)
   }
   .desc-preview {
     max-width: 100%;
+  }
+  .sub-en {
+    color: var(--text-faint);
+    font-size: 0.78rem;
   }
   .filter-bar {
     display: flex;
