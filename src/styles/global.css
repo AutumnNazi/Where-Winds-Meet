@@ -1,4 +1,4 @@
-/* 燕云资料站：水墨暗色主题 */
+/* 燕云资料站：水墨主题（暗色默认，亮色可切换） */
 :root {
   --bg: #141110;
   --panel: #1e1916;
@@ -10,6 +10,22 @@
   --accent: #c9a86a;
   --accent-dim: #93784c;
   --danger: #c96a6a;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* 亮色：宣纸水墨 */
+:root[data-theme='light'] {
+  --bg: #f5efe3;
+  --panel: #fdf9f0;
+  --panel-2: #f0e7d6;
+  --border: #d8ccba;
+  --text: #2c2419;
+  --text-dim: #6b5c46;
+  --text-faint: #a3937c;
+  --accent: #9a7426;
+  --accent-dim: #b8935c;
+  --danger: #b85252;
+  --shadow: rgba(90, 70, 40, 0.18);
 }
 
 * {
@@ -18,7 +34,7 @@
 
 html {
   background: var(--bg);
-  color-scheme: dark;
+  color-scheme: dark light;
 }
 
 body {
@@ -240,6 +256,10 @@ details.raw pre {
 .muted {
   color: var(--text-dim);
   font-size: 0.88rem;
+}
+.diff-mark {
+  color: var(--accent);
+  font-weight: 700;
 }
 .notice {
   border: 1px dashed var(--accent-dim);

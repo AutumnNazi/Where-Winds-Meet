@@ -16,6 +16,15 @@ export function getStaticPaths() {
 
 const { entry } = Astro.props;
 const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
+// 同流派关联推荐（排除自身，最多 8 个；通用心法按同品质推荐）
+const related = innerwayCatalogList
+  .filter(
+    (e) =>
+      e.slug !== entry.slug &&
+      e.faction === entry.faction &&
+      (e.quality ?? null) === (entry.quality ?? null),
+  )
+  .slice(0, 8);
 ---
 
 <Base active="/innerways" title={entry.zhName + " · 心法"}>
@@ -63,7 +72,7 @@ const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
           <thead>
             <tr>
               <th>层级</th>
-              <th>效果</th>
+              <th>效果（新增部分以 <span class="diff-mark">＋</span> 标记）</th>
             </tr>
           </thead>
           <tbody>
@@ -71,7 +80,7 @@ const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
               <tr>
                 <td class="tier-cell">{tierLabels[i]}</td>
                 <td>
-                  <EffectList tier={tier} affixLookup={affixLookup} />
+                  <EffectList tier={tier} affixLookup={affixLookup} diffAgainst={entry.tiers[i - 1] ?? null} />
                 </td>
               </tr>
             ))}
@@ -82,6 +91,25 @@ const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
       !entry.desc && (
         <div class="notice">该心法的描述与数值待补充，欢迎对照游戏内文案录入。</div>
       )
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <>
+        <h2>{entry.quality ? '同品质心法' : '同流派心法'}</h2>
+        <div class="card-grid">
+          {related.map((e) => (
+            <a class="card" href={`/innerways/${encodeURIComponent(e.slug)}/`}>
+              <div class="title">{e.zhName}</div>
+              {e.desc?.category && <div class="sub">{e.desc.category}</div>}
+              <div class="sub">
+                {e.tiers ? '含数值效果' : e.desc?.effect ? '中文描述' : '基本信息'}
+              </div>
+            </a>
+          ))}
+        </div>
+      </>
     )
   }
 </Base>

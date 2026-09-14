@@ -1,15 +1,22 @@
 ---
-/** 渲染转译后的效果条目列表：可转译的显示文本，无法识别的折叠展示 JSON 原文 */
+/** 渲染转译后的效果条目列表：可转译的显示文本，无法识别的折叠展示 JSON 原文。
+ *  diffAgainst 传入前一层 tier 时，与上一层重复的条目淡化、新增条目标记＋ */
 import type { AffixLookup, EffectRender } from '../lib/format';
 import { renderEffectList } from '../lib/format';
 
 interface Props {
   tier: unknown;
   affixLookup?: AffixLookup;
+  diffAgainst?: unknown;
   emptyText?: string;
 }
-const { tier, affixLookup, emptyText = '本层无效果' } = Astro.props;
+const { tier, affixLookup, diffAgainst = null, emptyText = '本层无效果' } = Astro.props;
+
 const items: EffectRender[] = renderEffectList(tier, affixLookup);
+const prev: EffectRender[] = diffAgainst ? renderEffectList(diffAgainst, affixLookup) : [];
+const prevTexts = new Set(prev.map((p) => ('text' in p ? p.text : JSON.stringify(p.raw))));
+const isNew = (item: EffectRender) =>
+  !prevTexts.has('text' in item ? item.text : JSON.stringify(item.raw));
 ---
 
 {
@@ -19,7 +26,14 @@ const items: EffectRender[] = renderEffectList(tier, affixLookup);
     <ul class="effect-list">
       {items.map((item) =>
         'text' in item ? (
-          <li>{item.text}</li>
+          isNew(item) && prev.length > 0 ? (
+            <li class="is-new">
+              <span class="diff-mark">＋</span>
+              {item.text}
+            </li>
+          ) : (
+            <li>{item.text}</li>
+          )
         ) : (
           <li>
             <details class="raw">
@@ -40,5 +54,12 @@ const items: EffectRender[] = renderEffectList(tier, affixLookup);
   }
   .effect-list li {
     margin: 0.2rem 0;
+  }
+  .effect-list li.is-new {
+    color: var(--accent);
+  }
+  .diff-mark {
+    font-weight: 700;
+    margin-right: 0.2rem;
   }
 </style>
