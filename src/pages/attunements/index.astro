@@ -60,7 +60,7 @@ const attunementEffectText = (a: (typeof attunements)[number]): string | null =>
 const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
 ---
 
-<Base active="/attunements">
+<Base active="/attunements" title="词条与调律">
   <h1>词条</h1>
   <p class="page-desc">
     调律词条 {attunements.length} 条、装备词条池 {gearDefs.gear.length} 件、数值上限 {levels.length} 档。

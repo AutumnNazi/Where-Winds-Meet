@@ -18,7 +18,7 @@ const { entry } = Astro.props;
 const tierLabels = ['T0', 'T1', 'T2', 'T3', 'T4', 'T5', 'T6'];
 ---
 
-<Base active="/innerways">
+<Base active="/innerways" title={entry.zhName + " · 心法"}>
   <p><a href="/innerways/">← 返回心法列表</a></p>
   <h1>{entry.zhName}</h1>
   <p class="page-desc">

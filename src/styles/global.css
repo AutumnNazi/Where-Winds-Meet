@@ -158,6 +158,9 @@ h2 {
 }
 
 /* ---- 表格 ---- */
+.table-wrap {
+  overflow-x: auto;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -166,6 +169,16 @@ table {
   border-radius: 8px;
   overflow: hidden;
   font-size: 0.92rem;
+}
+/* 移动端：宽表横向滚动而不是撑破布局 */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.82rem;
+  }
+  th,
+  td {
+    white-space: normal;
+  }
 }
 th,
 td {

@@ -12,9 +12,11 @@ for (const entry of innerwayCatalogList) {
   if (!groups.has(key)) groups.set(key, []);
   groups.get(key)!.push(entry);
 }
+// 筛选维度：流派（含「全部」）
+const factions = ['全部', ...new Set(innerwayCatalogList.map((e) => e.faction))];
 ---
 
-<Base active="/innerways">
+<Base active="/innerways" title="心法">
   <h1>心法</h1>
   <p class="page-desc">
     全 {innerwayCatalogList.length} 部心法（{innerwayCatalogTotal.factions} 大流派 +
@@ -22,9 +24,17 @@ for (const entry of innerwayCatalogList) {
     {innerwayCatalogList.filter((e) => e.tiers).length} 部有结构化数值。
   </p>
 
+  <div class="filter-bar" id="faction-filter">
+    {factions.map((f) => (
+      <button class="filter-btn" data-faction={f} class:list={{ active: f === '全部' }}>
+        {f}
+      </button>
+    ))}
+  </div>
+
   {
     [...groups.entries()].map(([groupName, items]) => (
-      <section>
+      <section data-faction={items[0].faction}>
         <h2>{groupName}（{items.length}）</h2>
         <div class="card-grid">
           {items.map((entry) => (
@@ -76,4 +86,44 @@ for (const entry of innerwayCatalogList) {
   .desc-preview {
     max-width: 100%;
   }
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.6rem;
+  }
+  .filter-btn {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+  }
+  .filter-btn:hover {
+    border-color: var(--accent-dim);
+  }
+  .filter-btn.active {
+    background: var(--panel-2);
+    border-color: var(--accent-dim);
+    color: var(--accent);
+  }
 </style>
+
+<script>
+  // 流派筛选：按 section 的 data-faction 显隐分组
+  const filter = (faction: string) => {
+    document.querySelectorAll<HTMLDivElement>('section[data-faction]').forEach((sec) => {
+      sec.style.display = faction === '全部' || sec.dataset.faction === faction ? '' : 'none';
+    });
+  };
+  document.getElementById('faction-filter')?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    filter(btn.dataset.faction ?? '全部');
+  });
+</script>

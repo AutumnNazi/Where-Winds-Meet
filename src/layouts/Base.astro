@@ -1,12 +1,16 @@
 ---
 import { SITE } from '../lib/data';
+import SiteSearch from '../components/SiteSearch.astro';
 import '../styles/global.css';
 
 interface Props {
   /** 当前导航高亮项的路径前缀，如 /innerways */
   active?: string;
+  /** 页面标题（浏览器标签 & 搜索索引） */
+  title?: string;
 }
-const { active } = Astro.props;
+const { active, title } = Astro.props;
+const pageTitle = title ? `${title} | ${SITE.title}` : `${SITE.title} · ${SITE.subtitle}`;
 ---
 
 <!doctype html>
@@ -15,7 +19,8 @@ const { active } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>{SITE.title} · {SITE.subtitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
   </head>
   <body>
     <header class="site-header">
@@ -33,6 +38,7 @@ const { active } = Astro.props;
             ))
           }
         </nav>
+        <SiteSearch />
       </div>
     </header>
     <main>

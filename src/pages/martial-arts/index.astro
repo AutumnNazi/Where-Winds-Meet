@@ -7,19 +7,30 @@ import {
   weapons,
 } from '../../lib/data';
 import { displayName } from '../../lib/format';
+
+// 武学本名的中英对照候选（供筛选条展示）：武器名 + 全部
+const weaponOptions = ['全部', ...weapons.map((w) => displayName(w.name).text)];
 ---
 
-<Base active="/martial-arts">
+<Base active="/martial-arts" title="武学">
   <h1>武学</h1>
   <p class="page-desc">
     共 {Object.keys(martialArts).length} 套武学，按武器分类。每套武学的强化树详见详情页。
   </p>
 
+  <div class="filter-bar" id="weapon-filter">
+    {weaponOptions.map((w, i) => (
+      <button class="filter-btn" data-weapon={weapons[i - 1]?.key ?? '全部'} class:list={{ active: i === 0 }}>
+        {w}
+      </button>
+    ))}
+  </div>
+
   {
     weapons.map((weapon) => {
       const wName = displayName(weapon.name);
       return (
-        <section>
+        <section data-weapon={weapon.key}>
           <h2>
             {wName.text}
             <span class={wName.zhMissing ? 'muted' : 'muted en-name'}>
@@ -71,4 +82,42 @@ import { displayName } from '../../lib/format';
   .desc-preview {
     max-width: 100%;
   }
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.6rem;
+  }
+  .filter-btn {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--text-dim);
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+  }
+  .filter-btn:hover {
+    border-color: var(--accent-dim);
+  }
+  .filter-btn.active {
+    background: var(--panel-2);
+    border-color: var(--accent-dim);
+    color: var(--accent);
+  }
 </style>
+
+<script>
+  // 武器筛选：按 section 的 data-weapon 显隐分组
+  document.getElementById('weapon-filter')?.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+    const key = btn.dataset.weapon ?? '全部';
+    document.querySelectorAll<HTMLDivElement>('section[data-weapon]').forEach((sec) => {
+      sec.style.display = key === '全部' || sec.dataset.weapon === key ? '' : 'none';
+    });
+  });
+</script>

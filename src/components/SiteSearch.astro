@@ -1,0 +1,166 @@
+---
+/** 站内搜索：Pagefind 索引懒加载，输入时即时检索，Esc 关闭 */
+---
+
+<div id="site-search" class="site-search">
+  <input
+    id="search-input"
+    type="search"
+    placeholder="搜索心法 / 武学 / 词条…（/ 快捷键）"
+    autocomplete="off"
+    aria-label="站内搜索"
+  />
+  <div id="search-results" class="search-results" hidden></div>
+</div>
+
+<script>
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsBox = document.getElementById('search-results')!;
+  let pagefind: { search: (q: string) => Promise<{ results: Array<{ data: () => Promise<{ url: string; meta: { title?: string }[]; excerpt?: string }> }> }> } | null = null;
+  let loadPromise: Promise<void> | null = null;
+  let debounce: ReturnType<typeof setTimeout> | null = null;
+
+  async function loadPagefind() {
+    // GitHub Pages 子路径部署：索引在 /Where-Winds-Meet/pagefind/ 下
+    const candidates = [
+      '/Where-Winds-Meet/pagefind/pagefind.js',
+      '/pagefind/pagefind.js',
+    ];
+    for (const path of candidates) {
+      try {
+        pagefind = await import(/* @vite-ignore */ path);
+        return;
+      } catch {
+        /* try next */
+      }
+    }
+    resultsBox.textContent = '搜索索引加载失败（本地 dev 无索引，需 build 后 preview）';
+    resultsBox.hidden = false;
+  }
+
+  function ensureLoaded() {
+    if (!loadPromise) loadPromise = loadPagefind();
+    return loadPromise;
+  }
+
+  async function runSearch(q: string) {
+    await ensureLoaded();
+    if (!pagefind) return;
+    const search = await pagefind.search(q);
+    const items = await Promise.all(search.results.slice(0, 8).map((r) => r.data()));
+    if (!items.length) {
+      resultsBox.innerHTML = '<div class="sr-empty">没有匹配的结果</div>';
+    } else {
+      resultsBox.innerHTML = items
+        .map(
+          (it) =>
+            `<a class="sr-item" href="${it.url.replace(/^\.\//, '')}">
+               <div class="sr-title">${(it.meta?.title ?? it.url).replace(/ \| 燕云资料站.*$/, '')}</div>
+               ${it.excerpt ? `<div class="sr-excerpt">${it.excerpt}</div>` : ''}
+             </a>`,
+        )
+        .join('');
+    }
+    resultsBox.hidden = false;
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    if (debounce) clearTimeout(debounce);
+    if (!q) {
+      resultsBox.hidden = true;
+      return;
+    }
+    debounce = setTimeout(() => void runSearch(q), 200);
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      input.value = '';
+      resultsBox.hidden = true;
+      input.blur();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!document.getElementById('site-search')!.contains(e.target as Node)) {
+      resultsBox.hidden = true;
+    }
+  });
+  // 「/」聚焦搜索框（未在输入框时）
+  document.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
+</script>
+
+<style>
+  .site-search {
+    position: relative;
+    margin-left: auto;
+    min-width: 200px;
+  }
+  #search-input {
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    padding: 0.3rem 0.7rem;
+    font-size: 0.88rem;
+    font-family: inherit;
+    outline: none;
+  }
+  #search-input:focus {
+    border-color: var(--accent-dim);
+  }
+  .search-results {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    right: 0;
+    width: min(420px, 90vw);
+    max-height: 60vh;
+    overflow: auto;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    padding: 0.3rem;
+  }
+  .sr-item {
+    display: block;
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    color: var(--text);
+  }
+  .sr-item:hover {
+    background: var(--panel-2);
+    text-decoration: none;
+  }
+  .sr-title {
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .sr-excerpt {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-top: 0.15rem;
+    line-height: 1.5;
+  }
+  .sr-excerpt :is(mark) {
+    background: none;
+    color: var(--accent);
+  }
+  .sr-empty {
+    color: var(--text-dim);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.88rem;
+  }
+  @media (max-width: 640px) {
+    .site-search {
+      min-width: 0;
+      width: 130px;
+    }
+  }
+</style>

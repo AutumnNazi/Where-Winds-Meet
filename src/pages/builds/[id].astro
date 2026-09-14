@@ -27,7 +27,7 @@ const setLine = (sets: Record<string, number>) =>
     });
 ---
 
-<Base active="/builds">
+<Base active="/builds" title={name.text + " · 配装"}>
   <p><a href="/builds/">← 返回配装列表</a></p>
   <h1 class={name.zhMissing ? 'zh-missing' : ''}>{name.text}</h1>
   <p class="page-desc">{b.name.en} · 流派分组：{b.group}</p>
