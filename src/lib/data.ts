@@ -14,6 +14,7 @@ import innerwayZhCatalogRaw from '../data/innerway-zh-catalog.json';
 import innerwayZhDescRaw from '../data/innerway-zh-desc.json';
 import martialArtsZhDescRaw from '../data/martial-arts-zh-desc.json';
 import martialArtsZhMapRaw from '../data/martial-arts-zh-map.json';
+import tiaolvKnowledgeRaw from '../data/tiaolv-knowledge.json';
 import zhMapRaw from '../data/innerway-zh-map.json';
 import {
   affixValuesSchema,
@@ -93,6 +94,37 @@ export const innerwayZhInfo = (id: string) => zhMap[id] ?? null;
 export const martialArtZhInfo = (id: string) => martialArtsZhMap[id] ?? null;
 export const martialArtZhDesc = (zhName: string) =>
   martialArtsZhDesc[zhName] ?? null;
+
+/** 调律机制知识（社区整理的官方机制数据，宽松校验） */
+export const tiaolvKnowledge = z
+  .object({
+    _comment: z.string(),
+    updatedAt: z.string(),
+    fiveStats: z.object({
+      title: z.string(),
+      note: z.string(),
+      rows: z.array(z.object({ stat: z.string(), convert: z.string() })),
+    }),
+    rateCaps: z.object({
+      title: z.string(),
+      rows: z.array(z.object({ name: z.string(), cap: z.string() })),
+    }),
+    damageFlow: z.object({
+      title: z.string(),
+      steps: z.array(z.string()),
+    }),
+    factionSplit: z.object({
+      title: z.string(),
+      rows: z.array(z.object({ type: z.string(), detail: z.string() })),
+      note: z.string(),
+    }),
+    affixPriority: z.object({
+      title: z.string(),
+      order: z.array(z.string()),
+      notes: z.array(z.string()),
+    }),
+  })
+  .parse(tiaolvKnowledgeRaw);
 
 /** 心法流派 tag → 中文流派名（StonesplitMight → 裂石·威） */
 export const factionZhByTag = (tag: string) => zhAnchor[tag] ?? null;

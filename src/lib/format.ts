@@ -36,11 +36,11 @@ export function pascalToKebab(tag: string): string {
 }
 
 /**
- * 词条/属性 key 的中文名（来源：17173 全武器攻略的效果描述原文、九游五维属性说明，
- * 均为游戏内官方用语的玩家转述）：
+ * 词条/属性 key 的中文名（来源：17173 全武器攻略的效果描述原文、九游五维说明、
+ * 游民星空《基础属性讲解》，均为游戏内官方用语的玩家转述）：
  * - 五维：劲/体/敏/势/御（power/body/agility/momentum/defense）
  * - 暴击两系：会心（crit）与 会意（affinity，鸣金流派专用）
- * - 五系属性攻击：外功/鸣金/裂石/牵丝/破竹
+ * - 六系属性攻击：外功/无相/鸣金/裂石/牵丝/破竹
  */
 const STAT_LABELS: Record<string, string> = {
   dmgBonus: '伤害加成',
@@ -61,6 +61,8 @@ const STAT_LABELS: Record<string, string> = {
   momentum: '势',
   minPhys: '最小外功攻击',
   maxPhys: '最大外功攻击',
+  minVoidAttack: '最小无相攻击',
+  maxVoidAttack: '最大无相攻击',
   minBellstrike: '最小鸣金攻击',
   maxBellstrike: '最大鸣金攻击',
   minStonesplit: '最小裂石攻击',

@@ -8,6 +8,7 @@ import {
   martialArtZhInfo,
   pathByTag,
   statDisplayName,
+  tiaolvKnowledge,
 } from '../../lib/data';
 import { displayName, fmtStatValue, pascalToKebab } from '../../lib/format';
 
@@ -64,6 +65,73 @@ const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
   <p class="page-desc">
     调律词条 {attunements.length} 条、装备词条池 {gearDefs.gear.length} 件、数值上限 {levels.length} 档。
   </p>
+
+  <details class="knowledge" open>
+    <summary class="group-summary">调律机制速查（{tiaolvKnowledge.updatedAt} 整理）</summary>
+    <div class="knowledge-grid">
+      <div class="panel">
+        <h3>{tiaolvKnowledge.fiveStats.title}</h3>
+        <p class="muted">{tiaolvKnowledge.fiveStats.note}</p>
+        <table>
+          <tbody>
+            {tiaolvKnowledge.fiveStats.rows.map((r) => (
+              <tr>
+                <td class="k-stat">{r.stat}</td>
+                <td>{r.convert}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="panel">
+        <h3>{tiaolvKnowledge.rateCaps.title}</h3>
+        <table>
+          <tbody>
+            {tiaolvKnowledge.rateCaps.rows.map((r) => (
+              <tr>
+                <td class="k-stat">{r.name}</td>
+                <td>{r.cap}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <h3>{tiaolvKnowledge.factionSplit.title}</h3>
+        <table>
+          <tbody>
+            {tiaolvKnowledge.factionSplit.rows.map((r) => (
+              <tr>
+                <td class="k-stat">{r.type}</td>
+                <td>{r.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="muted">{tiaolvKnowledge.factionSplit.note}</p>
+      </div>
+      <div class="panel">
+        <h3>{tiaolvKnowledge.damageFlow.title}</h3>
+        <ol class="flow-list">
+          {tiaolvKnowledge.damageFlow.steps.map((s) => (
+            <li>{s}</li>
+          ))}
+        </ol>
+      </div>
+      <div class="panel">
+        <h3>{tiaolvKnowledge.affixPriority.title}</h3>
+        <p class="priority-order">
+          {tiaolvKnowledge.affixPriority.order.join(' ＞ ')}
+        </p>
+        <ul class="flow-list">
+          {tiaolvKnowledge.affixPriority.notes.map((s) => (
+            <li>{s}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <p class="muted">
+      整理自社区攻略（游民星空《基础属性讲解》《调律与转律入门指南》、17173《装备词条四攻选择》），数值为 96 版本玩家实测，以游戏内实际为准。
+    </p>
+  </details>
 
   <h2>调律词条总表</h2>
   {
@@ -202,5 +270,38 @@ const levels = Object.keys(affixValues).sort((a, b) => Number(b) - Number(a));
     cursor: pointer;
     color: var(--accent);
     font-weight: 600;
+  }
+  .knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 0.8rem;
+    margin: 0.8rem 0;
+  }
+  .knowledge-grid .panel {
+    margin-bottom: 0;
+  }
+  .knowledge-grid h3 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  .k-stat {
+    color: var(--accent);
+    font-weight: 600;
+    white-space: nowrap;
+    width: 5rem;
+  }
+  .flow-list {
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+  .flow-list li {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+  .priority-order {
+    color: var(--text);
+    font-weight: 600;
+    margin: 0 0 0.5rem;
   }
 </style>
